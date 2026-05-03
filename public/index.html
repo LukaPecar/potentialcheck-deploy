@@ -180,6 +180,21 @@
     text-transform: uppercase;
   }
 
+  .brand-logo,
+  .personal-logo {
+    display: block;
+    object-fit: contain;
+    background: #fff;
+  }
+
+  .brand-logo {
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px rgba(255, 250, 240, 0.18);
+  }
+
   .nav-actions {
     display: flex;
     align-items: center;
@@ -1646,6 +1661,22 @@
     padding: 24px 28px 24px 0;
   }
 
+  .personal-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 8px;
+  }
+
+  .personal-logo {
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px rgba(255, 250, 240, 0.16), 0 14px 34px rgba(0, 0, 0, 0.18);
+  }
+
   .portrait {
     aspect-ratio: 1;
     border-radius: 21px;
@@ -2238,6 +2269,7 @@
   </div>
   <header class="container nav">
     <div class="brand">
+      <img class="brand-logo" src="pecar-und-partner-logo.jpeg" alt="Pecar & Partner">
       <span>Potentialcheck</span>
     </div>
     <div class="nav-actions">
@@ -2607,7 +2639,10 @@
           <img src="luka-pecar.jpeg" alt="Luka Pecar">
         </div>
         <div class="personal-copy">
-          <div class="section-kicker">Persönlich</div>
+          <div class="personal-topline">
+            <div class="section-kicker">Persönlich</div>
+            <img class="personal-logo" src="pecar-und-partner-logo.jpeg" alt="Pecar & Partner">
+          </div>
           <h2>Der Check kommt nicht von einer Agentur-Fabrik.</h2>
           <p>Ich bin Luka Pecar. Ich habe über 10 Jahre im Bau- und HLKS-Umfeld gearbeitet, Abläufe verbessert und dort selbst erlebt, wo Rückfragen, Offerten, Baustellenkoordination und Systembrüche täglich Zeit kosten. Genau deshalb schaue ich nicht aus Agentur-Sicht auf Prozesse, sondern aus der Praxis: Was wiederholt sich, wo entsteht Aufwand und welcher kleine Hebel bringt schnell Entlastung?</p>
           <div class="personal-facts">
