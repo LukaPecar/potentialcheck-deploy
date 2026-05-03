@@ -1,0 +1,40 @@
+name: Deploy to Hostpoint
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare SSH
+        env:
+          HOSTPOINT_HOST: ${{ secrets.HOSTPOINT_HOST }}
+          HOSTPOINT_PORT: ${{ secrets.HOSTPOINT_PORT || '22' }}
+          HOSTPOINT_SSH_KEY: ${{ secrets.HOSTPOINT_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          printf '%s\n' "$HOSTPOINT_SSH_KEY" > ~/.ssh/hostpoint_key
+          chmod 600 ~/.ssh/hostpoint_key
+          ssh-keyscan -p "$HOSTPOINT_PORT" "$HOSTPOINT_HOST" >> ~/.ssh/known_hosts
+
+      - name: Upload public files
+        env:
+          HOSTPOINT_HOST: ${{ secrets.HOSTPOINT_HOST }}
+          HOSTPOINT_USER: ${{ secrets.HOSTPOINT_USER }}
+          HOSTPOINT_PORT: ${{ secrets.HOSTPOINT_PORT || '22' }}
+          HOSTPOINT_TARGET_DIR: ${{ secrets.HOSTPOINT_TARGET_DIR }}
+        run: |
+          set -euo pipefail
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/hostpoint_key -p $HOSTPOINT_PORT" \
+            public/ "$HOSTPOINT_USER@$HOSTPOINT_HOST:$HOSTPOINT_TARGET_DIR/"
+
