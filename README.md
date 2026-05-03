@@ -1,12 +1,12 @@
-# Potentialcheck Landingpage Deploy
+# Potentialcheck Landingpage
 
-Dieses Mini-Repo ist nur fuer die veroeffentlichte Landingpage gedacht.
+Dieses Mini-Repo ist nur fuer die veroeffentlichte Landingpage gedacht und deployed automatisch zu GitHub Pages.
 
 ## Inhalt
 
-- `public/index.html` - die Live-Seite fuer Hostpoint
+- `public/index.html` - die Live-Seite fuer GitHub Pages
 - `public/luka-pecar.jpeg` - oeffentliches Portraitbild
-- `.github/workflows/deploy-hostpoint.yml` - automatischer Upload zu Hostpoint nach jedem Push auf `main`
+- `.github/workflows/deploy-pages.yml` - automatisches GitHub-Pages-Deployment nach jedem Push auf `main`
 
 ## Lokale Aenderungen uebernehmen
 
@@ -31,15 +31,20 @@ Oder alles in einem Schritt:
 ./deploy.sh "Update landing page"
 ```
 
-## GitHub Secrets
+## GitHub Pages aktivieren
 
-In GitHub im Repo unter `Settings` -> `Secrets and variables` -> `Actions` diese Secrets hinterlegen:
+Im GitHub-Repo:
 
-- `HOSTPOINT_HOST` - z.B. `sl100.web.hostpoint.ch` oder der Host aus Hostpoint
-- `HOSTPOINT_USER` - Haupt-FTP/SSH-Benutzer
-- `HOSTPOINT_SSH_KEY` - privater SSH-Key fuer den Hostpoint-Zugang
-- `HOSTPOINT_TARGET_DIR` - Zielordner auf Hostpoint, z.B. `/home/USERNAME/www/DOMAIN.ch`
-- `HOSTPOINT_PORT` - optional, Standard ist `22`
+1. `Settings` -> `Pages`
+2. Bei `Build and deployment` als Source `GitHub Actions` auswaehlen
+3. Speichern
+4. Danach deployed jeder Push auf `main` automatisch
 
-SSH/SFTP muss im Hostpoint Control Panel aktiviert sein.
+Standard-URL:
+
+```text
+https://lukapecar.github.io/potentialcheck-deploy/
+```
+
+Eine eigene Domain kann spaeter in `Settings` -> `Pages` -> `Custom domain` verbunden werden.
 
