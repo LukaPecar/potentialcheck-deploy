@@ -1571,20 +1571,22 @@
     border-bottom: 1px solid rgba(245,240,231,0.12);
     margin-bottom: 0;
   }
-  .proof-section > .container > .proof-metric {
+  .proof-section .proof-metric {
     text-align: right;
     margin-top: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
     color: var(--muted);
   }
-  .proof-section > .container > .proof-metric strong {
-    display: block;
-    font-size: 48px;
+  .proof-section .proof-metric strong {
+    font-size: clamp(40px, 5vw, 56px);
     font-weight: 900;
     letter-spacing: -0.06em;
     line-height: 1;
     color: var(--ink);
   }
-  .proof-section > .container > .proof-metric span {
+  .proof-section .proof-metric span {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.09em;
