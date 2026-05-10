@@ -1497,13 +1497,65 @@
   .zwei-wege-section { padding-top: 80px; padding-bottom: 80px; }
   .zwei-wege-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 56px 1fr;
+    gap: 0;
     margin-top: 44px;
+    align-items: stretch;
   }
-  .weg { padding: 32px; border-radius: 16px; }
-  .weg-a { background: rgba(245,240,231,0.025); border: 1px solid var(--line); }
-  .weg-b { background: rgba(185,147,70,0.06); border: 1px solid rgba(185,147,70,0.28); }
+  .zwei-wege-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+  }
+  .zwei-wege-vs::after {
+    content: 'VS';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid rgba(245,240,231,0.18);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+  .weg {
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    min-height: 380px;
+  }
+  .weg-watermark {
+    position: absolute;
+    right: -6px;
+    bottom: -24px;
+    font-size: 190px;
+    font-weight: 900;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.06em;
+  }
+  .weg-a {
+    background: rgba(245,240,231,0.025);
+    border: 1px solid var(--line);
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+  }
+  .weg-a .weg-watermark { color: rgba(242,132,130,0.07); }
+  .weg-b {
+    background: rgba(185,147,70,0.07);
+    border: 1.5px solid rgba(216,180,93,0.55);
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 0 60px rgba(216,180,93,0.18), inset 0 0 40px rgba(216,180,93,0.05);
+  }
+  .weg-b .weg-watermark { color: rgba(216,180,93,0.13); }
   .weg-badge {
     display: inline-block;
     font-size: 10px;
@@ -1511,15 +1563,79 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   .weg-b .weg-badge { color: var(--gold); }
-  .weg h3 { font-size: 22px; font-weight: 800; color: var(--ink); margin-bottom: 20px; }
-  .weg-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .weg-a .weg-list li { font-size: 15px; color: var(--muted); padding-left: 20px; position: relative; }
+  .weg h3 { font-size: 26px; font-weight: 800; color: var(--ink); margin-bottom: 28px; line-height: 1.1; letter-spacing: -0.02em; }
+  .weg-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .weg-a .weg-list li { font-size: 15px; color: var(--muted); padding-left: 24px; position: relative; line-height: 1.45; }
   .weg-a .weg-list li::before { content: '—'; position: absolute; left: 0; color: var(--red); }
-  .weg-b .weg-list li { font-size: 15px; color: var(--ink); padding-left: 20px; position: relative; }
+  .weg-b .weg-list li { font-size: 15px; color: var(--ink); padding-left: 24px; position: relative; line-height: 1.45; }
   .weg-b .weg-list li::before { content: '→'; position: absolute; left: 0; color: var(--gold); }
+
+  /* Projekte — case rows */
+  .proof-section > .container > .proof-intro {
+    background: none;
+    border-radius: 0;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 0 32px;
+    border-bottom: 1px solid rgba(245,240,231,0.12);
+    margin-bottom: 0;
+  }
+  .case-rows {
+    display: flex;
+    flex-direction: column;
+  }
+  .case-row {
+    display: grid;
+    grid-template-columns: 190px 1fr 190px 160px;
+    gap: 0 28px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(245,240,231,0.07);
+    position: relative;
+    transition: background 280ms ease;
+  }
+  .case-row::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 20%;
+    bottom: 20%;
+    width: 2px;
+    background: var(--gold-strong);
+    border-radius: 999px;
+    transform: scaleY(0);
+    transition: transform 260ms var(--ease-out);
+  }
+  .case-row:hover::before { transform: scaleY(1); }
+  .cr-industry {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cr-project {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .cr-stat {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--gold-strong);
+    letter-spacing: -0.02em;
+    text-align: right;
+  }
+  .cr-stat2 {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    text-align: right;
+  }
 
   .deliverables {
     display: grid;
@@ -2307,6 +2423,27 @@
       align-items: flex-start;
       flex-direction: column;
     }
+
+    .zwei-wege-grid {
+      grid-template-columns: 1fr;
+    }
+    .zwei-wege-vs { display: none; }
+    .weg-a { border-right: 1px solid var(--line); border-bottom: none; border-radius: 16px 16px 0 0; }
+    .weg-b { border-left: 1px solid rgba(185,147,70,0.35); border-top: none; border-radius: 0 0 16px 16px; }
+    .weg { min-height: unset; padding: 36px 28px; }
+
+    .case-row {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 4px;
+    }
+    .cr-industry { grid-column: 1 / -1; }
+    .cr-stat { text-align: left; }
+    .cr-stat2 { text-align: left; }
+    .proof-section > .container > .proof-intro {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
   }
 
   @keyframes logo-glow {
@@ -2476,6 +2613,7 @@
         </div>
         <div class="zwei-wege-grid" data-reveal style="--delay: 80ms">
           <div class="weg weg-a">
+            <div class="weg-watermark">×</div>
             <div class="weg-header">
               <span class="weg-badge">Weg A</span>
               <h3>Weiter wie bisher</h3>
@@ -2487,7 +2625,9 @@
               <li>Entscheidungen basieren auf Bauchgefühl</li>
             </ul>
           </div>
+          <div class="zwei-wege-vs" aria-hidden="true"></div>
           <div class="weg weg-b">
+            <div class="weg-watermark">→</div>
             <div class="weg-header">
               <span class="weg-badge">Weg B</span>
               <h3>Gezielter Hebel</h3>
@@ -2676,88 +2816,59 @@
     </section>
 
     <section class="section proof-section" id="proof" aria-label="Projektbeispiele und Ergebnisse">
-      <div class="container proof-panel case-panel" data-reveal>
+      <div class="container" data-reveal>
         <div class="proof-intro">
           <div>
             <div class="section-kicker">Projekte</div>
             <h2>Umgesetzt in echten Betrieben.</h2>
-            <p>Kurze Beispiele statt langer Theorie: Wo Prozesse sichtbar schneller wurden.</p>
+            <p>Wo Prozesse sichtbar schneller wurden.</p>
           </div>
-          <div class="proof-metric"><strong>8+</strong><span>Branchen und Prozessarten</span></div>
+          <div class="proof-metric"><strong>8+</strong><span>Branchen</span></div>
         </div>
 
-        <div class="case-grid">
-          <article class="case-card">
-            <div class="case-kicker">Baubranche / HVAC</div>
-            <h3>Ausschreibungs-Tool</h3>
-            <div class="case-results">
-              <span>75% weniger Zeit</span>
-              <span>3x Ausschreibungen</span>
-            </div>
-          </article>
-
-          <article class="case-card">
-            <div class="case-kicker">Facility Management</div>
-            <h3>Einsatzplanung bis Abrechnung</h3>
-            <div class="case-results">
-              <span>End-to-End Ablauf</span>
-              <span>mobile Rapportierung</span>
-            </div>
-          </article>
-
-          <article class="case-card">
-            <div class="case-kicker">Handwerk</div>
-            <h3>CRM & Nachverfolgung</h3>
-            <div class="case-results">
-              <span>0 verlorene Anfragen</span>
-              <span>60% schneller</span>
-            </div>
-          </article>
-
-          <article class="case-card">
-            <div class="case-kicker">Elektro / Installation</div>
-            <h3>ERP, Zeit & Projektplanung</h3>
-            <div class="case-results">
-              <span>18h / Woche gespart</span>
-              <span>CHF 190k / Jahr</span>
-            </div>
-          </article>
-
-          <article class="case-card">
-            <div class="case-kicker">Immobilien / Verwaltung</div>
-            <h3>Ticket-System für Mieteranfragen</h3>
-            <div class="case-results">
-              <span>48h → 4h Reaktion</span>
-              <span>92% Zufriedenheit</span>
-            </div>
-          </article>
-
-          <article class="case-card">
-            <div class="case-kicker">HLKS / Gebäudetechnik</div>
-            <h3>Offerten-Assistent</h3>
-            <div class="case-results">
-              <span>3h → 20min</span>
-              <span>&lt;2% Fehlerquote</span>
-            </div>
-          </article>
-
-          <article class="case-card">
-            <div class="case-kicker">Gartenbau</div>
-            <h3>Einsatzplanung & Rapportierung</h3>
-            <div class="case-results">
-              <span>10h Admin / Woche</span>
-              <span>40% schneller fakturieren</span>
-            </div>
-          </article>
-
-          <article class="case-card">
-            <div class="case-kicker">Weitere Prozesse</div>
-            <h3>WhatsApp, ERP, CRM und Follow-ups</h3>
-            <div class="case-results">
-              <span>WhatsApp 2.0</span>
-              <span>u.v.m.</span>
-            </div>
-          </article>
+        <div class="case-rows">
+          <div class="case-row">
+            <span class="cr-industry">Baubranche / HVAC</span>
+            <span class="cr-project">Ausschreibungs-Tool</span>
+            <span class="cr-stat">75% weniger Zeit</span>
+            <span class="cr-stat2">3× mehr Ausschreibungen</span>
+          </div>
+          <div class="case-row">
+            <span class="cr-industry">Elektro / Installation</span>
+            <span class="cr-project">ERP & Projektplanung</span>
+            <span class="cr-stat">CHF 190k / Jahr</span>
+            <span class="cr-stat2">18h / Woche gespart</span>
+          </div>
+          <div class="case-row">
+            <span class="cr-industry">HLKS / Gebäudetechnik</span>
+            <span class="cr-project">Offerten-Assistent</span>
+            <span class="cr-stat">3h → 20 Min</span>
+            <span class="cr-stat2">&lt;2% Fehlerquote</span>
+          </div>
+          <div class="case-row">
+            <span class="cr-industry">Immobilien / Verwaltung</span>
+            <span class="cr-project">Ticket-System Mieteranfragen</span>
+            <span class="cr-stat">48h → 4h Reaktion</span>
+            <span class="cr-stat2">92% Zufriedenheit</span>
+          </div>
+          <div class="case-row">
+            <span class="cr-industry">Handwerk</span>
+            <span class="cr-project">CRM & Nachverfolgung</span>
+            <span class="cr-stat">0 verlorene Anfragen</span>
+            <span class="cr-stat2">60% schneller</span>
+          </div>
+          <div class="case-row">
+            <span class="cr-industry">Facility Management</span>
+            <span class="cr-project">Einsatzplanung bis Abrechnung</span>
+            <span class="cr-stat">End-to-End</span>
+            <span class="cr-stat2">Mobile Rapportierung</span>
+          </div>
+          <div class="case-row">
+            <span class="cr-industry">Gartenbau</span>
+            <span class="cr-project">Einsatzplanung & Rapportierung</span>
+            <span class="cr-stat">40% schneller fakturieren</span>
+            <span class="cr-stat2">10h Admin / Woche</span>
+          </div>
         </div>
       </div>
     </section>
