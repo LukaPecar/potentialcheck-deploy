@@ -92,6 +92,7 @@
   }
 
   .journey-thread {
+    display: none !important;
     position: absolute;
     top: 690px;
     left: -2vw;
@@ -701,11 +702,21 @@
     margin-bottom: 26px;
   }
 
+  /* Gold gradient section divider */
+  .section:not(.hero-section):not(:first-of-type)::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(185,147,70,0.35) 30%, rgba(216,180,93,0.55) 50%, rgba(185,147,70,0.35) 70%, transparent 100%);
+    margin-bottom: 80px;
+  }
+
   .section-kicker {
     color: var(--gold);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 900;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-bottom: 11px;
   }
@@ -896,9 +907,8 @@
     min-height: 118px;
     padding: 15px;
     overflow: hidden;
-    background:
-      linear-gradient(180deg, rgba(245, 240, 231, 0.052), rgba(245, 240, 231, 0.018)),
-      #0f100e;
+    background: transparent;
+    border: 1px solid rgba(245,240,231,0.08);
     transition: background 220ms var(--ease-out), transform 220ms var(--ease-out);
   }
 
@@ -1542,9 +1552,8 @@
 
   .process-step {
     padding: 28px;
-    background:
-      linear-gradient(180deg, rgba(245, 240, 231, 0.052), rgba(245, 240, 231, 0.022)),
-      #0f100e;
+    background: transparent;
+    border: 1px solid rgba(245,240,231,0.07);
     transition: background 220ms var(--ease-out);
     position: relative;
     z-index: 1;
