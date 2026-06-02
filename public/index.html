@@ -96,6 +96,32 @@
       line-height: 1.2;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 760;
+      letter-spacing: -.01em;
+      opacity: .82;
+      white-space: nowrap;
+      transition: opacity .18s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
     .btn {
       display: inline-flex;
       min-height: 48px;
@@ -655,9 +681,67 @@
     }
 
     .legal {
-      margin-top: 12px;
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
       color: #7b8490;
       font-size: 13px;
+    }
+
+    .legal-block {
+      border-top: 1px solid var(--line);
+      width: 100%;
+      padding-top: 12px;
+    }
+
+    .legal-block summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 760;
+      color: var(--navy);
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      user-select: none;
+    }
+
+    .legal-block summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .legal-block summary::before {
+      content: "+";
+      font-weight: 800;
+      color: #b6411f;
+      width: 14px;
+      text-align: center;
+    }
+
+    .legal-block[open] summary::before {
+      content: "–";
+    }
+
+    .legal-body {
+      margin-top: 12px;
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    .legal-body p {
+      margin: 0 0 10px;
+    }
+
+    .legal-body strong {
+      display: inline;
+      margin: 0;
+      color: var(--navy);
+    }
+
+    .legal-body a {
+      color: var(--navy);
+      font-weight: 700;
     }
 
     @media (max-width: 980px) {
@@ -787,6 +871,13 @@
         </span>
       </a>
 
+      <nav class="nav-links" aria-label="Abschnitte">
+        <a href="#warum-jetzt">Warum jetzt</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#vertrauen">Vertrauen</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
       <a class="btn" href="https://meetings-eu1.hubspot.com/lpecar/erstgesprach-mit-luka?uuid=69a22305-15c0-441f-986a-9d1ff8c5ff66" target="_blank" rel="noopener">Erstgespräch buchen</a>
     </div>
   </header>
@@ -796,7 +887,7 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow"><span class="cross"></span> Eigene Daten nutzbar machen</div>
-          <h1>Ihre Daten sind schon da. Ich mache sie in 14 Tagen nutzbar.</h1>
+          <h1>Ihre Daten sind schon da.<br>Ich mache sie in 14 Tagen nutzbar.</h1>
           <p class="hero-sub">Viele KMU haben genug Daten. Sie liegen nur verteilt in Programmen, Excel-Listen, Mails und Köpfen. Ich verbinde diese bestehenden Datenquellen zu einem ersten klar abgegrenzten Betriebsmodul, das Ihr Team im Alltag nutzen kann. Ohne Systemwechsel. Ohne Abo.</p>
 
           <div class="hero-action">
@@ -946,17 +1037,38 @@
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>Luka Pecar, Pecar & Partner</strong>
+        <strong>Pecar und Partner GmbH</strong>
         <div>Betriebsmodule für Schweizer KMU, gebaut auf bestehenden Daten, Programmen und Abläufen.</div>
-        <div class="legal">Impressum Platzhalter: Firmenadresse, UID, E-Mail und verantwortliche Person ergänzen. Datenschutz Platzhalter: Datenschutzerklärung und Tracking-Hinweise ergänzen.</div>
+        <div class="legal">
+          <span>© 2026 Pecar und Partner GmbH · Föhneneichstrasse 19a, 6440 Brunnen · <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a> · <a href="tel:+41796190687">+41 79 619 06 87</a></span>
+
+          <details class="legal-block">
+            <summary>Impressum</summary>
+            <div class="legal-body">
+              <p><strong>Pecar und Partner GmbH</strong><br>
+              Föhneneichstrasse 19a<br>
+              6440 Brunnen<br>
+              Schweiz</p>
+              <p>Vertreten durch: Luka Pecar<br>
+              UID / MWST: CHE-274.524.395</p>
+              <p>E-Mail: <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a><br>
+              Telefon: <a href="tel:+41796190687">+41 79 619 06 87</a></p>
+            </div>
+          </details>
+
+          <details class="legal-block">
+            <summary>Datenschutz</summary>
+            <div class="legal-body">
+              <p>Verantwortlich für die Datenbearbeitung ist die Pecar und Partner GmbH, Föhneneichstrasse 19a, 6440 Brunnen, <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a>.</p>
+              <p><strong>Diese Website.</strong> Diese Seite setzt keine Cookies, kein Tracking und keine Analyse-Tools ein. Beim Aufruf verarbeitet der Hosting-Anbieter (Netlify) technisch notwendige Server-Logs wie IP-Adresse, Zeitpunkt und abgerufene Datei, um die Seite sicher auszuliefern.</p>
+              <p><strong>Terminbuchung.</strong> Über die Buttons gelangen Sie zum Buchungstool von HubSpot (HubSpot, Inc.). Buchen Sie dort einen Termin, werden Ihre eingegebenen Angaben wie Name und E-Mail durch HubSpot bearbeitet. Es gelten zusätzlich die Datenschutzbestimmungen von HubSpot.</p>
+              <p><strong>Kontakt.</strong> Schreiben Sie mir per E-Mail oder Telefon, bearbeite ich Ihre Angaben ausschliesslich zur Beantwortung Ihrer Anfrage.</p>
+              <p><strong>Ihre Rechte.</strong> Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten. Eine kurze Nachricht an <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a> genügt.</p>
+            </div>
+          </details>
+        </div>
       </div>
 
-      <div class="footer-links">
-        <a href="#warum-jetzt">Warum jetzt</a>
-        <a href="#ablauf">Ablauf</a>
-        <a href="#vertrauen">Vertrauen</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
     </div>
   </footer>
 
