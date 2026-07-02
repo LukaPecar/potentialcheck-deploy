@@ -385,6 +385,9 @@
   .cta-band .cta-sub { margin: 1.1rem auto 0; color: var(--on-dark-dim); font-size: 1.1rem; max-width: 46ch; }
   .cta-band .btn { margin-top: 2rem; }
   .cta-band .fine { margin-top: 1rem; font-size: 0.82rem; color: var(--on-dark-dim); }
+  .cta-trust { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.6rem 1.7rem; width: fit-content; margin: 2rem auto 0; padding: 0.85rem 1.7rem; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; }
+  .cta-trust span { display: inline-flex; align-items: center; gap: 0.55rem; font-weight: 600; font-size: 0.95rem; color: var(--on-dark); }
+  .cta-trust .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex: none; }
   .cta-avatars { display: flex; justify-content: center; margin-bottom: 1.6rem; }
   .cta-avatars img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--navy); margin-left: -12px; }
   .cta-avatars img:first-child { margin-left: 0; }
@@ -541,41 +544,8 @@
     </div>
   </section>
 
-  <!-- ---------- ABLAUF (split + workflow) ---------- -->
-  <section class="bg-paper" id="ablauf">
-    <div class="inner split">
-      <div class="split-text reveal">
-        <span class="eyebrow">So läuft's</span>
-        <h2 class="h2">In vier Schritten zu deiner <span class="accent">eigenen</span> Lösung.</h2>
-        <p class="lead" style="margin-top:1.1rem">Kein Monatelanges Projekt, kein Risiko. Wir fangen dort an, wo du am meisten Zeit verlierst, und du siehst schnell etwas Echtes.</p>
-      </div>
-      <div class="split-visual reveal reveal-d2">
-        <div class="flow-panel">
-          <div class="flow">
-            <div class="flow-step">
-              <div class="flow-node">1</div>
-              <div class="flow-body"><h3>Wir schauen hin</h3><p>Wir schauen, wo bei dir am meisten Zeit verloren geht.</p></div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-node">2</div>
-              <div class="flow-body"><h3>Du siehst die Skizze</h3><p>Anhand deiner Angaben bekommst du eine einfache digitale Skizze deiner Lösung. Du siehst, wie sie aussieht und funktioniert, bevor gebaut wird.</p></div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-node">3</div>
-              <div class="flow-body"><h3>Ich baue</h3><p>Ich baue aus deinen eigenen Daten die erste Lösung.</p></div>
-            </div>
-            <div class="flow-step hot">
-              <div class="flow-node">4</div>
-              <div class="flow-body"><h3>Du besitzt</h3><p>Die KI rechnet, du gibst frei. Und du besitzt alles.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ---------- WAS ICH BAUE ---------- -->
-  <section class="bg-cream">
+  <section class="bg-paper">
     <div class="inner split feature">
       <div class="split-text reveal">
         <span class="eyebrow">Was ich dir baue</span>
@@ -608,6 +578,39 @@
           <div class="pain-row pain-open">
             <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M9.6 9.4a2.4 2.4 0 0 1 4.7.7c0 1.6-2.3 2-2.3 3.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg></span>
             <div><span>Und alles, was du brauchst</span><small>Sag mir, wo's bei dir hakt, ich baue es</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- ABLAUF (split + workflow) ---------- -->
+  <section class="bg-cream" id="ablauf">
+    <div class="inner split">
+      <div class="split-text reveal">
+        <span class="eyebrow">So läuft's</span>
+        <h2 class="h2">In vier Schritten zu deiner <span class="accent">eigenen</span> Lösung.</h2>
+        <p class="lead" style="margin-top:1.1rem">Kein Monatelanges Projekt, kein Risiko. Wir fangen dort an, wo du am meisten Zeit verlierst, und du siehst schnell etwas Echtes.</p>
+      </div>
+      <div class="split-visual reveal reveal-d2">
+        <div class="flow-panel">
+          <div class="flow">
+            <div class="flow-step">
+              <div class="flow-node">1</div>
+              <div class="flow-body"><h3>Wir schauen hin</h3><p>Wir schauen, wo bei dir am meisten Zeit verloren geht.</p></div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-node">2</div>
+              <div class="flow-body"><h3>Du siehst die Skizze</h3><p>Anhand deiner Angaben bekommst du eine einfache digitale Skizze deiner Lösung. Du siehst, wie sie aussieht und funktioniert, bevor gebaut wird.</p></div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-node">3</div>
+              <div class="flow-body"><h3>Ich baue</h3><p>Ich baue aus deinen eigenen Daten die erste Lösung.</p></div>
+            </div>
+            <div class="flow-step hot">
+              <div class="flow-node">4</div>
+              <div class="flow-body"><h3>Du besitzt</h3><p>Die KI rechnet, du gibst frei. Und du besitzt alles.</p></div>
+            </div>
           </div>
         </div>
       </div>
@@ -724,9 +727,14 @@
   <section class="on-dark cta-band" id="kontakt">
     <div class="inner reveal">
       <span class="eyebrow">Nächster Schritt</span>
-      <h2 class="cta-title">Neugierig, was bei dir zuerst Sinn macht?</h2>
-      <p class="cta-sub">Lass uns 15 Minuten austauschen, unverbindlich.</p>
+      <h2 class="cta-title">Bereit für ein erstes Kennenlernen?</h2>
+      <p class="cta-sub">Ein ehrliches, unverbindliches Gespräch. Ich höre zu, schaue auf deine Zahlen und sage dir offen, ob und wie ich helfen kann. Du erreichst immer einen Menschen, kein Ticket-System.</p>
       <a class="btn btn-primary" href="https://meetings-eu1.hubspot.com/lpecar/erstgesprach-mit-luka" target="_blank" rel="noopener">Kennenlernen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <div class="cta-trust">
+        <span><span class="dot"></span>Unverbindlich</span>
+        <span><span class="dot"></span>Kein Verkaufsdruck</span>
+        <span><span class="swiss" aria-hidden="true"></span>100 % Schweiz</span>
+      </div>
     </div>
   </section>
 
