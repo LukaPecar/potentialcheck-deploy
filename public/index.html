@@ -129,7 +129,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .collage figure img{width:100%;height:100%;object-fit:cover}
 .collage .f1{left:0;top:0;width:62%;height:56%;transform:rotate(-3deg);border-color:var(--lime)}
 .collage .f2{right:0;top:22%;width:44%;height:40%;transform:rotate(4deg);border-color:var(--ice)}
-.collage .f3{left:14%;bottom:0;width:50%;height:42%;transform:rotate(-5deg);border-color:var(--sage)}
+.collage .f3{left:8%;bottom:0;width:46%;height:40%;transform:rotate(-5deg);border-color:var(--sage)}
+.collage .f4{right:0;bottom:4%;width:42%;height:30%;transform:rotate(5deg);border-color:var(--ice);z-index:2}
 .about-text p{color:var(--text);font-size:1.06rem} .about-text p+p{margin-top:.9rem}
 @media (min-width:960px){
   .about{grid-template-columns:.85fr 1.15fr;gap:3.5rem}
@@ -179,7 +180,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .akig-text p{color:var(--text);font-size:1.08rem} .akig-text p+p{margin-top:1rem}
 .akig-text a.person{font-weight:800;color:var(--petrol);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:3px;text-underline-offset:3px}
 .akig-card{background:var(--white);border-radius:var(--r-xl);padding:clamp(2rem,4vw,3.2rem);box-shadow:0 34px 70px -36px rgba(8,47,58,.4);display:grid;gap:1.4rem;justify-items:start}
-.akig-card .logo{width:min(100%,300px)}
+.akig-card .logo{width:min(100%,220px)}
+.akig-photo{width:100%;border-radius:22px;overflow:hidden;border:6px solid var(--ice);transform:rotate(-2deg);box-shadow:0 26px 54px -30px rgba(8,47,58,.5);margin-bottom:.4rem}
+.akig-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 40%}
 .akig-card .tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:999px;background:var(--sage);color:var(--petrol);font-weight:800;font-size:.82rem}
 .akig-card .tag i{width:9px;height:9px;border-radius:50%;background:var(--green)}
 @media (min-width:960px){.akig{grid-template-columns:.9fr 1.1fr;gap:4rem}}
@@ -265,6 +268,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
       <figure class="f1"><img src="luka-werkstatt.jpg" alt="Luka Pecar beim Schweissen in der Werkstatt" width="1000" height="1000" loading="lazy"></figure>
       <figure class="f2"><img src="luka-baustelle.jpg" alt="Luka Pecar mit Helm auf der Baustelle" width="900" height="1125" loading="lazy"></figure>
       <figure class="f3"><img src="luka-nahbar.jpg" alt="Luka Pecar, lachend" width="1000" height="1000" loading="lazy"></figure>
+      <figure class="f4"><img src="luka-christian.jpg" alt="Luka Pecar mit Christian Facchin" width="1400" height="1050" loading="lazy"></figure>
     </div>
     <div class="about-text rv d1">
       <p>Ich komme aus der Gebäudetechnik. In meiner früheren Tätigkeit habe ich unter anderem Digitalisierungsaufgaben übernommen.</p>
@@ -337,6 +341,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
 <section class="band-cream" id="akig" aria-labelledby="akig-title">
   <div class="wrap akig">
     <div class="akig-card rv">
+      <figure class="akig-photo"><img src="luka-christian.jpg" alt="Luka Pecar und Christian Facchin beim gemeinsamen Mittagessen" width="1400" height="1050" loading="lazy"></figure>
       <img class="logo" src="logo-akig.svg" alt="akig." width="300" height="90">
       <span class="tag"><i></i>Im Aufbau, gemeinsam mit dem Team</span>
       <a class="btn" href="https://www.akig.ch/" target="_blank" rel="noopener">akig.ch ansehen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
