@@ -3,864 +3,504 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pecar &amp; Partner — Software für Schweizer KMU, aus der Praxis gebaut</title>
-<meta name="description" content="Ich baue Schweizer KMU massgeschneiderte, KI-gestützte Software aus den Daten, die sie längst haben. Bleibt in der Schweiz, gehört dir. Erste Lösung in rund 14 Tagen.">
-<link rel="icon" type="image/webp" href="data:image/png;base64,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">
+<title>Luka Pecar – Pecar &amp; Partner</title>
+<meta name="description" content="Ich übernehme Verantwortung, um deine betrieblichen Herausforderungen zu lösen. Persönliche Anlaufstelle von Luka Pecar: Pecar & Partner, Sajinth & Partner, pv innovation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23102D35'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%23D5E65A'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_CH">
-<meta property="og:site_name" content="Pecar & Partner">
-<meta property="og:title" content="Pecar & Partner — Software für Schweizer KMU, aus der Praxis gebaut">
-<meta property="og:description" content="Ich baue Schweizer KMU massgeschneiderte, KI-gestützte Software aus den Daten, die sie längst haben. Bleibt in der Schweiz, gehört dir.">
+<meta property="og:site_name" content="Luka Pecar – Pecar & Partner">
+<meta property="og:title" content="Luka Pecar – Pecar & Partner">
+<meta property="og:description" content="Ich übernehme Verantwortung, um deine betrieblichen Herausforderungen zu lösen.">
 <meta property="og:image" content="og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pecar & Partner — Software für Schweizer KMU">
-<meta name="twitter:description" content="Massgeschneiderte, KI-gestützte Software aus deinen eigenen Daten. Bleibt in der Schweiz, gehört dir.">
-<meta name="twitter:image" content="og-image.png">
 <style>
-@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter.woff2) format('woff2');}
-@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(fonts/spacegrotesk.woff2) format('woff2');}
-</style>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/manrope.woff2) format('woff2');}
 
-  :root {
-    /* Akzent (Rot) */
-    --red:        #C7341F;
-    --red-deep:   #AF2B1E;
-    --red-dark:   #561A12;
-    --red-faint:  rgba(199, 52, 31, 0.08);
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --petrol:#102D35; --ice:#DFF3F6; --sky:#59CBE8; --lime:#D5E65A; --sun:#F4DA37; --cream:#FAFAF6; --ink:#111111;
+  --ink-2:#2A3F46; --ink-3:#5C7077;
+  --font:'Manrope',system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1200px; --gutter:clamp(1.25rem,5vw,4rem);
+  --r-xl:36px; --r-lg:28px; --r-md:20px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-weight:500;font-size:1.06rem;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+section{position:relative;padding-block:clamp(4.5rem,9vw,8rem)}
+h1,h2,h3{font-weight:800;letter-spacing:-.03em;line-height:1.04;text-wrap:balance}
+h2{font-size:clamp(2.1rem,4.6vw,3.5rem)}
+h3{font-size:clamp(1.25rem,2vw,1.6rem);letter-spacing:-.02em}
+p{text-wrap:pretty}
+.lead{font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.55;color:var(--ink-2);max-width:62ch}
 
-    /* Dunkel (Navy) */
-    --navy:       #0F1A36;
-    --navy-deep:  #0A1228;
-    --navy-700:   #1E3160;
+/* Kapsel-Highlight */
+.cap{display:inline-block;padding:.02em .42em;border-radius:999px;line-height:1.02;background:var(--lime);color:var(--ink);box-shadow:0 8px 24px -10px rgba(16,45,53,.35);transform:rotate(-1.5deg)}
+.cap.sun{background:var(--sun)}
+.cap.sky{background:var(--sky)}
+.underline{background:linear-gradient(transparent 62%,var(--sun) 62%,var(--sun) 92%,transparent 92%)}
 
-    /* Flächen */
-    --cream:      #F5F4EE;
-    --paper:      #FFFFFF;
-    --paper-2:    #FBFAF6;
-    --border:     #E6E4DA;
-    --border-2:   #D9D6CA;
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.6rem 1rem 1.9rem;border-radius:999px;font-weight:800;font-size:1.02rem;background:var(--petrol);color:#fff;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s}
+.btn .arr{display:grid;place-items:center;width:1.8em;height:1.8em;border-radius:50%;background:var(--lime);color:var(--petrol);transition:transform .25s var(--ease)}
+.btn .arr svg{width:1em;height:1em}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -18px rgba(16,45,53,.55)}
+.btn:hover .arr{transform:translateX(3px)}
+.btn.light{background:var(--cream);color:var(--petrol)}
+.btn.light .arr{background:var(--petrol);color:var(--lime)}
+.btn.sun{background:var(--sun);color:var(--ink)}
+.btn.sun .arr{background:var(--petrol);color:var(--sun)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:8px}
 
-    /* Text */
-    --ink:        #161D2B;
-    --ink-2:      #424B5A;
-    --ink-3:      #717986;
+/* Header */
+.header{position:sticky;top:0;z-index:100;background:rgba(250,250,246,.86);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.header.scrolled{border-bottom-color:rgba(16,45,53,.08);box-shadow:0 10px 30px -22px rgba(16,45,53,.35)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.95rem}
+.brand{display:flex;flex-direction:column;line-height:1.1}
+.brand b{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;color:var(--petrol)}
+.brand small{font-size:.8rem;font-weight:600;color:var(--ink-3);letter-spacing:.01em}
+.menu{display:flex;align-items:center;gap:1.9rem}
+.menu a{font-weight:700;font-size:.98rem;color:var(--ink-2);position:relative;padding:.3rem 0}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;border-radius:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.menu a:hover::after,.menu a.active::after{transform:scaleX(1)}
+.menu .btn{padding:.7rem 1.1rem .7rem 1.3rem;font-size:.95rem}
+.menu .btn::after{display:none}
+.menu .btn,.menu .btn:hover{color:#fff}
+.burger{display:none;width:46px;height:46px;border-radius:14px;background:var(--petrol);color:#fff;place-items:center}
+.burger svg{width:22px;height:22px}
+.burger .x{display:none}
+.header.open .burger .bars{display:none}
+.header.open .burger .x{display:block}
+@media (max-width:860px){
+  .burger{display:grid}
+  .menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--cream);border-bottom:1px solid rgba(16,45,53,.1);padding:.5rem var(--gutter) 1.25rem;display:none;box-shadow:0 30px 50px -30px rgba(16,45,53,.4)}
+  .header.open .menu{display:flex}
+  .menu a{padding:1rem 0;font-size:1.15rem;border-bottom:1px solid rgba(16,45,53,.08)}
+  .menu a::after{display:none}
+  .menu .btn{margin-top:1rem;justify-content:center;border-bottom:0;padding:1rem}
+}
 
-    /* Text auf Dunkel */
-    --on-dark:    #EDEBE4;
-    --on-dark-dim:#A7AEC0;
+/* Hero */
+.hero{min-height:min(92vh,940px);display:flex;align-items:flex-end;padding-block:0 clamp(3rem,6vw,5rem);overflow:hidden;
+  background:
+    radial-gradient(60% 55% at 12% 30%,rgba(244,218,55,.55),transparent 70%),
+    radial-gradient(55% 60% at 88% 25%,rgba(213,230,90,.55),transparent 70%),
+    radial-gradient(70% 60% at 50% 100%,rgba(89,203,232,.55),transparent 72%),
+    linear-gradient(180deg,#FDFCF3 0%,var(--ice) 100%);
+}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(16,45,53,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(16,45,53,.06) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%);mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%)}
+.hero .wrap{position:relative;z-index:2;text-align:center;padding-top:clamp(17rem,39vh,22rem)}
+.hero-person{position:absolute;left:50%;top:2.25rem;transform:translateX(-50%);width:clamp(230px,24vw,330px);z-index:1;pointer-events:none;
+  -webkit-mask-image:linear-gradient(#000 78%,transparent 100%);mask-image:linear-gradient(#000 78%,transparent 100%)}
+.hero-person img{width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(16,45,53,.25))}
+.hero h1{font-size:clamp(2.2rem,5vw,4.1rem);color:var(--ink);margin-inline:auto;max-width:17ch;position:relative}
+.hero h1 .comma{margin-left:-.22em}
+.hero h1 .cap{font-size:1.02em;padding:.02em .5em}
+.hero .cta{margin-top:clamp(1.6rem,3vw,2.4rem)}
+/* Bögen + Kreise */
+.lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.lines path{fill:none;stroke:var(--petrol);stroke-opacity:.5;stroke-width:2;stroke-dasharray:7 9;stroke-linecap:round}
+.node{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.45rem;transform:translate(-50%,-50%)}
+.node .disc{width:66px;height:66px;border-radius:50%;background:#fff;display:grid;place-items:center;border:3px solid var(--sky);box-shadow:0 14px 30px -16px rgba(16,45,53,.5)}
+.node.lime .disc{border-color:var(--lime)} .node.sun .disc{border-color:var(--sun)}
+.node .disc svg{width:30px;height:30px}
+.node span{font-size:.82rem;font-weight:800;color:var(--petrol);background:rgba(255,255,255,.75);padding:.15rem .6rem;border-radius:999px}
+.n1{left:15%;top:52%} .n2{left:85%;top:22%} .n3{left:84%;top:66%}
+@media (max-width:860px){
+  .hero{min-height:auto}
+  .hero .wrap{padding-top:clamp(14.5rem,54vw,18rem)}
+  .hero-person{width:clamp(190px,48vw,240px);top:1.5rem}
+  .lines,.node{display:none}
+  .hero h1{font-size:clamp(1.7rem,7.3vw,2.3rem);max-width:none;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}
+  .hero .btn{font-size:.95rem;padding:.9rem 1.1rem .9rem 1.35rem;white-space:normal;text-align:left;max-width:100%}
+  .mini-nodes{display:flex!important}
+}
+.mini-nodes{display:none;justify-content:center;gap:1.4rem;margin-top:1.6rem;flex-wrap:wrap}
+.mini-nodes div{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:.9rem;color:var(--petrol)}
+.mini-nodes i{width:12px;height:12px;border-radius:50%;background:var(--sky);display:inline-block}
+.mini-nodes i.lime{background:var(--lime)} .mini-nodes i.sun{background:var(--sun)}
 
-    /* System */
-    --ease-out:   cubic-bezier(0.23, 1, 0.32, 1);
-    --max:        1320px;
-    --gutter:     clamp(1.5rem, 5vw, 5.5rem);
-    --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
+/* Farbige Bänder */
+.band-sky{background:var(--sky);color:var(--petrol);
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.08) 0 18px,transparent 18px 36px)}
+.band-ice{background:var(--ice)}
+.band-cream{background:var(--cream)}
+.band-sun{background:linear-gradient(180deg,#FBF3C4,#F7EBA0)}
+.band-petrol{background:var(--petrol);color:var(--cream)}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
+.head{max-width:860px;margin-bottom:clamp(2rem,4vw,3.2rem)}
+.head h2{max-width:19ch}
+.head.center h2{margin-inline:auto}
+.head.center{margin-inline:auto}
 
-    --shadow:      0 1px 2px rgba(15,26,54,0.03), 0 14px 36px -26px rgba(15,26,54,0.16);
-    --shadow-hover:0 22px 50px -28px rgba(15,26,54,0.26);
-  }
+/* Prinzip: 4 verbundene Karten */
+.steps{position:relative;display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:clamp(2.5rem,5vw,4rem)}
+.steps::before{content:"";position:absolute;left:34px;top:40px;bottom:40px;border-left:3px dashed rgba(16,45,53,.45);z-index:0}
+.step{position:relative;z-index:1;background:var(--cream);border-radius:var(--r-lg);padding:1.9rem 1.7rem 1.9rem 5.2rem;box-shadow:0 26px 60px -34px rgba(16,45,53,.45)}
+.step .no{position:absolute;left:1.05rem;top:1.6rem;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:1.15rem;color:var(--petrol);background:var(--sun);border:4px solid var(--cream)}
+.step:nth-child(2) .no{background:var(--lime)} .step:nth-child(3) .no{background:var(--ice)} .step:nth-child(4) .no{background:#fff}
+.step h3{margin-bottom:.45rem;color:var(--petrol)}
+.step p{color:var(--ink-2);font-size:1rem}
+@media (min-width:900px){
+  .steps{grid-template-columns:repeat(4,1fr);gap:1.4rem}
+  .steps::before{left:12%;right:12%;top:38px;bottom:auto;border-left:0;border-top:3px dashed rgba(16,45,53,.45)}
+  .step{padding:4.4rem 1.6rem 1.9rem}
+  .step .no{left:50%;top:0;transform:translate(-50%,-30%);width:60px;height:60px}
+}
 
-  html { scroll-behavior: smooth; }
+/* Über: Collage */
+.about{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:start}
+.collage{position:relative;height:clamp(420px,52vw,560px)}
+.collage figure{position:absolute;border-radius:24px;overflow:hidden;box-shadow:0 34px 70px -36px rgba(16,45,53,.55);border:6px solid var(--sun)}
+.collage figure img{width:100%;height:100%;object-fit:cover}
+.collage .f1{left:4%;top:6%;width:58%;height:78%;transform:rotate(-4deg);border-color:var(--sun)}
+.collage .f2{right:3%;top:0;width:42%;height:48%;transform:rotate(5deg);border-color:var(--sky)}
+.collage .f3{right:10%;bottom:2%;width:40%;height:44%;transform:rotate(-7deg);border-color:var(--lime)}
+.collage .blob{position:absolute;border-radius:50%;z-index:-1}
+.about-text p+p{margin-top:1rem}
+.about-text p{color:var(--ink-2);font-size:1.08rem}
+@media (min-width:960px){
+  .about{grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
+  .about .head{grid-column:1/-1;max-width:none}
+  .about .head h2{max-width:17ch}
+}
 
-  body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 1.55;
-    letter-spacing: -0.005em;
-    color: var(--ink-2);
-    background: var(--cream);
-    overflow-x: clip;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
+/* Unternehmen: 3 grosse Karten */
+.firms{display:grid;grid-template-columns:1fr;gap:1.4rem}
+.firm{border-radius:var(--r-xl);padding:2.2rem 2rem 2rem;display:flex;flex-direction:column;gap:1rem;min-height:100%;color:var(--ink);box-shadow:0 30px 70px -40px rgba(16,45,53,.5);transition:transform .3s var(--ease)}
+.firm:hover{transform:translateY(-4px)}
+.firm.sun{background:var(--sun)} .firm.sky{background:var(--sky)} .firm.lime{background:var(--lime)}
+.firm .sym{width:84px;height:84px;position:relative;margin-bottom:.4rem}
+.firm .role{display:inline-flex;align-self:flex-start;padding:.35rem .8rem;border-radius:999px;background:rgba(16,45,53,.12);font-weight:800;font-size:.78rem;letter-spacing:.02em;color:var(--petrol)}
+.firm h3{font-size:clamp(1.5rem,2.2vw,1.9rem);color:var(--petrol)}
+.firm p{color:var(--ink-2);font-size:1rem;flex:1}
+.firm .more{font-weight:800;color:var(--petrol);display:inline-flex;align-items:center;gap:.4rem}
+.firm .more svg{width:1em;height:1em;transition:transform .25s var(--ease)}
+.firm .more:hover svg{transform:translateX(4px)}
+@media (min-width:900px){.firms{grid-template-columns:repeat(3,1fr);gap:1.6rem}}
+/* geometrische Symbole */
+.sym i{position:absolute;display:block}
+.sym.pp i:nth-child(1){left:0;top:10px;width:46px;height:46px;border-radius:50%;background:var(--petrol)}
+.sym.pp i:nth-child(2){left:34px;top:26px;width:46px;height:46px;border-radius:50%;background:var(--cream);border:4px solid var(--petrol)}
+.sym.sp i:nth-child(1){left:6px;top:8px;width:34px;height:64px;border-radius:17px;background:var(--petrol)}
+.sym.sp i:nth-child(2){left:44px;top:8px;width:34px;height:34px;border-radius:50%;background:var(--cream);border:4px solid var(--petrol)}
+.sym.sp i:nth-child(3){left:44px;top:48px;width:34px;height:24px;border-radius:12px;background:var(--petrol)}
+.sym.pv i:nth-child(1){left:8px;top:8px;width:66px;height:66px;border-radius:50%;border:5px dashed var(--petrol)}
+.sym.pv i:nth-child(2){left:24px;top:24px;width:34px;height:34px;border-radius:50%;background:var(--petrol)}
 
-  img { display: block; max-width: 100%; }
-  a { color: inherit; text-decoration: none; }
+/* Zusammenarbeit: 4 Prozess-Karten */
+.proc{display:grid;grid-template-columns:1fr;gap:1.25rem}
+.pc{border-radius:var(--r-lg);padding:1.8rem 1.6rem 1.7rem;background:#fff;box-shadow:0 26px 60px -36px rgba(16,45,53,.45);position:relative;overflow:hidden}
+.pc .big{font-size:clamp(3.2rem,5vw,4.2rem);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--petrol);opacity:.18;position:absolute;right:1rem;top:.6rem}
+.pc .cube{width:64px;height:64px;position:relative;margin-bottom:1.1rem}
+.pc .cube::before,.pc .cube::after{content:"";position:absolute;inset:0;border-radius:16px}
+.pc .cube::after{background:var(--petrol);transform:translate(6px,6px);opacity:.25}
+.pc .cube::before{z-index:1;background:var(--c)}
+.pc h3{color:var(--petrol);margin-bottom:.3rem}
+.pc p{color:var(--ink-2);font-size:.98rem}
+.pc.a{--c:var(--sun)} .pc.b{--c:var(--sky)} .pc.c{--c:var(--lime)} .pc.d{--c:var(--ice)}
+@media (min-width:760px){.proc{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.proc{grid-template-columns:repeat(4,1fr)}}
 
-  /* ---------- Layout ---------- */
-  section { padding: 5.5rem var(--gutter); position: relative; }
-  @media (max-width: 800px) { section { padding: 3.75rem 1.25rem; } }
-  section .inner { max-width: var(--max); margin: 0 auto; }
+/* HunziCare */
+.case{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+.video-card{border-radius:var(--r-xl);overflow:hidden;background:#000;box-shadow:0 40px 90px -40px rgba(16,45,53,.7);border:8px solid var(--cream)}
+.video-card video{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover}
+.case-text p{color:var(--petrol);font-size:1.08rem}
+.case-text p+p{margin-top:1rem}
+.note{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;padding:.75rem 1.1rem;border-radius:999px;background:var(--cream);color:var(--petrol);font-weight:800;font-size:.92rem}
+.note i{width:10px;height:10px;border-radius:50%;background:var(--lime);display:inline-block}
+@media (min-width:1000px){.case{grid-template-columns:1.35fr .9fr;gap:3.5rem}}
 
-  .bg-cream { background: var(--cream); }
-  .bg-paper { background: var(--paper); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .on-dark  { background: var(--navy); color: var(--on-dark); }
+/* AKIG */
+.akig{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+.akig-text p{color:var(--ink-2);font-size:1.08rem}
+.akig-text p+p{margin-top:1rem}
+.akig-art{position:relative;height:clamp(240px,34vw,360px)}
+.akig-art i{position:absolute;border-radius:50%}
+.akig-art .a1{left:12%;top:14%;width:44%;aspect-ratio:1;background:var(--sky)}
+.akig-art .a2{left:44%;top:30%;width:44%;aspect-ratio:1;background:var(--lime);mix-blend-mode:multiply}
+.akig-art .a3{left:30%;top:58%;width:22%;aspect-ratio:1;background:var(--sun)}
+.akig-art .a4{left:6%;top:62%;width:14%;aspect-ratio:1;border:4px dashed var(--petrol);border-radius:50%}
+@media (min-width:960px){.akig{grid-template-columns:1fr 1.1fr;gap:4rem}}
 
-  .split { display: grid; grid-template-columns: 1fr; gap: 2.6rem; align-items: center; }
-  @media (min-width: 960px) {
-    .split     { grid-template-columns: minmax(0,0.72fr) minmax(0,1.28fr); gap: clamp(2.5rem,4vw,4rem); }
-    .split.rev { grid-template-columns: minmax(0,1.28fr) minmax(0,0.72fr); }
-    .split.rev > .split-text   { order: 2; }
-    .split.rev > .split-visual { order: 1; }
-  }
-  .split-text { max-width: 440px; text-align: left; }
+/* Kontakt */
+.contact{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+.shapes{position:relative;height:clamp(260px,38vw,420px)}
+.shapes i{position:absolute;display:block}
+.shapes .s1{left:6%;top:8%;width:38%;aspect-ratio:1;border-radius:50%;background:var(--sun)}
+.shapes .s2{left:40%;top:0;width:52%;height:46%;border-radius:0 0 999px 999px;background:var(--sky)}
+.shapes .s3{left:12%;bottom:6%;width:46%;height:34%;border-radius:32px;background:var(--lime)}
+.shapes .s4{right:8%;bottom:10%;width:30%;aspect-ratio:1;border-radius:50%;border:6px dashed var(--ice)}
+.shapes .s5{left:56%;top:52%;width:14%;aspect-ratio:1;border-radius:50%;background:var(--cream)}
+.contact h2{color:var(--cream)}
+.contact .lead{color:rgba(250,250,246,.8)}
+.clinks{display:flex;flex-direction:column;gap:.9rem;margin-top:1.8rem}
+.clink{display:inline-flex;align-items:center;gap:1rem;padding:1.05rem 1.3rem;border-radius:999px;background:rgba(250,250,246,.08);border:1px solid rgba(250,250,246,.16);font-weight:800;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--cream);transition:background .25s,transform .25s var(--ease);width:fit-content;max-width:100%}
+.clink .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--lime);color:var(--petrol);flex:none}
+.clink .ic svg{width:20px;height:20px}
+.clink:hover{background:rgba(250,250,246,.16);transform:translateX(4px)}
+.clink span{overflow-wrap:anywhere}
+@media (min-width:960px){.contact{grid-template-columns:1fr 1fr;gap:4rem}}
 
-  .sec-head { max-width: 640px; }
-  .sec-head.center { margin: 0 auto 3.2rem; text-align: center; }
-  .sec-head .lead { margin-top: 1.1rem; }
+/* Footer */
+footer{background:var(--petrol);color:rgba(250,250,246,.7);padding:1.6rem var(--gutter) 2.2rem;border-top:1px solid rgba(250,250,246,.1);font-size:.9rem}
+.foot{max-width:var(--wrap);margin-inline:auto;display:flex;flex-wrap:wrap;gap:.8rem 1.6rem;align-items:center;justify-content:space-between}
+.foot a:hover{color:var(--lime)}
+.foot nav{display:flex;gap:1.4rem;flex-wrap:wrap}
 
-  /* ---------- Typography ---------- */
-  .h2 {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: clamp(2rem, 3.4vw, 3rem);
-    letter-spacing: -0.035em;
-    line-height: 1.05;
-    color: var(--ink);
-    text-wrap: balance;
-  }
-  .h2 .accent { color: var(--red-deep); font-weight: 900; }
-  .split-text .h2 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); }
-  .feature .split-text .h2 { font-size: clamp(2.3rem, 4.4vw, 3.6rem); }
-  .feature .split-text .lead { font-size: 1.3rem; color: var(--ink); font-weight: 500; }
+/* Rechtliches */
+.legal-page{display:none;background:var(--cream)}
+.legal-page:target{display:block}
+.legal-wrap{max-width:760px}
+.legal-back{display:inline-flex;font-weight:800;color:var(--petrol);margin-bottom:1rem}
+.legal-body{color:var(--ink-2);line-height:1.7}
+.legal-body p+p{margin-top:1rem}
+.legal-body strong{color:var(--ink)}
+.legal-body a{color:var(--petrol);text-decoration:underline;text-underline-offset:2px}
+#ueber-mich,#unternehmen,#zusammenarbeit,#kontakt,#prinzip,#hunzicare,#akig,#impressum,#datenschutz{scroll-margin-top:84px}
 
-  .lead {
-    font-size: 1.16rem;
-    line-height: 1.55;
-    color: var(--ink-2);
-    max-width: 640px;
-    font-weight: 500;
-    text-wrap: pretty;
-  }
-  .lead b { color: var(--ink); font-weight: 700; }
-
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.45rem 0.95rem; border-radius: 999px;
-    background: var(--paper); border: 1px solid var(--border);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--red-deep); box-shadow: 0 2px 10px rgba(22,29,43,0.04);
-    margin-bottom: 1.3rem;
-  }
-
-  .swiss { position: relative; width: 15px; height: 15px; border-radius: 3px; background: var(--red-deep); flex: none; }
-  .swiss::before, .swiss::after { content: ""; position: absolute; background: #fff; }
-  .swiss::before { left: 50%; top: 3px; width: 2.4px; height: 9px; transform: translateX(-50%); }
-  .swiss::after { top: 50%; left: 3px; height: 2.4px; width: 9px; transform: translateY(-50%); }
-
-  /* ---------- Buttons ---------- */
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.6rem; padding: 1rem 1.7rem;
-    border-radius: 999px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.95rem;
-    border: 1px solid transparent; cursor: pointer;
-    transition: transform .22s var(--ease-out), background .22s, box-shadow .22s, border-color .22s;
-  }
-  .btn-primary { background: var(--red-deep); color: #fff; box-shadow: 0 10px 28px -8px rgba(199,52,31,0.45); }
-  .btn-primary:hover { background: var(--red-dark); }
-  .btn-ghost { background: var(--paper); color: var(--ink); border-color: var(--border-2); }
-  .btn:hover { transform: translateY(-1px); }
-  .btn .arr {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 1.55em; height: 1.55em; border-radius: 50%;
-    background: rgba(255,255,255,0.18);
-    transition: transform .22s var(--ease-out);
-  }
-  .btn-ghost .arr { background: var(--red-faint); color: var(--red-deep); }
-  .btn:hover .arr { transform: translate(3px, -1px); }
-  .btn .arr svg { width: 0.95em; height: 0.95em; }
-
-  .btn-nav { padding: 0.72rem 1.25rem; font-size: 0.9rem; }
-
-  /* ---------- Card ---------- */
-  .card {
-    padding: 2rem 1.7rem; background: var(--paper); border: 1px solid var(--border);
-    border-radius: 16px; box-shadow: var(--shadow);
-    transition: transform .28s var(--ease-out), border-color .28s, box-shadow .28s;
-  }
-  .card:hover { transform: translateY(-3px); border-color: rgba(199,52,31,0.3); box-shadow: var(--shadow-hover); }
-  .card-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red-deep); margin-bottom: 0.7rem; }
-  .card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.28rem; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.5rem; }
-  .card p { color: var(--ink-2); font-size: 1rem; }
-
-  /* ---------- Reveal ---------- */
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
-  .reveal.in { opacity: 1; transform: none; }
-  .reveal-d1 { transition-delay: 80ms; }
-  .reveal-d2 { transition-delay: 160ms; }
-  .reveal-d3 { transition-delay: 240ms; }
-  .reveal-d4 { transition-delay: 320ms; }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .reveal { transition: none; opacity: 1; transform: none; }
-  }
-
-  /* ---------- Nav ---------- */
-  .nav {
-    position: fixed; inset: 0 0 auto 0; z-index: 100; padding: 1.1rem var(--gutter);
-    display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 1px solid transparent;
-    transition: background .3s, border-color .3s;
-  }
-  .nav.scrolled { background: rgba(245,244,238,0.82); backdrop-filter: saturate(180%) blur(18px); border-bottom-color: var(--border); }
-  .brand { display: inline-flex; align-items: center; gap: 0.65rem; font-family: var(--font-display); font-weight: 700; font-size: 1.06rem; letter-spacing: -0.01em; color: var(--ink); }
-  .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; flex: none; }
-  .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
-  .nav .brand-mark { width: 44px; height: 44px; }
-  .brand small { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.68rem; letter-spacing: 0.01em; color: var(--ink-3); margin-top: 1px; }
-
-  .nav-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 1.6rem; }
-  .nav-links a { position: relative; font-size: 0.92rem; font-weight: 600; color: var(--ink-2); padding: 0.25rem 0; transition: color .2s; }
-  .nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--red-deep); transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease-out); }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
-  .nav-links a.active { color: var(--ink); }
-  @media (max-width: 900px) { .nav-links { display: none; } }
-  @media (max-width: 460px) { .brand small { display: none; } }
-
-  /* ---------- Hero ---------- */
-  .hero { padding-top: 8.5rem; overflow: hidden; }
-  .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(58% 48% at 76% 18%, rgba(199,52,31,0.10), transparent 70%); pointer-events: none; z-index: 0; }
-  .hero::after {
-    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 54px 54px; opacity: 0.45;
-    -webkit-mask-image: radial-gradient(72% 62% at 74% 26%, #000, transparent 76%);
-    mask-image: radial-gradient(72% 62% at 74% 26%, #000, transparent 76%);
-  }
-  .hero .inner { position: relative; z-index: 1; }
-  .hero-inner { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
-  @media (min-width: 980px) {
-    .hero-inner { grid-template-columns: minmax(0,1fr) minmax(0,1.02fr); gap: 3.5rem; align-items: stretch; }
-    .hero-visual { display: flex; }
-    .hero-visual .portrait-frame { display: flex; flex-direction: column; width: 100%; }
-    .hero-visual .portrait-frame img { flex: 1 1 auto; height: 100%; min-height: 0; aspect-ratio: auto; }
-  }
-
-  .hx-headline { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.05rem, 3.6vw, 3.4rem); letter-spacing: -0.04em; line-height: 1.06; color: var(--ink); text-wrap: balance; }
-  .hx-headline .accent { color: var(--red-deep); }
-  .hero .lead { margin-top: 1.4rem; }
-  .hero-cta { margin-top: 1.9rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.7rem; }
-  .hero-note { display: flex; flex-wrap: wrap; gap: 0.55rem 1.5rem; margin-top: 2.2rem; }
-  .hero-note span { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.98rem; font-weight: 600; color: var(--ink); }
-  .hero-note svg { width: 18px; height: 18px; color: var(--red-deep); flex: none; }
-  .trust { margin-top: 1.9rem; padding-top: 1.4rem; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--ink-3); }
-  .trust b { color: var(--ink); font-weight: 700; }
-  .trust .dot { color: var(--red-deep); margin: 0 0.35rem; }
-
-  .portrait-frame { position: relative; border: 1px solid var(--border); border-radius: 18px; background: var(--paper); padding: 12px; box-shadow: var(--shadow); }
-  .portrait-frame img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: 12px; }
-  .portrait-tag { position: absolute; left: 24px; bottom: 24px; background: rgba(15,26,54,0.86); color: #fff; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 999px; backdrop-filter: blur(4px); }
-
-  /* ---------- Warum jetzt / Timeline ---------- */
-  .whynow-head { max-width: 660px; margin-bottom: 3rem; }
-  .whynow-intro { margin-top: 1.2rem; max-width: 640px; color: var(--ink-2); font-size: 1.08rem; }
-  .timeline { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
-  .tl-card { position: relative; }
-  .tl-card.now { border-color: rgba(199,52,31,0.35); background: linear-gradient(180deg, var(--red-faint), rgba(199,52,31,0.02)); }
-  .tl-era { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 0.7rem; }
-  .tl-card.now .tl-era { color: var(--red-deep); }
-  .tl-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.5rem; }
-  .tl-card p { color: var(--ink-2); font-size: 1rem; }
-  .badge { position: absolute; top: -11px; right: 1.4rem; background: var(--red-deep); color: #fff; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.32rem 0.7rem; border-radius: 999px; }
-  @media (min-width: 760px) {
-    .timeline { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .tl-card:not(:last-child)::after { content: ""; position: absolute; top: 50%; right: -1.25rem; width: 1.25rem; height: 1px; background: var(--border-2); transform: translateY(-50%); }
-    .tl-card:not(:last-child)::before { content: ""; position: absolute; top: 50%; right: calc(-1.25rem + 2px); width: 7px; height: 7px; border-top: 1.5px solid var(--red-deep); border-right: 1.5px solid var(--red-deep); transform: translateY(-50%) rotate(45deg); opacity: 0.6; z-index: 2; }
-  }
-
-  /* ---------- Problem (split) ---------- */
-  .pain-card { background: var(--paper); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
-  .pain-card .pain-top { padding: 1.4rem 1.6rem; border-bottom: 1px solid var(--border); font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--ink); }
-  .pain-row { display: flex; align-items: center; gap: 0.9rem; padding: 1.05rem 1.6rem; border-bottom: 1px solid var(--border); }
-  .pain-row:last-child { border-bottom: 0; }
-  .pain-ic { width: 40px; height: 40px; flex: none; border-radius: 11px; background: var(--red-faint); border: 1px solid rgba(199,52,31,0.22); display: grid; place-items: center; color: var(--red-deep); }
-  .pain-ic svg { width: 20px; height: 20px; }
-  .pain-row span { font-weight: 600; color: var(--ink); }
-  .pain-row small { display: block; font-weight: 500; color: var(--ink-3); font-size: 0.82rem; margin-top: 1px; }
-  .pain-open { background: var(--red-faint); }
-  .pain-open span { color: var(--red-deep); }
-
-  /* ---------- Du entscheidest (Vergleich) ---------- */
-  .compare { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 1.1rem; align-items: stretch; }
-  @media (min-width: 760px) { .compare { grid-template-columns: 1fr auto 1fr; gap: 1.4rem; } }
-  .compare .col { display: flex; flex-direction: column; }
-  .col-label { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.2rem; }
-  .col.win { border-color: rgba(199,52,31,0.32); position: relative; background: linear-gradient(180deg, var(--red-faint), rgba(199,52,31,0.02)); }
-  .col.win .col-label { color: var(--red-deep); }
-  .col-sub { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--ink); margin: -0.6rem 0 1.3rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--border); }
-  .col.win .col-sub { color: var(--red-deep); }
-  .compare-note { max-width: 1000px; margin: 2rem auto 0; text-align: center; font-weight: 600; color: var(--ink); }
-
-  .vs { max-width: 900px; margin: 2.6rem auto 0; border: 1px solid var(--border); border-radius: 18px; overflow: hidden; background: var(--paper); box-shadow: var(--shadow); }
-  .vs-head, .vs-row { display: grid; grid-template-columns: 0.8fr 1.25fr 1.25fr; }
-  .vs-head { border-bottom: 1px solid var(--border); background: var(--paper-2); }
-  .vs-head > div { padding: 1rem 1.4rem; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-3); }
-  .vs-head .win-col { color: var(--red-deep); display: flex; align-items: center; gap: 0.55rem; background: var(--red-faint); }
-  .vs-badge { background: var(--red-deep); color: #fff; font-size: 0.58rem; letter-spacing: 0.1em; padding: 0.2rem 0.5rem; border-radius: 999px; }
-  .vs-row { border-bottom: 1px solid var(--border); }
-  .vs-row:last-child { border-bottom: 0; }
-  .vs-row > div { padding: 1.15rem 1.4rem; display: flex; align-items: center; gap: 0.6rem; font-size: 1rem; }
-  .vs-dim { font-size: 0.74rem !important; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
-  .vs-std { color: var(--ink-3); }
-  .vs-win { color: var(--ink); font-weight: 600; background: var(--red-faint); }
-  .vs-std svg { width: 18px; height: 18px; color: #B0ABA0; flex: none; }
-  .vs-win svg { width: 18px; height: 18px; color: var(--red-deep); flex: none; }
-  @media (max-width: 680px) {
-    .vs-head { display: none; }
-    .vs-row { grid-template-columns: 1fr 1fr; grid-template-areas: "dim dim" "std win"; }
-    .vs-dim { grid-area: dim; background: var(--paper-2); padding-block: 0.7rem; }
-    .vs-std { grid-area: std; }
-    .vs-win { grid-area: win; }
-  }
-  .compare ul { list-style: none; display: grid; gap: 0.85rem; }
-  .compare li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 1rem; line-height: 1.4; }
-  .compare li .ic { flex: none; margin-top: 1px; width: 20px; height: 20px; }
-  .col.dim li { color: var(--ink-3); }
-  .col.win li { color: var(--ink); font-weight: 500; }
-  .or { align-self: center; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--paper); border: 1px solid var(--border-2); font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; color: var(--ink-3); box-shadow: var(--shadow); }
-  @media (max-width: 759px) { .or { transform: rotate(90deg); margin: -0.3rem auto; } }
-
-  /* ---------- Ablauf (workflow chart) ---------- */
-  .flow-panel { background: var(--paper); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); padding: 2.2rem 2rem; }
-  .flow { display: grid; gap: 0; }
-  .flow-step { position: relative; display: grid; grid-template-columns: 46px 1fr; gap: 1.1rem; padding-bottom: 1.9rem; }
-  .flow-step:last-child { padding-bottom: 0; }
-  .flow-step:not(:last-child)::after { content: ""; position: absolute; left: 22px; top: 46px; bottom: 0; width: 2px; background: var(--border-2); }
-  .flow-node { width: 46px; height: 46px; border-radius: 13px; background: var(--paper); border: 1px solid var(--border-2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--ink); position: relative; z-index: 1; }
-  .flow-step.hot .flow-node { background: var(--navy); border-color: var(--navy); color: #fff; }
-  .flow-body h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.12rem; letter-spacing: -0.02em; color: var(--ink); margin: 0.5rem 0 0.3rem; }
-  .flow-body p { color: var(--ink-2); font-size: 1rem; }
-
-  /* ---------- Was ich baue (chips) ---------- */
-  .chips { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin-bottom: 1.6rem; }
-  .chip { display: inline-flex; align-items: center; gap: 0.55rem; background: var(--paper); border: 1px solid var(--border); border-radius: 999px; padding: 0.7rem 1.15rem; font-size: 0.98rem; font-weight: 600; color: var(--ink); box-shadow: var(--shadow); }
-  .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red-deep); flex: none; }
-  .svc-warm { margin-top: 1.1rem; color: var(--ink); font-weight: 600; }
-
-  /* ---------- Wer ich bin (split.rev) ---------- */
-  .about-text .punch { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.25; color: var(--red-deep); margin: 1.1rem 0; }
-  .about-text p { color: var(--ink-2); }
-  .about-text p + p { margin-top: 0.9rem; }
-  .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
-  .about-tags span { background: var(--paper); border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 600; color: var(--ink); }
-  .about-photo { border: 1px solid var(--border); border-radius: 18px; background: var(--paper); padding: 12px; box-shadow: var(--shadow); }
-  .about-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: 12px; }
-  @media (min-width: 960px) {
-    .split.rev.about-split { grid-template-columns: minmax(0,1.02fr) minmax(0,0.98fr); align-items: stretch; }
-    .about-split .split-visual { display: flex; }
-    .about-split .about-photo { display: flex; flex-direction: column; width: 100%; }
-    .about-split .about-photo img { flex: 1 1 auto; height: 100%; min-height: 0; aspect-ratio: auto; }
-  }
-
-  /* ---------- Beweis ---------- */
-  .proof-grid { display: grid; grid-template-columns: 1fr; gap: 2.4rem; align-items: center; max-width: var(--max); margin: 0 auto; }
-  @media (min-width: 900px) { .proof-grid { grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; } }
-  .proof-big { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.06; letter-spacing: -0.035em; color: var(--ink); }
-  .proof-big span { color: var(--red-deep); }
-  .tool-intro { margin: 3.6rem 0 1.4rem; text-align: center; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
-  .tool-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-  @media (min-width: 760px) { .tool-grid { grid-template-columns: repeat(3, 1fr); } }
-  .tool-card { padding: 0; overflow: hidden; }
-  .tool-shot { aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--border); background: var(--cream); }
-  .tool-shot img { width: 100%; height: 100%; object-fit: cover; object-position: left top; }
-  .tool-body { padding: 1.4rem 1.5rem 1.6rem; }
-  .tool-body .card-label { margin-bottom: 0.5rem; }
-  .tool-body h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.5rem; }
-  .tool-body p { color: var(--ink-2); font-size: 0.98rem; }
-  .quote { border-left: 2px solid var(--red-deep); padding-left: 1.6rem; }
-  .quote p { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.4; color: var(--ink); }
-  .quote cite { display: block; margin-top: 1.1rem; font-style: normal; font-size: 0.92rem; font-weight: 600; color: var(--ink-3); }
-
-  /* ---------- FAQ ---------- */
-  .faq-list { display: grid; gap: 0.8rem; }
-  .faq-item { background: var(--paper); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
-  .faq-q { width: 100%; text-align: left; background: none; border: 0; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; padding: 1.35rem 1.5rem; font-family: var(--font-display); font-weight: 600; font-size: 1.08rem; color: var(--ink); }
-  .faq-sign { position: relative; width: 20px; height: 20px; flex: none; }
-  .faq-sign::before, .faq-sign::after { content: ""; position: absolute; background: var(--red-deep); transition: transform .25s var(--ease-out), opacity .25s; }
-  .faq-sign::before { top: 9px; left: 2px; width: 16px; height: 2px; }
-  .faq-sign::after { top: 2px; left: 9px; width: 2px; height: 16px; }
-  .faq-item.open .faq-sign::after { transform: scaleY(0); opacity: 0; }
-  .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease-out); }
-  .faq-a-inner { padding: 0 1.5rem 1.35rem; color: var(--ink-2); font-size: 1rem; max-width: 60ch; }
-
-  .faq-cta { margin-top: 1.6rem; }
-
-  /* ---------- Final CTA (navy) ---------- */
-  .cta-band { text-align: center; }
-  .cta-band .eyebrow { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); color: #fff; }
-  .cta-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 5.2vw, 4rem); letter-spacing: -0.04em; line-height: 1.04; color: #fff; max-width: 18ch; margin: 0 auto; text-wrap: balance; }
-  .cta-band .cta-sub { margin: 1.1rem auto 0; color: var(--on-dark-dim); font-size: 1.1rem; max-width: 46ch; }
-  .cta-band .btn { margin-top: 2rem; }
-  .cta-band .fine { margin-top: 1rem; font-size: 0.82rem; color: var(--on-dark-dim); }
-  .cta-trust { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.6rem 1.7rem; width: fit-content; margin: 2rem auto 0; padding: 0.85rem 1.7rem; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; }
-  .cta-trust span { display: inline-flex; align-items: center; gap: 0.55rem; font-weight: 600; font-size: 0.95rem; color: var(--on-dark); }
-  .cta-trust .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex: none; }
-  .cta-avatars { display: flex; justify-content: center; margin-bottom: 1.6rem; }
-  .cta-avatars img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--navy); margin-left: -12px; }
-  .cta-avatars img:first-child { margin-left: 0; }
-
-  /* ---------- Footer ---------- */
-  footer { background: var(--navy-deep); color: var(--on-dark-dim); padding: 3rem var(--gutter); }
-  .foot { max-width: var(--max); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1.2rem 2rem; align-items: center; justify-content: space-between; }
-  .foot .brand { color: #fff; }
-  .foot .brand-mark img { filter: invert(1); }
-  .foot-links { display: flex; flex-wrap: wrap; gap: 1.4rem; font-size: 0.9rem; }
-  .foot-links a:hover { color: var(--on-dark); }
-  .foot-copy { width: 100%; font-size: 0.82rem; }
-
-  .foot-legal { width: 100%; display: grid; gap: 0.6rem; padding-top: 1.5rem; margin-top: 0.4rem; border-top: 1px solid rgba(255,255,255,0.08); }
-  .foot-legal details { border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; background: rgba(255,255,255,0.02); }
-  .foot-legal summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.1rem; font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: var(--on-dark); }
-  .foot-legal summary::-webkit-details-marker { display: none; }
-  .foot-legal summary::after { content: "+"; color: var(--red); font-size: 1.2rem; line-height: 1; }
-  .foot-legal details[open] summary::after { content: "\2013"; }
-  .foot-legal .legal-body { padding: 0 1.1rem 1.1rem; font-size: 0.86rem; line-height: 1.6; color: var(--on-dark-dim); max-width: 72ch; }
-  .foot-legal .legal-body p + p { margin-top: 0.7rem; }
-  .foot-legal .legal-body strong { color: var(--on-dark); font-weight: 600; }
-  .foot-legal .legal-body a { color: var(--on-dark); text-decoration: underline; text-underline-offset: 2px; }
-
-  /* Anker-Offset unter der fixen Nav */
-  #problem, #warum-jetzt, #ablauf, #wer-ich-bin, #praxis, #faq, #kontakt, #impressum, #datenschutz { scroll-margin-top: 90px; }
-
-  /* Rechtliche Abschnitte, nur bei :target sichtbar */
-  .legal-page { display: none; }
-  .legal-page:target { display: block; }
-  .legal-wrap { max-width: 760px; }
-  .legal-wrap .h2 { margin: 0.8rem 0 1.6rem; }
-  .legal-back { display: inline-block; font-weight: 600; color: var(--red-deep); font-size: 0.9rem; }
-  .legal-back:hover { text-decoration: underline; text-underline-offset: 3px; }
-  .legal-body { color: var(--ink-2); font-size: 1rem; line-height: 1.7; }
-  .legal-body p + p { margin-top: 1rem; }
-  .legal-body strong { color: var(--ink); font-weight: 700; }
-  .legal-body a { color: var(--red-deep); text-decoration: underline; text-underline-offset: 2px; }
-
-  /* Tastatur-Fokus */
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--red-deep); outline-offset: 3px; border-radius: 8px; }
+/* Reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .btn,.firm,.clink,.menu a::after{transition:none}
+}
 </style>
 </head>
 <body>
 
-<!-- ---------- NAV ---------- -->
-<nav class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Pecar und Partner, Startseite">
-    <span class="brand-mark" aria-hidden="true"><img src="data:image/png;base64,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" alt=""></span>
-    <span>Pecar &amp; Partner<small>Software für Schweizer KMU</small></span>
-  </a>
-  <div class="nav-links">
-    <a href="#problem">Das Problem</a>
-    <a href="#warum-jetzt">Warum jetzt</a>
-    <a href="#ablauf">So läuft's</a>
-    <a href="#wer-ich-bin">Wer ich bin</a>
-    <a href="#praxis">Resultate</a>
-    <a href="#faq">FAQ</a>
+<header class="header" id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Zum Seitenanfang">
+      <b>Luka Pecar</b>
+      <small>Pecar &amp; Partner</small>
+    </a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="menu" id="menu" aria-label="Hauptnavigation">
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#unternehmen">Unternehmen</a>
+      <a href="#zusammenarbeit">Zusammenarbeit</a>
+      <a class="btn" href="#kontakt">Kontakt <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    </nav>
   </div>
-  <a class="btn btn-primary btn-nav" href="https://meetings-eu1.hubspot.com/lpecar/erstgesprach-mit-luka" target="_blank" rel="noopener">Kennenlernen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-</nav>
+</header>
 
 <main id="top">
 
-  <!-- ---------- HERO ---------- -->
-  <section class="hero bg-cream">
-    <div class="inner">
-      <div class="hero-inner">
-        <div class="hero-text reveal">
-          <span class="eyebrow"><span class="swiss" aria-hidden="true"></span> Software für Schweizer KMU</span>
-          <h1 class="hx-headline">Alle reden über KI. Ich baue, was vor sechs Monaten noch <span class="accent">unmöglich</span> war.</h1>
-          <p class="lead">Massgeschneiderte Software auf <b>deinen eigenen Daten</b>. Sie bleibt in der Schweiz, gehört dir, kein Fremdkörper. Erste Lösung in rund 14 Tagen.</p>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="https://meetings-eu1.hubspot.com/lpecar/erstgesprach-mit-luka" target="_blank" rel="noopener">Kennenlernen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-          </div>
-          <div class="hero-note">
-            <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Unverbindlich</span>
-            <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>15 Minuten Austausch</span>
-            <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Kein Verkaufsgespräch</span>
-          </div>
-        </div>
-        <div class="hero-visual reveal reveal-d2">
-          <figure class="portrait-frame">
-            <img src="luka-portrait.jpg" alt="Portrait von Luka Pecar">
-            <figcaption class="portrait-tag">Luka Pecar</figcaption>
-          </figure>
-        </div>
+<!-- 1 HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <svg class="lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M -20 620 C 140 560, 200 470, 216 468"/>
+    <path d="M 1224 198 C 1100 300, 980 360, 900 330"/>
+    <path d="M 1210 594 C 1120 660, 1000 700, 880 640"/>
+    <path d="M 160 860 C 300 800, 420 740, 520 720"/>
+  </svg>
+  <div class="hero-person" aria-hidden="true">
+    <picture>
+      <source srcset="luka-cutout.webp" type="image/webp">
+      <img src="luka-cutout.png" alt="" width="720" height="996" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="node n1 lime"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#102D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></div><span>Verstehen</span></div>
+  <div class="node n2"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#102D35" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.7 10.7 15.3 7.3M8.7 13.3l6.6 3.4"/></svg></div><span>Verbinden</span></div>
+  <div class="node n3 sun"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#102D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13l5 5L20 7"/></svg></div><span>Umsetzen</span></div>
+
+  <div class="wrap">
+    <h1 id="hero-title">Ich übernehme <span class="cap">Verantwortung</span><span class="comma">,</span><br>um deine betrieblichen Herausforderungen zu lösen.</h1>
+    <div class="cta"><a class="btn" href="#kontakt">Herausforderung besprechen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+    <div class="mini-nodes" aria-label="Vorgehen"><div><i class="lime"></i>Verstehen</div><div><i></i>Verbinden</div><div><i class="sun"></i>Umsetzen</div></div>
+  </div>
+</section>
+
+<!-- 2 GRUNDPRINZIP -->
+<section class="band-sky" id="prinzip" aria-labelledby="prinzip-title">
+  <div class="wrap">
+    <div class="head center rv"><h2 id="prinzip-title">Eine Herausforderung. Vier Schritte bis zur Lösung.</h2></div>
+    <div class="steps">
+      <article class="step rv"><span class="no">1</span><h3>Verstehen</h3><p>Ich kläre, was tatsächlich funktionieren muss und wo die Herausforderung liegt.</p></article>
+      <article class="step rv d1"><span class="no">2</span><h3>Entscheiden</h3><p>Ich bestimme, welche Kompetenzen, Partner und Mittel für die Lösung notwendig sind.</p></article>
+      <article class="step rv d2"><span class="no">3</span><h3>Umsetzen</h3><p>Ich begleite die Lösung von der Entscheidung bis zum konkret nutzbaren Ergebnis.</p></article>
+      <article class="step rv d3"><span class="no">4</span><h3>Begleiten</h3><p>Ich bleibe Ansprechpartner und entwickle die Lösung weiter, wenn sich Anforderungen verändern.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 3 ÜBER LUKA -->
+<section class="band-ice" id="ueber-mich" aria-labelledby="about-title">
+  <div class="wrap about">
+    <div class="head rv"><h2 id="about-title">Verantwortung hat mich ins <span class="cap sun">Unternehmertum</span> geführt.</h2></div>
+    <div class="collage rv">
+      <figure class="f1"><img src="luka.jpg" alt="Luka Pecar, Porträt mit verschränkten Armen" width="800" height="800" loading="lazy"></figure>
+      <figure class="f2"><img src="luka-portrait.jpg" alt="Luka Pecar im Freien" width="960" height="1200" loading="lazy"></figure>
+      <figure class="f3"><img src="luka-nahbar.jpg" alt="Luka Pecar, lachend" width="1000" height="1000" loading="lazy"></figure>
+    </div>
+    <div class="about-text rv d1">
+      <p>Ich komme aus der Gebäudetechnik. In meiner früheren Tätigkeit habe ich unter anderem Digitalisierungsaufgaben übernommen.</p>
+      <p>Dabei habe ich erlebt, was möglich wird, wenn Menschen mir eine Herausforderung anvertrauen und mir den notwendigen Spielraum geben, sie zu lösen.</p>
+      <p>Ich konnte Entscheidungen treffen, die Umsetzung voranbringen und sehen, wie Kunden mit dem Ergebnis zufrieden waren. Diese Erfahrung hat mich in die Selbstständigkeit geführt.</p>
+      <p>Heute arbeite ich in unterschiedlichen unternehmerischen Bereichen. Mein Anspruch bleibt derselbe: das Anliegen verstehen, Verantwortung übernehmen und die Lösung bis in die Umsetzung begleiten.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 UNTERNEHMEN -->
+<section class="band-cream" id="unternehmen" aria-labelledby="firms-title">
+  <div class="wrap">
+    <div class="head center rv"><h2 id="firms-title">Wo ich <span class="underline">Verantwortung</span> übernehme.</h2></div>
+    <div class="firms">
+      <article class="firm sun rv">
+        <div class="sym pp" aria-hidden="true"><i></i><i></i></div>
+        <span class="role">Inhaber</span>
+        <h3>Pecar &amp; Partner</h3>
+        <p>Die persönliche Anlaufstelle für unterschiedliche betriebliche und persönliche Anliegen. Dazu gehören Beratung, Neukundengewinnung, Immobilienvermittlung sowie die Koordination passender Fachpartner. Für Spezial- und Hypothekarfinanzierungen arbeitet Luka mit einem festen Fachpartner zusammen.</p>
+        <a class="more" href="#kontakt">Anliegen besprechen <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+      <article class="firm sky rv d1">
+        <div class="sym sp" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="role">Partner · Unternehmens- und Projektaufbau</span>
+        <h3>Sajinth &amp; Partner</h3>
+        <p>Luka übernimmt Verantwortung für individuelle Softwarelösungen und Transformationsprojekte. Gemeinsam mit dem Team begleitet er Aufgaben von der ersten Klärung über die Entwicklung und Einführung bis zur laufenden Betreuung.</p>
+        <a class="more" href="https://sajinth-partner.ch/" target="_blank" rel="noopener">sajinth-partner.ch <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+      <article class="firm lime rv d2">
+        <div class="sym pv" aria-hidden="true"><i></i><i></i></div>
+        <span class="role">Alleiniger Inhaber</span>
+        <h3>pv innovation</h3>
+        <p>Luka bringt Projektvorhaben, Fachpartner, Material und Finanzierungsmöglichkeiten für Solarprojekte zusammen und begleitet die Umsetzung.</p>
+        <a class="more" href="#kontakt">Solarprojekt besprechen <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5 ZUSAMMENARBEIT -->
+<section class="band-sun" id="zusammenarbeit" aria-labelledby="proc-title">
+  <div class="wrap">
+    <div class="head rv"><h2 id="proc-title">Von der Anfrage bis zur laufenden Lösung.</h2></div>
+    <div class="proc">
+      <article class="pc a rv"><span class="big" aria-hidden="true">1</span><div class="cube" aria-hidden="true"></div><h3>Anliegen klären</h3><p>Wir sprechen darüber, was dich beschäftigt und was am Ende funktionieren muss.</p></article>
+      <article class="pc b rv d1"><span class="big" aria-hidden="true">2</span><div class="cube" aria-hidden="true"></div><h3>Lösungsweg bestimmen</h3><p>Ich lege fest, welcher Weg zum Ziel führt und was dafür nötig ist.</p></article>
+      <article class="pc c rv d2"><span class="big" aria-hidden="true">3</span><div class="cube" aria-hidden="true"></div><h3>Passende Beteiligte verbinden</h3><p>Wo es Fachwissen braucht, bringe ich die richtigen Partner ins Spiel.</p></article>
+      <article class="pc d rv d3"><span class="big" aria-hidden="true">4</span><div class="cube" aria-hidden="true"></div><h3>Umsetzung begleiten</h3><p>Ich bleibe dein Ansprechpartner, bis die Lösung im Alltag läuft, und darüber hinaus.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 6 HUNZICARE -->
+<section class="band-sky" id="hunzicare" aria-labelledby="case-title">
+  <div class="wrap">
+    <div class="head rv"><h2 id="case-title">Verantwortung zeigt sich im Alltag.</h2></div>
+    <div class="case">
+      <div class="video-card rv">
+        <video controls preload="none" poster="gregory.jpg" playsinline aria-label="Gregory Hunziker über die Zusammenarbeit mit Luka Pecar">
+          <source src="https://reinig.ch/testimonial-hunziker.mp4" type="video/mp4">
+          Dein Browser kann dieses Video nicht abspielen.
+        </video>
+      </div>
+      <div class="case-text rv d1">
+        <p>Gregory Hunziker hat Luka über LinkedIn kontaktiert. Daraus entstand die Zusammenarbeit an einer Lösung für den Alltag seines Reinigungsbetriebs.</p>
+        <p>Luka trug die Verantwortung vom ersten Gespräch über die Umsetzung mit dem Team bis zur laufenden Betreuung. Die Lösung wird heute bei HunziCare im täglichen Betrieb eingesetzt.</p>
+        <div class="note"><i></i>Umsetzung gemeinsam mit dem Team von Sajinth &amp; Partner.</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ---------- PROBLEM (split) ---------- -->
-  <section class="bg-paper" id="problem">
-    <div class="inner split">
-      <div class="split-text reveal">
-        <span class="eyebrow">Das Problem</span>
-        <h2 class="h2">Es ist nicht ein Problem, es sind <span class="accent">viele</span> gleichzeitig.</h2>
-        <p class="lead" style="margin-top:1.1rem">Wer einen Betrieb führt, kämpft selten an einer Front. Diese fünf Baustellen erleben fast alle, meistens alle auf einmal, und deine Daten liegen ungenutzt daneben.</p>
-      </div>
-      <div class="split-visual reveal reveal-d2">
-        <div class="pain-card">
-          <div class="pain-top">Woran es täglich hakt</div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.7"/></svg></span>
-            <div><span>Alte Offerten &amp; Rapporte</span><small>Jahre an Kalkulationen, nie wieder angeschaut</small></div>
-          </div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.7"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.7"/></svg></span>
-            <div><span>Mails &amp; Anfragen</span><small>Wissen, das im Postfach verschwindet</small></div>
-          </div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.7"/><path d="M9 5v14M4 10h16" stroke="currentColor" stroke-width="1.7"/></svg></span>
-            <div><span>Excel-Listen &amp; PDFs</span><small>Überall verstreut, nichts spricht miteinander</small></div>
-          </div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M4.5 20c0-3.6 3.4-5.5 7.5-5.5s7.5 1.9 7.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-            <div><span>Wissen hängt an Köpfen</span><small>Geht jemand, geht das Wissen mit</small></div>
-          </div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m20 20-3.4-3.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-            <div><span>Suchen statt arbeiten</span><small>Halbe Stunden mit „Wo liegt das nochmal?"</small></div>
-          </div>
-        </div>
+<!-- 7 AKIG -->
+<section class="band-cream" id="akig" aria-labelledby="akig-title">
+  <div class="wrap akig">
+    <div class="akig-art rv" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><i class="a4"></i></div>
+    <div class="akig-text rv d1">
+      <h2 id="akig-title" style="margin-bottom:1.2rem">Aus Branchenerfahrung wird eine <span class="cap sky">gemeinsame</span> Idee.</h2>
+      <p>Luka lernte Christian Facchin über LinkedIn kennen. Beide kannten den Aufwand hinter der Kalkulation in HLKS-Betrieben.</p>
+      <p>Gemeinsam analysierten sie bestehende Kalkulationen und entwickelten mit dem Team eine KI-gestützte Lösung.</p>
+      <p>Luka begleitet den Aufbau von der Produktentwicklung bis zu den Kundengesprächen. Der reguläre Kundeneinsatz steht noch bevor.</p>
+      <p style="margin-top:1.4rem"><a class="btn sun" href="https://www.akig.ch/" target="_blank" rel="noopener">akig.ch ansehen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 KONTAKT -->
+<section class="band-petrol" id="kontakt" aria-labelledby="contact-title">
+  <div class="wrap contact">
+    <div class="shapes rv" aria-hidden="true"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><i class="s5"></i></div>
+    <div class="rv d1">
+      <h2 id="contact-title">Was beschäftigt dich?</h2>
+      <p class="lead" style="margin-top:1rem">Schilder mir dein Anliegen. Ich kläre mit dir, ob und wie ich dich unterstützen kann.</p>
+      <div class="clinks">
+        <a class="clink" href="mailto:luka@pe-pa.ch"><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2"/></svg></span><span>luka@pe-pa.ch</span></a>
+        <a class="clink" href="tel:+41796190687"><span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><span>+41 79 619 06 87</span></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ---------- WARUM JETZT ---------- -->
-  <section class="bg-cream" id="warum-jetzt">
-    <div class="inner">
-      <div class="whynow-head reveal">
-        <span class="eyebrow">Warum jetzt</span>
-        <h2 class="h2">Die grösste Umwälzung seit dem Internet, und sie läuft <span class="accent">bereits</span>.</h2>
-        <p class="whynow-intro">Wie das Internet vor Jahren alles verändert hat, verändert KI gerade, wie Betriebe arbeiten. Richtig eingesetzt holt sie aus den Daten, die du längst hast, enorm viel heraus: schneller kalkulieren, weniger Admin, Wissen, das im Betrieb bleibt. Wer jetzt anfängt, baut einen Vorsprung auf, den andere später teuer aufholen müssen.</p>
-      </div>
-      <div class="timeline">
-        <div class="card tl-card reveal">
-          <p class="tl-era">~1995 · Internet</p>
-          <h3>Alles wird digital</h3>
-          <p>Wer früh online ging, gewann Reichweite und Tempo, der Rest zog Jahre später nach.</p>
-        </div>
-        <div class="card tl-card reveal reveal-d1">
-          <p class="tl-era">~2010 · Mobile &amp; Cloud</p>
-          <h3>Alles wird vernetzt</h3>
-          <p>Daten sind plötzlich überall verfügbar, in Echtzeit und auf jedem Gerät.</p>
-        </div>
-        <div class="card tl-card now reveal reveal-d2">
-          <span class="badge">Jetzt</span>
-          <p class="tl-era">Seit 2026 · KI</p>
-          <h3>Aus Daten wird Vorsprung</h3>
-          <p>KI rechnet, erkennt und lernt aus deinen eigenen Daten. Das ist dein Moment, ihn zu nutzen.</p>
-        </div>
-      </div>
+<!-- RECHTLICHES (per :target) -->
+<section class="legal-page" id="impressum">
+  <div class="wrap legal-wrap">
+    <a class="legal-back" href="#top">&larr; Zurück zur Seite</a>
+    <h2 style="margin-bottom:1.2rem">Impressum</h2>
+    <div class="legal-body">
+      <p><strong>Pecar und Partner GmbH</strong><br>Föhneneichstrasse 19a<br>6440 Brunnen<br>Schweiz</p>
+      <p>Vertreten durch: Luka Pecar<br>UID / MWST: CHE-274.524.395</p>
+      <p>E-Mail: <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a><br>Telefon: +41 79 619 06 87</p>
     </div>
-  </section>
-
-  <!-- ---------- WAS ICH BAUE ---------- -->
-  <section class="bg-paper">
-    <div class="inner split feature">
-      <div class="split-text reveal">
-        <span class="eyebrow">Was ich dir baue</span>
-        <h2 class="h2">Das nehme ich dir <span class="accent">ab</span>.</h2>
-        <p class="lead" style="margin-top:1.2rem">Alles läuft auf deinen eigenen Daten, auf deinen Betrieb trainiert, nicht von der Stange, sondern aus dem gebaut, was du schon hast. Kein Abo: es gehört dir und läuft weiter, ohne dass du monatlich dafür zahlst.</p>
-      </div>
-      <div class="split-visual reveal reveal-d2">
-        <div class="pain-card">
-          <div class="pain-top">Was ich dir abnehme</div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 7h8M8 11h3M8 15h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><rect x="14" y="13" width="3" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/></svg></span>
-            <div><span>Offerten kalkulieren</span><small>Preislogik aus deinen bestehenden Offerten</small></div>
-          </div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8v16H6a1 1 0 0 1-1-1V7l3-3Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 12h6M9 15h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-            <div><span>Rapporte erfassen</span><small>Schnell eingegeben, sauber abgelegt</small></div>
-          </div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V4M20 20H4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8 16v-3M12 16v-6M16 16v-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-            <div><span>Nachkalkulieren &amp; auswerten</span><small>Du siehst sofort, wo die Marge liegt</small></div>
-          </div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.7"/></svg></span>
-            <div><span>Dokumente automatisch ablegen</span><small>Richtig benannt, am richtigen Ort</small></div>
-          </div>
-          <div class="pain-row">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 3V6a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7"/></svg></span>
-            <div><span>Anfragen beantworten</span><small>Entwürfe aus deinem eigenen Wissen</small></div>
-          </div>
-          <div class="pain-row pain-open">
-            <span class="pain-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M9.6 9.4a2.4 2.4 0 0 1 4.7.7c0 1.6-2.3 2-2.3 3.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg></span>
-            <div><span>Und alles, was du brauchst</span><small>Sag mir, wo's bei dir hakt, ich baue es</small></div>
-          </div>
-        </div>
-      </div>
+  </div>
+</section>
+<section class="legal-page" id="datenschutz">
+  <div class="wrap legal-wrap">
+    <a class="legal-back" href="#top">&larr; Zurück zur Seite</a>
+    <h2 style="margin-bottom:1.2rem">Datenschutz</h2>
+    <div class="legal-body">
+      <p>Verantwortlich für die Datenbearbeitung ist die Pecar und Partner GmbH, Föhneneichstrasse 19a, 6440 Brunnen, <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a>.</p>
+      <p><strong>Diese Website.</strong> Diese Seite setzt keine Cookies, kein Tracking und keine Analyse-Tools ein. Schriften und Bilder werden direkt von dieser Seite geladen. Beim Aufruf verarbeitet der Hosting-Anbieter technisch notwendige Server-Logs wie IP-Adresse, Zeitpunkt und abgerufene Datei, um die Seite sicher auszuliefern.</p>
+      <p><strong>Video.</strong> Das Testimonial-Video wird erst auf Klick geladen und stammt von reinig.ch, einer von uns betriebenen Seite. Dabei wird deine IP-Adresse an diesen Server übermittelt.</p>
+      <p><strong>Kontakt.</strong> Schreibst du mir per E-Mail oder Telefon, bearbeite ich deine Angaben ausschliesslich zur Beantwortung deiner Anfrage.</p>
+      <p><strong>Deine Rechte.</strong> Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner Daten. Eine kurze Nachricht an <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a> genügt.</p>
     </div>
-  </section>
-
-  <!-- ---------- ABLAUF (split + workflow) ---------- -->
-  <section class="bg-cream" id="ablauf">
-    <div class="inner split">
-      <div class="split-text reveal">
-        <span class="eyebrow">So läuft's</span>
-        <h2 class="h2">In vier Schritten zu deiner <span class="accent">eigenen</span> Lösung.</h2>
-        <p class="lead" style="margin-top:1.1rem">Kein Monatelanges Projekt, kein Risiko. Wir fangen dort an, wo du am meisten Zeit verlierst, und du siehst schnell etwas Echtes.</p>
-      </div>
-      <div class="split-visual reveal reveal-d2">
-        <div class="flow-panel">
-          <div class="flow">
-            <div class="flow-step">
-              <div class="flow-node">1</div>
-              <div class="flow-body"><h3>Wir schauen hin</h3><p>Wir schauen, wo bei dir am meisten Zeit verloren geht.</p></div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-node">2</div>
-              <div class="flow-body"><h3>Du siehst die Skizze</h3><p>Anhand deiner Angaben bekommst du eine einfache digitale Skizze deiner Lösung. Du siehst, wie sie aussieht und funktioniert, bevor gebaut wird.</p></div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-node">3</div>
-              <div class="flow-body"><h3>Ich baue</h3><p>Ich baue aus deinen eigenen Daten die erste Lösung.</p></div>
-            </div>
-            <div class="flow-step hot">
-              <div class="flow-node">4</div>
-              <div class="flow-body"><h3>Du besitzt</h3><p>Die KI rechnet, du gibst frei. Und du besitzt alles.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- WER ICH BIN (split.rev) ---------- -->
-  <!-- about-split: balanced, equal-height photo -->
-  <section class="bg-paper" id="wer-ich-bin">
-    <div class="inner split rev about-split">
-      <div class="split-text about-text reveal reveal-d2">
-        <span class="eyebrow">Wer ich bin</span>
-        <h2 class="h2">Ich komme selbst aus dem <span class="accent">Gewerbe</span>.</h2>
-        <p>Ich komme aus dem HLKS-Umfeld und habe jahrelang mit Bau, Submissionen und Offerten gearbeitet. Die tägliche Fleissarbeit und die Herausforderungen der Branche kenne ich nicht aus der Theorie, sondern aus eigener Hand.</p>
-        <p>Heute entwickle ich gemeinsam mit meinen Kunden individuelle Softwarelösungen und Automatisierungen für Schweizer KMU. Ich verbinde technisches Know-how mit den praktischen Anforderungen aus dem Betrieb, ob Bau, Gebäudetechnik, Facility oder Dienstleistung. Die Fleissarbeit ist überall dieselbe, und genau die nehme ich dir ab.</p>
-        <p class="punch">Ich zeige dir nicht, welche Tools es geben könnte. Ich baue sie ein.</p>
-        <p>Für Spezialgebiete arbeite ich mit einem Netzwerk erfahrener Partner.</p>
-        <div class="about-tags">
-          <span>Gebäudetechnik</span>
-          <span>HLKS-Praxis</span>
-          <span>Kalkulation</span>
-          <span>KI-Erkennung</span>
-          <span>Systembau</span>
-        </div>
-      </div>
-      <div class="split-visual reveal">
-        <figure class="about-photo">
-          <img src="luka-nahbar.jpg" alt="Luka Pecar, nahbar">
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- BEWEIS ---------- -->
-  <section class="bg-cream" id="praxis">
-    <div class="inner">
-      <div class="proof-grid">
-        <div class="reveal">
-          <span class="eyebrow">Resultate</span>
-          <p class="proof-big">Über <span>20 Projekte</span> realisiert, alle massgeschneidert.</p>
-        </div>
-        <blockquote class="quote reveal reveal-d2">
-          <p>«Schon im ersten Monat haben wir 60 % unserer wiederkehrenden Abläufe automatisiert. Was früher Tage dauerte, dauert heute Minuten, präziser und zuverlässiger.»</p>
-          <cite>Gregory Hunziker, Geschäftsleitung, HunziCare GmbH</cite>
-        </blockquote>
-      </div>
-
-      <p class="tool-intro reveal">Ein Einblick in gebaute Lösungen</p>
-      <div class="tool-grid">
-        <div class="card tool-card reveal">
-          <div class="tool-shot"><img src="tool-abros.png" alt="Dashboard eines gebauten ERP für einen Gartenbau-Betrieb"></div>
-          <div class="tool-body">
-            <p class="card-label">Gartenbau</p>
-            <h3>Eigenes ERP statt Sorba</h3>
-            <p>Projekte, Offerten, Rechnungen, Einsatzplanung und Liquidität an einem Ort, gebaut als Ersatz für die bisherige Standard-Software.</p>
-          </div>
-        </div>
-        <div class="card tool-card reveal reveal-d1">
-          <div class="tool-shot"><img src="tool-serviceradar.png" alt="Dashboard eines gebauten Service-Moduls für Wartungsverträge"></div>
-          <div class="tool-body">
-            <p class="card-label">Haustechnik</p>
-            <h3>Wartungsverträge automatisiert</h3>
-            <p>Erkennt fällige Services, schlägt Termine vor und versendet automatisch, inklusive Freigabe und Erfassung der Kundenantworten.</p>
-          </div>
-        </div>
-        <div class="card tool-card reveal reveal-d2">
-          <div class="tool-shot"><img src="tool-hunzicare.png" alt="Einsatzplanung eines gebauten ERP für Facility Management"></div>
-          <div class="tool-body">
-            <p class="card-label">Facility Management</p>
-            <h3>ERP für den ganzen Betrieb</h3>
-            <p>Einsatzplanung, Zeiterfassung, Objekte und Abrechnung für einen Facility-Betrieb mit über 30 Mitarbeitenden.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- FAQ (split) ---------- -->
-  <section class="bg-paper" id="faq">
-    <div class="inner split" style="align-items:start">
-      <div class="split-text reveal">
-        <span class="eyebrow">Häufige Fragen</span>
-        <h2 class="h2">Was du wahrscheinlich wissen willst.</h2>
-        <a class="btn btn-ghost faq-cta" href="https://meetings-eu1.hubspot.com/lpecar/erstgesprach-mit-luka" target="_blank" rel="noopener">Kennenlernen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      </div>
-      <div class="split-visual reveal reveal-d1">
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Ist das nur Software oder auch Beratung?<span class="faq-sign" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner">Beides. Ich berate aus eigener Praxis und baue dann auch. Kein Zeigen, was möglich wäre, sondern Umsetzen.</div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Was, wenn meine Daten die Schweiz nicht verlassen dürfen?<span class="faq-sign" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner">Müssen sie nicht. Alles bleibt in der Schweiz, bei dir.</div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Für welche Betriebe passt das?<span class="faq-sign" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner">Für Schweizer KMU aller Branchen, ob Bau, Gebäudetechnik, Facility oder Dienstleistung. Die Fleissarbeit ist überall dieselbe, und genau da setze ich an.</div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Was kostet das?<span class="faq-sign" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner">Kein Abo. Du investierst einmal in eine Lösung, die dir gehört und die du jederzeit ausbauen kannst. Den Rahmen klären wir offen im 15-Minuten-Gespräch, bevor du dich entscheidest.</div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Wie schnell habe ich etwas in der Hand?<span class="faq-sign" aria-hidden="true"></span></button>
-            <div class="faq-a"><div class="faq-a-inner">Eine erste Lösung steht oft in rund 14 Tagen. Dann siehst du sofort, ob's etwas bringt.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- FINALER CTA (navy) ---------- -->
-  <section class="on-dark cta-band" id="kontakt">
-    <div class="inner reveal">
-      <span class="eyebrow">Nächster Schritt</span>
-      <h2 class="cta-title">Bereit für ein erstes Kennenlernen?</h2>
-      <p class="cta-sub">Ein ehrliches, unverbindliches Gespräch. Ich höre zu, schaue auf deine Zahlen und sage dir offen, ob und wie ich helfen kann. Du erreichst immer einen Menschen, kein Ticket-System.</p>
-      <a class="btn btn-primary" href="https://meetings-eu1.hubspot.com/lpecar/erstgesprach-mit-luka" target="_blank" rel="noopener">Kennenlernen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <div class="cta-trust">
-        <span><span class="dot"></span>Unverbindlich</span>
-        <span><span class="dot"></span>Kein Verkaufsdruck</span>
-        <span><span class="swiss" aria-hidden="true"></span>100 % Schweiz</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- RECHTLICHES (per :target sichtbar) ---------- -->
-  <section class="legal-page bg-paper" id="impressum">
-    <div class="inner legal-wrap">
-      <a class="legal-back" href="#top">&larr; Zurück zur Seite</a>
-      <h2 class="h2">Impressum</h2>
-      <div class="legal-body">
-        <p><strong>Pecar und Partner GmbH</strong><br>
-        Föhneneichstrasse 19a<br>
-        6440 Brunnen<br>
-        Schweiz</p>
-        <p>Vertreten durch: Luka Pecar<br>
-        UID / MWST: CHE-274.524.395</p>
-        <p>E-Mail: <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a><br>
-        Telefon: +41 (0) 79 619 06 87</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="legal-page bg-paper" id="datenschutz">
-    <div class="inner legal-wrap">
-      <a class="legal-back" href="#top">&larr; Zurück zur Seite</a>
-      <h2 class="h2">Datenschutz</h2>
-      <div class="legal-body">
-        <p>Verantwortlich für die Datenbearbeitung ist die Pecar und Partner GmbH, Föhneneichstrasse 19a, 6440 Brunnen, <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a>.</p>
-        <p><strong>Diese Website.</strong> Diese Seite setzt keine Cookies, kein Tracking und keine Analyse-Tools ein. Beim Aufruf verarbeitet der Hosting-Anbieter technisch notwendige Server-Logs wie IP-Adresse, Zeitpunkt und abgerufene Datei, um die Seite sicher auszuliefern.</p>
-        <p><strong>Terminbuchung.</strong> Über die Buttons gelangst du zum Buchungstool von HubSpot (HubSpot, Inc.). Buchst du dort einen Termin, werden deine Angaben wie Name und E-Mail durch HubSpot bearbeitet. Es gelten zusätzlich die Datenschutzbestimmungen von HubSpot.</p>
-        <p><strong>Kontakt.</strong> Schreibst du mir per E-Mail oder Telefon, bearbeite ich deine Angaben ausschliesslich zur Beantwortung deiner Anfrage.</p>
-        <p><strong>Deine Rechte.</strong> Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner Daten. Eine kurze Nachricht an <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a> genügt.</p>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<!-- ---------- FOOTER ---------- -->
 <footer>
   <div class="foot">
-    <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true"><img src="data:image/png;base64,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" alt=""></span>
-      <span>Pecar &amp; Partner</span>
-    </a>
-    <div class="foot-links">
-      <a href="#warum-jetzt">Warum jetzt</a>
-      <a href="#ablauf">Ablauf</a>
-      <a href="#faq">FAQ</a>
-      <a href="#kontakt">Kontakt</a>
-      <a href="#impressum">Impressum</a>
-      <a href="#datenschutz">Datenschutz</a>
-    </div>
-
-    <div class="foot-copy">© 2026 Pecar &amp; Partner · Luka Pecar · Software für Schweizer KMU, aus der Praxis gebaut.</div>
+    <span>© 2026 Pecar &amp; Partner · Luka Pecar</span>
+    <nav aria-label="Rechtliches"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></nav>
   </div>
 </footer>
 
 <script>
-  (function () {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    /* 1. Nav scroll state */
-    var nav = document.getElementById('nav');
-    var onScroll = function () {
-      if (window.scrollY > 12) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    /* 2. Reveal on scroll */
-    var els = document.querySelectorAll('.reveal');
-    if (reduce || !('IntersectionObserver' in window)) {
-      els.forEach(function (el) { el.classList.add('in'); });
-    } else {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (el) { io.observe(el); });
-    }
-
-    /* 3. FAQ accordion, one open at a time */
-    var items = document.querySelectorAll('.faq-item');
-    items.forEach(function (item) {
-      var q = item.querySelector('.faq-q');
-      var a = item.querySelector('.faq-a');
-      q.addEventListener('click', function () {
-        var isOpen = item.classList.contains('open');
-        items.forEach(function (other) {
-          other.classList.remove('open');
-          other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-          other.querySelector('.faq-a').style.maxHeight = null;
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          q.setAttribute('aria-expanded', 'true');
-          a.style.maxHeight = a.scrollHeight + 'px';
-        }
-      });
-    });
-
-    /* 4. Scroll-spy for nav links */
-    var linkMap = {};
-    document.querySelectorAll('.nav-links a').forEach(function (l) {
-      linkMap[l.getAttribute('href').slice(1)] = l;
-    });
-    var spied = ['problem', 'warum-jetzt', 'ablauf', 'wer-ich-bin', 'praxis', 'faq']
-      .map(function (id) { return document.getElementById(id); })
-      .filter(Boolean);
-    if ('IntersectionObserver' in window) {
-      var spy = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          var link = linkMap[e.target.id];
-          if (!link) return;
-          if (e.isIntersecting) {
-            Object.keys(linkMap).forEach(function (k) { linkMap[k].classList.remove('active'); });
-            link.classList.add('active');
-          }
-        });
-      }, { rootMargin: '-45% 0px -50% 0px' });
-      spied.forEach(function (s) { spy.observe(s); });
-    }
-  })();
+(function(){
+  var header=document.getElementById('header'),burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  function onScroll(){header.classList.toggle('scrolled',window.scrollY>10)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  function setMenu(open){header.classList.toggle('open',open);burger.setAttribute('aria-expanded',open?'true':'false');burger.setAttribute('aria-label',open?'Menü schliessen':'Menü öffnen')}
+  burger.addEventListener('click',function(){setMenu(!header.classList.contains('open'))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,els=document.querySelectorAll('.rv');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in')})}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(function(el){io.observe(el)})}
+  var links=[].slice.call(menu.querySelectorAll('a[href^="#"]')).filter(function(a){return a.getAttribute('href')!=='#kontakt'});
+  var map={};links.forEach(function(l){map[l.getAttribute('href').slice(1)]=l});
+  if('IntersectionObserver' in window){var spy=new IntersectionObserver(function(es){es.forEach(function(e){var l=map[e.target.id];if(l&&e.isIntersecting){links.forEach(function(x){x.classList.remove('active')});l.classList.add('active')}})},{rootMargin:'-40% 0px -55% 0px'});Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)spy.observe(s)})}
+})();
 </script>
-
 </body>
 </html>
