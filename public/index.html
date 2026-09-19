@@ -72,7 +72,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 }
 
 /* Hero */
-.hero{position:relative;isolation:isolate;min-height:min(78vh,780px);display:flex;align-items:flex-end;padding-block:0 clamp(3rem,6vw,5rem);overflow:hidden;
+.hero{position:relative;isolation:isolate;min-height:min(92vh,920px);display:flex;align-items:flex-end;padding-block:0 clamp(6rem,12vw,10rem);overflow:hidden;
   background:radial-gradient(55% 55% at 15% 30%,rgba(220,239,242,.9),transparent 70%),radial-gradient(55% 60% at 85% 25%,rgba(228,236,229,.95),transparent 70%),radial-gradient(70% 55% at 50% 100%,rgba(220,239,242,.9),transparent 72%),linear-gradient(180deg,var(--cream) 0%,var(--ice) 60%,var(--sage) 100%)}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.55;-webkit-mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%);mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%)}
 .hero .wrap{position:relative;z-index:2;text-align:center;padding-top:clamp(10.5rem,25vh,13.5rem)}
@@ -122,11 +122,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 /* Über: kompakt, vertikal */
 .about{display:grid;grid-template-columns:1fr;gap:2.2rem;align-items:center}
 .about .head{margin-bottom:.5rem}
-.collage{position:relative;height:clamp(640px,90vw,820px);max-width:520px}
-.collage .f1{left:0;top:0;width:56%;height:31%;transform:rotate(-3deg);border-color:var(--lime)}
-.collage .f2{right:0;top:20%;width:46%;height:30%;transform:rotate(4deg);border-color:var(--ice)}
-.collage .f3{left:6%;top:47%;width:42%;height:27%;transform:rotate(-4deg);border-color:var(--lime)}
-.collage .f4{right:0;bottom:0;width:44%;height:29%;transform:rotate(3deg);border-color:var(--sage)}
+.collage{position:relative;height:clamp(560px,78vw,700px);max-width:520px}
+.collage .f1{left:0;top:0;width:58%;height:34%;transform:rotate(-3deg);border-color:var(--lime);z-index:1}
+.collage .f2{right:0;top:18%;width:48%;height:33%;transform:rotate(4deg);border-color:var(--ice);z-index:2}
+.collage .f3{left:4%;top:40%;width:46%;height:32%;transform:rotate(-4deg);border-color:var(--lime);z-index:3}
+.collage .f4{right:2%;bottom:0;width:46%;height:34%;transform:rotate(3deg);border-color:var(--sage);z-index:4}
 .collage figure{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 34px 70px -36px rgba(8,47,58,.5);border:6px solid var(--lime)}
 .collage figure img{width:100%;height:100%;object-fit:cover}
 .about-text p{color:var(--text);font-size:1.06rem} .about-text p+p{margin-top:.9rem}
