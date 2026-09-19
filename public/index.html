@@ -51,7 +51,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .header{position:sticky;top:0;z-index:100;background:rgba(245,242,236,.88);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
 .header.scrolled{border-bottom-color:var(--line);box-shadow:0 10px 30px -22px rgba(8,47,58,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.8rem}
-.brand img{height:48px;width:48px}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.12rem;letter-spacing:-.02em;color:var(--petrol)}
+.brand img{height:38px;width:38px}
+@media (max-width:420px){.brand span{font-size:1rem}}
 .menu{display:flex;align-items:center;gap:1.9rem}
 .menu a{font-weight:700;font-size:.98rem;color:var(--text);position:relative;padding:.3rem 0}
 .menu a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;border-radius:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
@@ -72,10 +74,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .hero{min-height:min(92vh,940px);display:flex;align-items:flex-end;padding-block:0 clamp(3rem,6vw,5rem);overflow:hidden;
   background:radial-gradient(55% 55% at 15% 30%,rgba(220,239,242,.9),transparent 70%),radial-gradient(55% 60% at 85% 25%,rgba(228,236,229,.95),transparent 70%),radial-gradient(70% 55% at 50% 100%,rgba(220,239,242,.9),transparent 72%),linear-gradient(180deg,var(--cream) 0%,var(--ice) 60%,var(--sage) 100%)}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.55;-webkit-mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%);mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%)}
-.hero .wrap{position:relative;z-index:2;text-align:center;padding-top:clamp(13rem,30vh,17rem)}
-.hero-person{position:absolute;left:50%;top:3.5rem;transform:translateX(-50%);width:clamp(170px,17vw,240px);z-index:1;pointer-events:none;-webkit-mask-image:linear-gradient(#000 80%,transparent 100%);mask-image:linear-gradient(#000 80%,transparent 100%)}
+.hero .wrap{position:relative;z-index:2;text-align:center;padding-top:clamp(14rem,32vh,18rem)}
+.hero-person{position:absolute;left:50%;top:3.5rem;transform:translateX(-50%);width:clamp(170px,17vw,240px);z-index:1;pointer-events:none;-webkit-mask-image:linear-gradient(#000 48%,transparent 96%);mask-image:linear-gradient(#000 48%,transparent 96%)}
 .hero-person img{width:100%;height:auto;filter:drop-shadow(0 24px 34px rgba(8,47,58,.28))}
-.hero h1{font-size:clamp(2.4rem,6.1vw,5.3rem);margin-inline:auto;max-width:16.5ch;position:relative}
+.hero h1{font-size:clamp(2.4rem,6.1vw,5.3rem);margin-inline:auto;max-width:16.5ch;position:relative;text-shadow:0 0 14px rgba(245,242,236,.95),0 0 34px rgba(245,242,236,.9),0 0 60px rgba(245,242,236,.8)}
 .hero h1 .cap{font-size:1em;padding:.02em .5em} .hero h1 .comma{margin-left:-.22em}
 .hero .cta{margin-top:clamp(1.6rem,3vw,2.4rem)}
 .lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
@@ -88,12 +90,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .node.green span{color:var(--green)}
 .n1{left:15%;top:50%} .n2{left:85%;top:24%} .n3{left:84%;top:66%}
 .mini-nodes{display:none;justify-content:center;gap:.7rem .9rem;margin-top:1.6rem;flex-wrap:wrap}
-.mini-nodes div{display:flex;align-items:center;gap:.45rem;font-weight:800;font-size:.84rem;color:var(--petrol);background:rgba(255,255,255,.7);padding:.35rem .75rem;border-radius:999px}
+.mini-nodes div{display:flex;align-items:center;gap:.4rem;font-weight:800;font-size:.78rem;color:var(--petrol);background:rgba(255,255,255,.7);padding:.35rem .75rem;border-radius:999px}
 .mini-nodes i{width:12px;height:12px;border-radius:50%;background:var(--petrol);display:inline-block} .mini-nodes i.green{background:var(--green)}
 .mini-nodes div.green{color:var(--green)}
 @media (max-width:860px){
   .hero{min-height:auto}
-  .hero .wrap{padding-top:clamp(11rem,42vw,14rem)}
+  .hero .wrap{padding-top:clamp(11.5rem,44vw,14.5rem)}
   .hero-person{width:clamp(150px,38vw,190px);top:2rem}
   .lines,.node{display:none}
   .hero h1{font-size:clamp(1.85rem,8vw,2.5rem);max-width:none;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}
@@ -144,10 +146,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .firm p{font-size:1rem;flex:1}
 .firm .more{font-weight:800;color:var(--petrol);display:inline-flex;align-items:center;gap:.4rem}
 .firm .more svg{width:1em;height:1em;transition:transform .25s var(--ease)} .firm .more:hover svg{transform:translateX(4px)}
-.logo-chip{display:inline-flex;align-items:center;justify-content:center;height:64px;padding:0 1.1rem;border-radius:16px;background:var(--white);box-shadow:0 10px 24px -16px rgba(8,47,58,.35);align-self:flex-start;margin-bottom:.2rem}
-.logo-chip img,.logo-chip svg{height:34px;width:auto}
-.logo-chip svg{color:var(--petrol)}
-.logo-chip .word{font-weight:800;color:var(--petrol);letter-spacing:-.02em;margin-left:.6rem;font-size:1rem}
+.firm-logo{height:30px;display:flex;align-items:center;margin-bottom:.3rem}
+.firm-logo img,.firm-logo svg{height:30px;width:auto}
+.firm-logo svg{color:var(--petrol)}
 @media (min-width:900px){.firms{grid-template-columns:repeat(3,1fr);gap:1.6rem}}
 
 /* Zusammenarbeit: farbige Karten auf Petrol, ohne Vierecke */
@@ -185,12 +186,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 
 /* Kontakt */
 .contact{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
-.shapes{position:relative;height:clamp(260px,38vw,420px)} .shapes i{position:absolute;display:block}
-.shapes .s1{left:6%;top:8%;width:38%;aspect-ratio:1;border-radius:50%;background:var(--lime)}
-.shapes .s2{left:40%;top:0;width:52%;height:46%;border-radius:0 0 999px 999px;background:var(--ice)}
-.shapes .s3{left:12%;bottom:6%;width:46%;height:34%;border-radius:32px;background:var(--sage)}
-.shapes .s4{right:8%;bottom:10%;width:30%;aspect-ratio:1;border-radius:50%;border:6px dashed var(--ice)}
-.shapes .s5{left:56%;top:52%;width:14%;aspect-ratio:1;border-radius:50%;background:var(--cream)}
+.contact-photo{position:relative;max-width:420px;margin-inline:auto;overflow:hidden;border:8px solid var(--lime);border-radius:46% 54% 50% 50% / 52% 46% 54% 48%;box-shadow:0 40px 90px -40px rgba(0,0,0,.7);transform:rotate(-2deg)}
+.contact-photo img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:center 20%}
 .contact h2{color:#fff} .contact .lead{color:rgba(245,242,236,.82)}
 .clinks{display:flex;flex-direction:column;gap:.9rem;margin-top:1.8rem}
 .clink{display:inline-flex;align-items:center;gap:1rem;padding:1.05rem 1.3rem;border-radius:999px;background:rgba(245,242,236,.08);border:1px solid rgba(245,242,236,.16);font-weight:800;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--cream);transition:background .25s,transform .25s var(--ease);width:fit-content;max-width:100%}
@@ -214,7 +211,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
 <body>
 <header class="header" id="header">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Pecar &amp; Partner, zum Seitenanfang"><img src="logo-pp.png" alt="Pecar &amp; Partner" width="240" height="240"></a>
+    <a class="brand" href="#top" aria-label="Pecar &amp; Partner, zum Seitenanfang"><img src="logo-pp.png" alt="" width="240" height="240"><span>Pecar &amp; Partner</span></a>
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
       <svg class="bars" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
       <svg class="x" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
@@ -265,8 +262,8 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
   <div class="wrap about">
     <div class="head rv"><h2 id="about-title">Verantwortung hat mich ins <span class="cap">Unternehmertum</span> geführt.</h2></div>
     <div class="collage rv">
-      <figure class="f1"><img src="luka.jpg" alt="Luka Pecar, Porträt mit verschränkten Armen" width="800" height="800" loading="lazy"></figure>
-      <figure class="f2"><img src="luka-portrait.jpg" alt="Luka Pecar im Freien" width="960" height="1200" loading="lazy"></figure>
+      <figure class="f1"><img src="luka-werkstatt.jpg" alt="Luka Pecar beim Schweissen in der Werkstatt" width="1000" height="1000" loading="lazy"></figure>
+      <figure class="f2"><img src="luka-baustelle.jpg" alt="Luka Pecar mit Helm auf der Baustelle" width="900" height="1125" loading="lazy"></figure>
       <figure class="f3"><img src="luka-nahbar.jpg" alt="Luka Pecar, lachend" width="1000" height="1000" loading="lazy"></figure>
     </div>
     <div class="about-text rv d1">
@@ -283,24 +280,24 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
     <div class="head center rv"><h2 id="firms-title">Wo ich <span class="underline">Verantwortung</span> übernehme.</h2></div>
     <div class="firms">
       <article class="firm lime rv">
+        <div class="firm-logo" aria-hidden="true"><img src="logo-pp.png" alt="" width="240" height="240"></div>
         <span class="role">Inhaber</span>
         <h3>Pecar &amp; Partner</h3>
         <p>Die persönliche Anlaufstelle für unterschiedliche betriebliche und persönliche Anliegen. Dazu gehören Beratung, Neukundengewinnung und Immobilienvermittlung. Für Spezial- und Hypothekarfinanzierungen arbeitet Luka Hand in Hand mit einem festen Fachpartner.</p>
-        <div class="logo-chip"><img src="logo-pp.png" alt="" width="240" height="240"><span class="word">Pecar &amp; Partner</span></div>
         <a class="more" href="#kontakt">Anliegen besprechen <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
       <article class="firm ice rv d1">
+        <div class="firm-logo" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="338 288 348 448" fill="none" aria-hidden="true" role="img"><path fill="currentColor" d="M456.811 405.452C457.721 402.094 458.133 396.467 458.693 392.763C463.155 363.26 481.439 335.207 505.354 317.691C518.401 308.171 533.257 301.419 549.009 297.85C563.904 294.539 576.041 294.918 591.076 294.91L629.719 294.858C640.019 294.678 650.32 294.569 660.621 294.53C666.362 294.509 674.404 294.277 679.902 295.134C680.134 300.633 680.116 307.303 679.953 312.791C679.042 343.601 681.219 375.77 679.842 406.413C671.796 406.708 662.37 406.389 654.22 406.438C630.08 406.582 606.085 406.042 581.951 407.109C578.844 406.635 573.6 407.035 570.294 407.184L570.258 407.241C570.38 407.329 581.192 408.434 581.91 408.338C595.683 411.67 608.196 415.325 620.649 422.425C656.296 442.749 678.854 481.267 679.709 522.173C679.836 528.242 679.871 534.296 679.873 540.392L679.873 576.384L679.892 602.612C679.907 607.093 680.137 614.152 679.779 618.424C643.246 619.025 605.577 618.477 568.932 618.558L568.599 466.076C568.518 446.674 568.934 426.867 568.601 407.525C546.477 407.045 524.346 406.91 502.217 407.119C487.297 407.159 471.352 407.002 456.519 407.551C455.603 418.468 456.133 433.722 456.118 445.047L456.245 522.544C456.081 544.768 456.039 566.992 456.12 589.217C456.117 594.096 455.712 613.424 456.335 617.231C453.13 616.901 449.939 616.813 446.65 616.481C419.373 612.271 394.302 599.017 375.461 578.848C342.19 543.177 343.957 508.417 344.434 463.715C344.638 444.636 343.995 424.743 344.605 405.675C353.39 405.08 370.547 405.622 379.954 405.631C405.573 405.81 431.193 405.75 456.811 405.452Z"></path><path fill="currentColor" d="M456.033 618.059C462.459 618.863 485.217 618.132 492.798 618.107C517.784 618.209 542.771 618.172 567.756 617.997C564.438 648.552 555.071 673.133 532.874 695.494C518.235 710.169 499.882 720.587 479.778 725.636C458.321 731.07 433.913 729.581 411.532 729.576L344.631 729.573C344.172 715.913 344.501 700.418 344.491 686.598L344.536 618.446C352.381 617.76 366.7 618.235 374.992 618.175C398.687 618.006 422.091 618.598 445.839 618.065C449.236 618.008 452.635 618.006 456.033 618.059Z"></path></svg></div>
         <span class="role">Partner · Unternehmens- und Projektaufbau</span>
         <h3>Sajinth &amp; Partner</h3>
         <p>Luka übernimmt Verantwortung für individuelle Softwarelösungen und Transformationsprojekte. Gemeinsam mit dem Team setzt er sie um: von der ersten Klärung über Entwicklung und Einführung bis zur laufenden Betreuung.</p>
-        <div class="logo-chip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="338 288 348 448" fill="none" aria-hidden="true" role="img"><path fill="currentColor" d="M456.811 405.452C457.721 402.094 458.133 396.467 458.693 392.763C463.155 363.26 481.439 335.207 505.354 317.691C518.401 308.171 533.257 301.419 549.009 297.85C563.904 294.539 576.041 294.918 591.076 294.91L629.719 294.858C640.019 294.678 650.32 294.569 660.621 294.53C666.362 294.509 674.404 294.277 679.902 295.134C680.134 300.633 680.116 307.303 679.953 312.791C679.042 343.601 681.219 375.77 679.842 406.413C671.796 406.708 662.37 406.389 654.22 406.438C630.08 406.582 606.085 406.042 581.951 407.109C578.844 406.635 573.6 407.035 570.294 407.184L570.258 407.241C570.38 407.329 581.192 408.434 581.91 408.338C595.683 411.67 608.196 415.325 620.649 422.425C656.296 442.749 678.854 481.267 679.709 522.173C679.836 528.242 679.871 534.296 679.873 540.392L679.873 576.384L679.892 602.612C679.907 607.093 680.137 614.152 679.779 618.424C643.246 619.025 605.577 618.477 568.932 618.558L568.599 466.076C568.518 446.674 568.934 426.867 568.601 407.525C546.477 407.045 524.346 406.91 502.217 407.119C487.297 407.159 471.352 407.002 456.519 407.551C455.603 418.468 456.133 433.722 456.118 445.047L456.245 522.544C456.081 544.768 456.039 566.992 456.12 589.217C456.117 594.096 455.712 613.424 456.335 617.231C453.13 616.901 449.939 616.813 446.65 616.481C419.373 612.271 394.302 599.017 375.461 578.848C342.19 543.177 343.957 508.417 344.434 463.715C344.638 444.636 343.995 424.743 344.605 405.675C353.39 405.08 370.547 405.622 379.954 405.631C405.573 405.81 431.193 405.75 456.811 405.452Z"></path><path fill="currentColor" d="M456.033 618.059C462.459 618.863 485.217 618.132 492.798 618.107C517.784 618.209 542.771 618.172 567.756 617.997C564.438 648.552 555.071 673.133 532.874 695.494C518.235 710.169 499.882 720.587 479.778 725.636C458.321 731.07 433.913 729.581 411.532 729.576L344.631 729.573C344.172 715.913 344.501 700.418 344.491 686.598L344.536 618.446C352.381 617.76 366.7 618.235 374.992 618.175C398.687 618.006 422.091 618.598 445.839 618.065C449.236 618.008 452.635 618.006 456.033 618.059Z"></path></svg><span class="word">Sajinth &amp; Partner</span></div>
         <a class="more" href="https://sajinth-partner.ch/" target="_blank" rel="noopener">sajinth-partner.ch <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
       <article class="firm sage rv d2">
+        <div class="firm-logo" aria-hidden="true"><img src="logo-pv.png" alt="" width="600" height="273"></div>
         <span class="role">Alleiniger Inhaber</span>
         <h3>pv innovation</h3>
         <p>Luka entwickelt Solarprojekte von der Idee bis zur Umsetzung. Er bringt Vorhaben, Material, Finanzierung und Fachpartner zusammen und setzt die Projekte gemeinsam mit ihnen um.</p>
-        <div class="logo-chip"><img src="logo-pv.png" alt="" width="600" height="273"></div>
         <a class="more" href="https://pvinnovation.eu/" target="_blank" rel="noopener">pvinnovation.eu <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
     </div>
@@ -355,7 +352,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
 
 <section class="band-petrol" id="kontakt" aria-labelledby="contact-title">
   <div class="wrap contact">
-    <div class="shapes rv" aria-hidden="true"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><i class="s5"></i></div>
+    <figure class="contact-photo rv"><img src="luka.jpg" alt="Luka Pecar" width="800" height="800" loading="lazy"></figure>
     <div class="rv d1">
       <h2 id="contact-title">Was beschäftigt dich?</h2>
       <p class="lead" style="margin-top:1rem">Schilder mir dein Anliegen. Ich kläre mit dir, ob und wie ich dich unterstützen kann.</p>
