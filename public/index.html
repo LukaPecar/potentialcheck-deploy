@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luka Pecar – Pecar &amp; Partner</title>
-<meta name="description" content="Ich übernehme Verantwortung, um deine betrieblichen Herausforderungen zu lösen. Persönliche Anlaufstelle von Luka Pecar: Pecar & Partner, Sajinth & Partner, pv innovation.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23102D35'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%23D5E65A'/%3E%3C/svg%3E">
+<meta name="description" content="Ich übernehme Verantwortung, um deine betrieblichen Herausforderungen zu lösen, und setze sie Hand in Hand mit meinen Partnern selbst um. Luka Pecar: Pecar & Partner, Sajinth & Partner, pv innovation.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="logo-pp.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_CH">
 <meta property="og:site_name" content="Luka Pecar – Pecar & Partner">
@@ -15,278 +16,205 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
 @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/manrope.woff2) format('woff2');}
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --petrol:#102D35; --ice:#DFF3F6; --sky:#59CBE8; --lime:#D5E65A; --sun:#F4DA37; --cream:#FAFAF6; --ink:#111111;
-  --ink-2:#2A3F46; --ink-3:#5C7077;
+  --petrol:#082F3A; --green:#3F7D5C; --cream:#F5F2EC; --sage:#E4ECE5; --ice:#DCEFF2; --lime:#D7DC58;
+  --text:#263237; --muted:#5B6B70; --line:#CBD5D1; --white:#FFFFFF;
   --font:'Manrope',system-ui,-apple-system,"Segoe UI",sans-serif;
   --wrap:1200px; --gutter:clamp(1.25rem,5vw,4rem);
-  --r-xl:36px; --r-lg:28px; --r-md:20px;
-  --ease:cubic-bezier(.22,1,.36,1);
+  --r-xl:36px; --r-lg:28px; --r-md:20px; --ease:cubic-bezier(.22,1,.36,1);
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--font);font-weight:500;font-size:1.06rem;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:clip;-webkit-font-smoothing:antialiased}
-img,video{display:block;max-width:100%}
+body{font-family:var(--font);font-weight:500;font-size:1.06rem;line-height:1.6;color:var(--text);background:var(--cream);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,video,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
 section{position:relative;padding-block:clamp(4.5rem,9vw,8rem)}
-h1,h2,h3{font-weight:800;letter-spacing:-.03em;line-height:1.04;text-wrap:balance}
+h1,h2,h3{font-weight:800;letter-spacing:-.03em;line-height:1.04;text-wrap:balance;color:var(--petrol)}
 h2{font-size:clamp(2.1rem,4.6vw,3.5rem)}
 h3{font-size:clamp(1.25rem,2vw,1.6rem);letter-spacing:-.02em}
 p{text-wrap:pretty}
-.lead{font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.55;color:var(--ink-2);max-width:62ch}
-
-/* Kapsel-Highlight */
-.cap{display:inline-block;padding:.02em .42em;border-radius:999px;line-height:1.02;background:var(--lime);color:var(--ink);box-shadow:0 8px 24px -10px rgba(16,45,53,.35);transform:rotate(-1.5deg)}
-.cap.sun{background:var(--sun)}
-.cap.sky{background:var(--sky)}
-.underline{background:linear-gradient(transparent 62%,var(--sun) 62%,var(--sun) 92%,transparent 92%)}
-
-/* Buttons */
-.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.6rem 1rem 1.9rem;border-radius:999px;font-weight:800;font-size:1.02rem;background:var(--petrol);color:#fff;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s}
+.lead{font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.55;color:var(--text);max-width:62ch}
+.cap{display:inline-block;padding:.02em .42em;border-radius:999px;line-height:1.02;background:var(--lime);color:var(--petrol);box-shadow:0 8px 24px -12px rgba(8,47,58,.35);transform:rotate(-1.5deg)}
+.cap.ice{background:var(--ice)}
+.underline{background:linear-gradient(transparent 62%,var(--lime) 62%,var(--lime) 92%,transparent 92%)}
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.6rem 1rem 1.9rem;border-radius:999px;font-weight:800;font-size:1.02rem;background:var(--petrol);color:#fff;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
 .btn .arr{display:grid;place-items:center;width:1.8em;height:1.8em;border-radius:50%;background:var(--lime);color:var(--petrol);transition:transform .25s var(--ease)}
 .btn .arr svg{width:1em;height:1em}
-.btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -18px rgba(16,45,53,.55)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -18px rgba(8,47,58,.55)}
 .btn:hover .arr{transform:translateX(3px)}
-.btn.light{background:var(--cream);color:var(--petrol)}
-.btn.light .arr{background:var(--petrol);color:var(--lime)}
-.btn.sun{background:var(--sun);color:var(--ink)}
-.btn.sun .arr{background:var(--petrol);color:var(--sun)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:8px}
+.btn.light{background:var(--cream);color:var(--petrol)} .btn.light .arr{background:var(--petrol);color:var(--lime)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:8px}
 
 /* Header */
-.header{position:sticky;top:0;z-index:100;background:rgba(250,250,246,.86);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
-.header.scrolled{border-bottom-color:rgba(16,45,53,.08);box-shadow:0 10px 30px -22px rgba(16,45,53,.35)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.95rem}
-.brand{display:flex;flex-direction:column;line-height:1.1}
-.brand b{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;color:var(--petrol)}
-.brand small{font-size:.8rem;font-weight:600;color:var(--ink-3);letter-spacing:.01em}
+.header{position:sticky;top:0;z-index:100;background:rgba(245,242,236,.88);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.header.scrolled{border-bottom-color:var(--line);box-shadow:0 10px 30px -22px rgba(8,47,58,.35)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.8rem}
+.brand img{height:48px;width:48px}
 .menu{display:flex;align-items:center;gap:1.9rem}
-.menu a{font-weight:700;font-size:.98rem;color:var(--ink-2);position:relative;padding:.3rem 0}
+.menu a{font-weight:700;font-size:.98rem;color:var(--text);position:relative;padding:.3rem 0}
 .menu a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;border-radius:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
 .menu a:hover::after,.menu a.active::after{transform:scaleX(1)}
-.menu .btn{padding:.7rem 1.1rem .7rem 1.3rem;font-size:.95rem}
-.menu .btn::after{display:none}
-.menu .btn,.menu .btn:hover{color:#fff}
+.menu .btn{padding:.7rem 1.1rem .7rem 1.3rem;font-size:.95rem} .menu .btn::after{display:none} .menu .btn,.menu .btn:hover{color:#fff}
 .burger{display:none;width:46px;height:46px;border-radius:14px;background:var(--petrol);color:#fff;place-items:center}
-.burger svg{width:22px;height:22px}
-.burger .x{display:none}
-.header.open .burger .bars{display:none}
-.header.open .burger .x{display:block}
+.burger svg{width:22px;height:22px} .burger .x{display:none}
+.header.open .burger .bars{display:none} .header.open .burger .x{display:block}
 @media (max-width:860px){
   .burger{display:grid}
-  .menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--cream);border-bottom:1px solid rgba(16,45,53,.1);padding:.5rem var(--gutter) 1.25rem;display:none;box-shadow:0 30px 50px -30px rgba(16,45,53,.4)}
+  .menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--cream);border-bottom:1px solid var(--line);padding:.5rem var(--gutter) 1.25rem;display:none;box-shadow:0 30px 50px -30px rgba(8,47,58,.4)}
   .header.open .menu{display:flex}
-  .menu a{padding:1rem 0;font-size:1.15rem;border-bottom:1px solid rgba(16,45,53,.08)}
-  .menu a::after{display:none}
+  .menu a{padding:1rem 0;font-size:1.15rem;border-bottom:1px solid var(--line)} .menu a::after{display:none}
   .menu .btn{margin-top:1rem;justify-content:center;border-bottom:0;padding:1rem}
 }
 
 /* Hero */
 .hero{min-height:min(92vh,940px);display:flex;align-items:flex-end;padding-block:0 clamp(3rem,6vw,5rem);overflow:hidden;
-  background:
-    radial-gradient(60% 55% at 12% 30%,rgba(244,218,55,.55),transparent 70%),
-    radial-gradient(55% 60% at 88% 25%,rgba(213,230,90,.55),transparent 70%),
-    radial-gradient(70% 60% at 50% 100%,rgba(89,203,232,.55),transparent 72%),
-    linear-gradient(180deg,#FDFCF3 0%,var(--ice) 100%);
-}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background-image:linear-gradient(rgba(16,45,53,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(16,45,53,.06) 1px,transparent 1px);
-  background-size:56px 56px;
-  -webkit-mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%);mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%)}
-.hero .wrap{position:relative;z-index:2;text-align:center;padding-top:clamp(17rem,39vh,22rem)}
-.hero-person{position:absolute;left:50%;top:2.25rem;transform:translateX(-50%);width:clamp(230px,24vw,330px);z-index:1;pointer-events:none;
-  -webkit-mask-image:linear-gradient(#000 78%,transparent 100%);mask-image:linear-gradient(#000 78%,transparent 100%)}
-.hero-person img{width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(16,45,53,.25))}
-.hero h1{font-size:clamp(2.2rem,5vw,4.1rem);color:var(--ink);margin-inline:auto;max-width:17ch;position:relative}
-.hero h1 .comma{margin-left:-.22em}
-.hero h1 .cap{font-size:1.02em;padding:.02em .5em}
+  background:radial-gradient(55% 55% at 15% 30%,rgba(220,239,242,.9),transparent 70%),radial-gradient(55% 60% at 85% 25%,rgba(228,236,229,.95),transparent 70%),radial-gradient(70% 55% at 50% 100%,rgba(220,239,242,.9),transparent 72%),linear-gradient(180deg,var(--cream) 0%,var(--ice) 60%,var(--sage) 100%)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.55;-webkit-mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%);mask-image:radial-gradient(70% 70% at 50% 45%,#000 40%,transparent 100%)}
+.hero .wrap{position:relative;z-index:2;text-align:center;padding-top:clamp(13rem,30vh,17rem)}
+.hero-person{position:absolute;left:50%;top:3.5rem;transform:translateX(-50%);width:clamp(170px,17vw,240px);z-index:1;pointer-events:none;-webkit-mask-image:linear-gradient(#000 80%,transparent 100%);mask-image:linear-gradient(#000 80%,transparent 100%)}
+.hero-person img{width:100%;height:auto;filter:drop-shadow(0 24px 34px rgba(8,47,58,.28))}
+.hero h1{font-size:clamp(2.4rem,6.1vw,5.3rem);margin-inline:auto;max-width:16.5ch;position:relative}
+.hero h1 .cap{font-size:1em;padding:.02em .5em} .hero h1 .comma{margin-left:-.22em}
 .hero .cta{margin-top:clamp(1.6rem,3vw,2.4rem)}
-/* Bögen + Kreise */
 .lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
-.lines path{fill:none;stroke:var(--petrol);stroke-opacity:.5;stroke-width:2;stroke-dasharray:7 9;stroke-linecap:round}
+.lines path{fill:none;stroke:var(--petrol);stroke-opacity:.45;stroke-width:2;stroke-dasharray:7 9;stroke-linecap:round}
 .node{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.45rem;transform:translate(-50%,-50%)}
-.node .disc{width:66px;height:66px;border-radius:50%;background:#fff;display:grid;place-items:center;border:3px solid var(--sky);box-shadow:0 14px 30px -16px rgba(16,45,53,.5)}
-.node.lime .disc{border-color:var(--lime)} .node.sun .disc{border-color:var(--sun)}
-.node .disc svg{width:30px;height:30px}
-.node span{font-size:.82rem;font-weight:800;color:var(--petrol);background:rgba(255,255,255,.75);padding:.15rem .6rem;border-radius:999px}
-.n1{left:15%;top:52%} .n2{left:85%;top:22%} .n3{left:84%;top:66%}
+.node .disc{width:66px;height:66px;border-radius:50%;background:#fff;display:grid;place-items:center;border:3px solid var(--petrol);box-shadow:0 14px 30px -16px rgba(8,47,58,.5)}
+.node.green .disc{border-color:var(--green)}
+.node .disc svg{width:30px;height:30px;color:var(--petrol)} .node.green .disc svg{color:var(--green)}
+.node span{font-size:.8rem;font-weight:800;color:var(--petrol);background:rgba(255,255,255,.85);padding:.2rem .65rem;border-radius:999px;text-align:center;max-width:12ch;line-height:1.15}
+.node.green span{color:var(--green)}
+.n1{left:15%;top:50%} .n2{left:85%;top:24%} .n3{left:84%;top:66%}
+.mini-nodes{display:none;justify-content:center;gap:.7rem .9rem;margin-top:1.6rem;flex-wrap:wrap}
+.mini-nodes div{display:flex;align-items:center;gap:.45rem;font-weight:800;font-size:.84rem;color:var(--petrol);background:rgba(255,255,255,.7);padding:.35rem .75rem;border-radius:999px}
+.mini-nodes i{width:12px;height:12px;border-radius:50%;background:var(--petrol);display:inline-block} .mini-nodes i.green{background:var(--green)}
+.mini-nodes div.green{color:var(--green)}
 @media (max-width:860px){
   .hero{min-height:auto}
-  .hero .wrap{padding-top:clamp(14.5rem,54vw,18rem)}
-  .hero-person{width:clamp(190px,48vw,240px);top:1.5rem}
+  .hero .wrap{padding-top:clamp(11rem,42vw,14rem)}
+  .hero-person{width:clamp(150px,38vw,190px);top:2rem}
   .lines,.node{display:none}
-  .hero h1{font-size:clamp(1.7rem,7.3vw,2.3rem);max-width:none;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}
+  .hero h1{font-size:clamp(1.85rem,8vw,2.5rem);max-width:none;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}
   .hero .btn{font-size:.95rem;padding:.9rem 1.1rem .9rem 1.35rem;white-space:normal;text-align:left;max-width:100%}
-  .mini-nodes{display:flex!important}
+  .mini-nodes{display:flex}
 }
-.mini-nodes{display:none;justify-content:center;gap:1.4rem;margin-top:1.6rem;flex-wrap:wrap}
-.mini-nodes div{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:.9rem;color:var(--petrol)}
-.mini-nodes i{width:12px;height:12px;border-radius:50%;background:var(--sky);display:inline-block}
-.mini-nodes i.lime{background:var(--lime)} .mini-nodes i.sun{background:var(--sun)}
 
-/* Farbige Bänder */
-.band-sky{background:var(--sky);color:var(--petrol);
-  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.08) 0 18px,transparent 18px 36px)}
-.band-ice{background:var(--ice)}
-.band-cream{background:var(--cream)}
-.band-sun{background:linear-gradient(180deg,#FBF3C4,#F7EBA0)}
-.band-petrol{background:var(--petrol);color:var(--cream)}
-.center{text-align:center}
-.center .lead{margin-inline:auto}
-.head{max-width:860px;margin-bottom:clamp(2rem,4vw,3.2rem)}
-.head h2{max-width:19ch}
-.head.center h2{margin-inline:auto}
-.head.center{margin-inline:auto}
+/* Bänder */
+.band-ice{background:var(--ice)} .band-sage{background:var(--sage)} .band-cream{background:var(--cream)}
+.band-petrol{background:var(--petrol);color:var(--cream)} .band-petrol h2{color:#fff}
+.head{max-width:860px;margin-bottom:clamp(2rem,4vw,3.2rem)} .head h2{max-width:19ch} .head.center{margin-inline:auto;text-align:center} .head.center h2{margin-inline:auto}
 
-/* Prinzip: 4 verbundene Karten */
+/* Prinzip */
 .steps{position:relative;display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:clamp(2.5rem,5vw,4rem)}
-.steps::before{content:"";position:absolute;left:34px;top:40px;bottom:40px;border-left:3px dashed rgba(16,45,53,.45);z-index:0}
-.step{position:relative;z-index:1;background:var(--cream);border-radius:var(--r-lg);padding:1.9rem 1.7rem 1.9rem 5.2rem;box-shadow:0 26px 60px -34px rgba(16,45,53,.45)}
-.step .no{position:absolute;left:1.05rem;top:1.6rem;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:1.15rem;color:var(--petrol);background:var(--sun);border:4px solid var(--cream)}
-.step:nth-child(2) .no{background:var(--lime)} .step:nth-child(3) .no{background:var(--ice)} .step:nth-child(4) .no{background:#fff}
-.step h3{margin-bottom:.45rem;color:var(--petrol)}
-.step p{color:var(--ink-2);font-size:1rem}
+.steps::before{content:"";position:absolute;left:34px;top:40px;bottom:40px;border-left:3px dashed rgba(8,47,58,.35);z-index:0}
+.step{position:relative;z-index:1;background:var(--white);border-radius:var(--r-lg);padding:1.9rem 1.7rem 1.9rem 5.2rem;box-shadow:0 26px 60px -34px rgba(8,47,58,.35)}
+.step .no{position:absolute;left:1.05rem;top:1.6rem;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:1.15rem;color:#fff;background:var(--petrol);border:4px solid var(--ice)}
+.step:nth-child(3) .no,.step:nth-child(4) .no{background:var(--green)}
+.step h3{margin-bottom:.45rem} .step p{color:var(--text);font-size:1rem}
 @media (min-width:900px){
   .steps{grid-template-columns:repeat(4,1fr);gap:1.4rem}
-  .steps::before{left:12%;right:12%;top:38px;bottom:auto;border-left:0;border-top:3px dashed rgba(16,45,53,.45)}
-  .step{padding:4.4rem 1.6rem 1.9rem}
-  .step .no{left:50%;top:0;transform:translate(-50%,-30%);width:60px;height:60px}
+  .steps::before{left:12%;right:12%;top:38px;bottom:auto;border-left:0;border-top:3px dashed rgba(8,47,58,.35)}
+  .step{padding:4.4rem 1.6rem 1.9rem} .step .no{left:50%;top:0;transform:translate(-50%,-30%);width:60px;height:60px}
 }
 
-/* Über: Collage */
-.about{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:start}
-.collage{position:relative;height:clamp(420px,52vw,560px)}
-.collage figure{position:absolute;border-radius:24px;overflow:hidden;box-shadow:0 34px 70px -36px rgba(16,45,53,.55);border:6px solid var(--sun)}
+/* Über: kompakt, vertikal */
+.about{display:grid;grid-template-columns:1fr;gap:2.2rem;align-items:center}
+.about .head{margin-bottom:.5rem}
+.collage{position:relative;height:clamp(440px,60vw,560px);max-width:520px}
+.collage figure{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 34px 70px -36px rgba(8,47,58,.5);border:6px solid var(--lime)}
 .collage figure img{width:100%;height:100%;object-fit:cover}
-.collage .f1{left:4%;top:6%;width:58%;height:78%;transform:rotate(-4deg);border-color:var(--sun)}
-.collage .f2{right:3%;top:0;width:42%;height:48%;transform:rotate(5deg);border-color:var(--sky)}
-.collage .f3{right:10%;bottom:2%;width:40%;height:44%;transform:rotate(-7deg);border-color:var(--lime)}
-.collage .blob{position:absolute;border-radius:50%;z-index:-1}
-.about-text p+p{margin-top:1rem}
-.about-text p{color:var(--ink-2);font-size:1.08rem}
+.collage .f1{left:0;top:0;width:62%;height:56%;transform:rotate(-3deg);border-color:var(--lime)}
+.collage .f2{right:0;top:22%;width:44%;height:40%;transform:rotate(4deg);border-color:var(--ice)}
+.collage .f3{left:14%;bottom:0;width:50%;height:42%;transform:rotate(-5deg);border-color:var(--sage)}
+.about-text p{color:var(--text);font-size:1.06rem} .about-text p+p{margin-top:.9rem}
 @media (min-width:960px){
-  .about{grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
-  .about .head{grid-column:1/-1;max-width:none}
-  .about .head h2{max-width:17ch}
+  .about{grid-template-columns:.85fr 1.15fr;gap:3.5rem}
+  .about .head{grid-column:1/-1} .about .head h2{max-width:17ch}
 }
 
-/* Unternehmen: 3 grosse Karten */
+/* Unternehmen */
 .firms{display:grid;grid-template-columns:1fr;gap:1.4rem}
-.firm{border-radius:var(--r-xl);padding:2.2rem 2rem 2rem;display:flex;flex-direction:column;gap:1rem;min-height:100%;color:var(--ink);box-shadow:0 30px 70px -40px rgba(16,45,53,.5);transition:transform .3s var(--ease)}
+.firm{border-radius:var(--r-xl);padding:2.2rem 2rem 2rem;display:flex;flex-direction:column;gap:1rem;color:var(--text);box-shadow:0 30px 70px -40px rgba(8,47,58,.35);transition:transform .3s var(--ease)}
 .firm:hover{transform:translateY(-4px)}
-.firm.sun{background:var(--sun)} .firm.sky{background:var(--sky)} .firm.lime{background:var(--lime)}
-.firm .sym{width:84px;height:84px;position:relative;margin-bottom:.4rem}
-.firm .role{display:inline-flex;align-self:flex-start;padding:.35rem .8rem;border-radius:999px;background:rgba(16,45,53,.12);font-weight:800;font-size:.78rem;letter-spacing:.02em;color:var(--petrol)}
-.firm h3{font-size:clamp(1.5rem,2.2vw,1.9rem);color:var(--petrol)}
-.firm p{color:var(--ink-2);font-size:1rem;flex:1}
+.firm.lime{background:var(--lime)} .firm.ice{background:var(--ice)} .firm.sage{background:var(--sage)}
+.firm .role{display:inline-flex;align-self:flex-start;padding:.35rem .8rem;border-radius:999px;background:rgba(8,47,58,.1);font-weight:800;font-size:.78rem;color:var(--petrol)}
+.firm h3{font-size:clamp(1.5rem,2.2vw,1.9rem)}
+.firm p{font-size:1rem;flex:1}
 .firm .more{font-weight:800;color:var(--petrol);display:inline-flex;align-items:center;gap:.4rem}
-.firm .more svg{width:1em;height:1em;transition:transform .25s var(--ease)}
-.firm .more:hover svg{transform:translateX(4px)}
+.firm .more svg{width:1em;height:1em;transition:transform .25s var(--ease)} .firm .more:hover svg{transform:translateX(4px)}
+.logo-chip{display:inline-flex;align-items:center;justify-content:center;height:64px;padding:0 1.1rem;border-radius:16px;background:var(--white);box-shadow:0 10px 24px -16px rgba(8,47,58,.35);align-self:flex-start;margin-bottom:.2rem}
+.logo-chip img,.logo-chip svg{height:34px;width:auto}
+.logo-chip svg{color:var(--petrol)}
+.logo-chip .word{font-weight:800;color:var(--petrol);letter-spacing:-.02em;margin-left:.6rem;font-size:1rem}
 @media (min-width:900px){.firms{grid-template-columns:repeat(3,1fr);gap:1.6rem}}
-/* geometrische Symbole */
-.sym i{position:absolute;display:block}
-.sym.pp i:nth-child(1){left:0;top:10px;width:46px;height:46px;border-radius:50%;background:var(--petrol)}
-.sym.pp i:nth-child(2){left:34px;top:26px;width:46px;height:46px;border-radius:50%;background:var(--cream);border:4px solid var(--petrol)}
-.sym.sp i:nth-child(1){left:6px;top:8px;width:34px;height:64px;border-radius:17px;background:var(--petrol)}
-.sym.sp i:nth-child(2){left:44px;top:8px;width:34px;height:34px;border-radius:50%;background:var(--cream);border:4px solid var(--petrol)}
-.sym.sp i:nth-child(3){left:44px;top:48px;width:34px;height:24px;border-radius:12px;background:var(--petrol)}
-.sym.pv i:nth-child(1){left:8px;top:8px;width:66px;height:66px;border-radius:50%;border:5px dashed var(--petrol)}
-.sym.pv i:nth-child(2){left:24px;top:24px;width:34px;height:34px;border-radius:50%;background:var(--petrol)}
 
-/* Zusammenarbeit: 4 Prozess-Karten */
-.proc{display:grid;grid-template-columns:1fr;gap:1.25rem}
-.pc{border-radius:var(--r-lg);padding:1.8rem 1.6rem 1.7rem;background:#fff;box-shadow:0 26px 60px -36px rgba(16,45,53,.45);position:relative;overflow:hidden}
-.pc .big{font-size:clamp(3.2rem,5vw,4.2rem);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--petrol);opacity:.18;position:absolute;right:1rem;top:.6rem}
-.pc .cube{width:64px;height:64px;position:relative;margin-bottom:1.1rem}
-.pc .cube::before,.pc .cube::after{content:"";position:absolute;inset:0;border-radius:16px}
-.pc .cube::after{background:var(--petrol);transform:translate(6px,6px);opacity:.25}
-.pc .cube::before{z-index:1;background:var(--c)}
-.pc h3{color:var(--petrol);margin-bottom:.3rem}
-.pc p{color:var(--ink-2);font-size:.98rem}
-.pc.a{--c:var(--sun)} .pc.b{--c:var(--sky)} .pc.c{--c:var(--lime)} .pc.d{--c:var(--ice)}
+/* Zusammenarbeit: farbige Karten auf Petrol, ohne Vierecke */
+.proc{display:grid;grid-template-columns:1fr;gap:1.25rem;position:relative}
+.pc{border-radius:var(--r-lg);padding:1.7rem 1.6rem 1.7rem;position:relative;color:var(--petrol)}
+.pc.ice{background:var(--ice)} .pc.sage{background:var(--sage)} .pc.lime{background:var(--lime)} .pc.cream{background:var(--cream)}
+.pc .no{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--petrol);color:#fff;font-weight:800;font-size:1.3rem;margin-bottom:1.1rem;border:4px solid rgba(255,255,255,.7)}
+.pc.green-mark .no{background:var(--green)}
+.pc h3{margin-bottom:.35rem} .pc p{color:var(--text);font-size:.98rem}
 @media (min-width:760px){.proc{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1100px){.proc{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:1100px){
+  .proc{grid-template-columns:repeat(4,1fr)}
+  .proc::before{content:"";position:absolute;left:8%;right:8%;top:calc(1.7rem + 28px);border-top:3px dashed rgba(255,255,255,.35);z-index:0}
+  .pc{z-index:1}
+}
 
 /* HunziCare */
 .case{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
-.video-card{border-radius:var(--r-xl);overflow:hidden;background:#000;box-shadow:0 40px 90px -40px rgba(16,45,53,.7);border:8px solid var(--cream)}
+.video-card{border-radius:var(--r-xl);overflow:hidden;background:#000;box-shadow:0 40px 90px -40px rgba(8,47,58,.6);border:8px solid var(--white)}
 .video-card video{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover}
-.case-text p{color:var(--petrol);font-size:1.08rem}
-.case-text p+p{margin-top:1rem}
-.note{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;padding:.75rem 1.1rem;border-radius:999px;background:var(--cream);color:var(--petrol);font-weight:800;font-size:.92rem}
+.case-text p{color:var(--text);font-size:1.08rem} .case-text p+p{margin-top:1rem}
+.note{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;padding:.75rem 1.1rem;border-radius:999px;background:var(--green);color:#fff;font-weight:800;font-size:.92rem}
 .note i{width:10px;height:10px;border-radius:50%;background:var(--lime);display:inline-block}
 @media (min-width:1000px){.case{grid-template-columns:1.35fr .9fr;gap:3.5rem}}
 
 /* AKIG */
 .akig{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
-.akig-text p{color:var(--ink-2);font-size:1.08rem}
-.akig-text p+p{margin-top:1rem}
-.akig-art{position:relative;height:clamp(240px,34vw,360px)}
-.akig-art i{position:absolute;border-radius:50%}
-.akig-art .a1{left:12%;top:14%;width:44%;aspect-ratio:1;background:var(--sky)}
-.akig-art .a2{left:44%;top:30%;width:44%;aspect-ratio:1;background:var(--lime);mix-blend-mode:multiply}
-.akig-art .a3{left:30%;top:58%;width:22%;aspect-ratio:1;background:var(--sun)}
-.akig-art .a4{left:6%;top:62%;width:14%;aspect-ratio:1;border:4px dashed var(--petrol);border-radius:50%}
-@media (min-width:960px){.akig{grid-template-columns:1fr 1.1fr;gap:4rem}}
+.akig-text p{color:var(--text);font-size:1.08rem} .akig-text p+p{margin-top:1rem}
+.akig-text a.person{font-weight:800;color:var(--petrol);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:3px;text-underline-offset:3px}
+.akig-card{background:var(--white);border-radius:var(--r-xl);padding:clamp(2rem,4vw,3.2rem);box-shadow:0 34px 70px -36px rgba(8,47,58,.4);display:grid;gap:1.4rem;justify-items:start}
+.akig-card .logo{width:min(100%,300px)}
+.akig-card .tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:999px;background:var(--sage);color:var(--petrol);font-weight:800;font-size:.82rem}
+.akig-card .tag i{width:9px;height:9px;border-radius:50%;background:var(--green)}
+@media (min-width:960px){.akig{grid-template-columns:.9fr 1.1fr;gap:4rem}}
 
 /* Kontakt */
 .contact{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
-.shapes{position:relative;height:clamp(260px,38vw,420px)}
-.shapes i{position:absolute;display:block}
-.shapes .s1{left:6%;top:8%;width:38%;aspect-ratio:1;border-radius:50%;background:var(--sun)}
-.shapes .s2{left:40%;top:0;width:52%;height:46%;border-radius:0 0 999px 999px;background:var(--sky)}
-.shapes .s3{left:12%;bottom:6%;width:46%;height:34%;border-radius:32px;background:var(--lime)}
+.shapes{position:relative;height:clamp(260px,38vw,420px)} .shapes i{position:absolute;display:block}
+.shapes .s1{left:6%;top:8%;width:38%;aspect-ratio:1;border-radius:50%;background:var(--lime)}
+.shapes .s2{left:40%;top:0;width:52%;height:46%;border-radius:0 0 999px 999px;background:var(--ice)}
+.shapes .s3{left:12%;bottom:6%;width:46%;height:34%;border-radius:32px;background:var(--sage)}
 .shapes .s4{right:8%;bottom:10%;width:30%;aspect-ratio:1;border-radius:50%;border:6px dashed var(--ice)}
 .shapes .s5{left:56%;top:52%;width:14%;aspect-ratio:1;border-radius:50%;background:var(--cream)}
-.contact h2{color:var(--cream)}
-.contact .lead{color:rgba(250,250,246,.8)}
+.contact h2{color:#fff} .contact .lead{color:rgba(245,242,236,.82)}
 .clinks{display:flex;flex-direction:column;gap:.9rem;margin-top:1.8rem}
-.clink{display:inline-flex;align-items:center;gap:1rem;padding:1.05rem 1.3rem;border-radius:999px;background:rgba(250,250,246,.08);border:1px solid rgba(250,250,246,.16);font-weight:800;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--cream);transition:background .25s,transform .25s var(--ease);width:fit-content;max-width:100%}
-.clink .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--lime);color:var(--petrol);flex:none}
-.clink .ic svg{width:20px;height:20px}
-.clink:hover{background:rgba(250,250,246,.16);transform:translateX(4px)}
-.clink span{overflow-wrap:anywhere}
+.clink{display:inline-flex;align-items:center;gap:1rem;padding:1.05rem 1.3rem;border-radius:999px;background:rgba(245,242,236,.08);border:1px solid rgba(245,242,236,.16);font-weight:800;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--cream);transition:background .25s,transform .25s var(--ease);width:fit-content;max-width:100%}
+.clink .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--lime);color:var(--petrol);flex:none} .clink .ic svg{width:20px;height:20px}
+.clink:hover{background:rgba(245,242,236,.16);transform:translateX(4px)} .clink span{overflow-wrap:anywhere}
 @media (min-width:960px){.contact{grid-template-columns:1fr 1fr;gap:4rem}}
 
-/* Footer */
-footer{background:var(--petrol);color:rgba(250,250,246,.7);padding:1.6rem var(--gutter) 2.2rem;border-top:1px solid rgba(250,250,246,.1);font-size:.9rem}
+footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter) 2.2rem;font-size:.9rem}
 .foot{max-width:var(--wrap);margin-inline:auto;display:flex;flex-wrap:wrap;gap:.8rem 1.6rem;align-items:center;justify-content:space-between}
-.foot a:hover{color:var(--lime)}
-.foot nav{display:flex;gap:1.4rem;flex-wrap:wrap}
-
-/* Rechtliches */
-.legal-page{display:none;background:var(--cream)}
-.legal-page:target{display:block}
-.legal-wrap{max-width:760px}
-.legal-back{display:inline-flex;font-weight:800;color:var(--petrol);margin-bottom:1rem}
-.legal-body{color:var(--ink-2);line-height:1.7}
-.legal-body p+p{margin-top:1rem}
-.legal-body strong{color:var(--ink)}
+.foot a:hover{color:var(--lime)} .foot nav{display:flex;gap:1.4rem;flex-wrap:wrap}
+.legal-page{display:none;background:var(--cream)} .legal-page:target{display:block}
+.legal-wrap{max-width:760px} .legal-back{display:inline-flex;font-weight:800;color:var(--petrol);margin-bottom:1rem}
+.legal-body{color:var(--text);line-height:1.7} .legal-body p+p{margin-top:1rem} .legal-body strong{color:var(--petrol)}
 .legal-body a{color:var(--petrol);text-decoration:underline;text-underline-offset:2px}
 #ueber-mich,#unternehmen,#zusammenarbeit,#kontakt,#prinzip,#hunzicare,#akig,#impressum,#datenschutz{scroll-margin-top:84px}
-
-/* Reveal */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.rv.in{opacity:1;transform:none}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)} .rv.in{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .rv{opacity:1;transform:none;transition:none}
-  .btn,.firm,.clink,.menu a::after{transition:none}
-}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.btn,.firm,.clink,.menu a::after{transition:none}}
 </style>
 </head>
 <body>
-
 <header class="header" id="header">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Zum Seitenanfang">
-      <b>Luka Pecar</b>
-      <small>Pecar &amp; Partner</small>
-    </a>
+    <a class="brand" href="#top" aria-label="Pecar &amp; Partner, zum Seitenanfang"><img src="logo-pp.png" alt="Pecar &amp; Partner" width="240" height="240"></a>
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
       <svg class="bars" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
       <svg class="x" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
@@ -301,49 +229,41 @@ footer{background:var(--petrol);color:rgba(250,250,246,.7);padding:1.6rem var(--
 </header>
 
 <main id="top">
-
-<!-- 1 HERO -->
 <section class="hero" aria-labelledby="hero-title">
   <svg class="lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M -20 620 C 140 560, 200 470, 216 468"/>
-    <path d="M 1224 198 C 1100 300, 980 360, 900 330"/>
+    <path d="M -20 610 C 140 550, 200 460, 216 452"/>
+    <path d="M 1224 216 C 1100 310, 980 370, 900 340"/>
     <path d="M 1210 594 C 1120 660, 1000 700, 880 640"/>
     <path d="M 160 860 C 300 800, 420 740, 520 720"/>
   </svg>
   <div class="hero-person" aria-hidden="true">
-    <picture>
-      <source srcset="luka-cutout.webp" type="image/webp">
-      <img src="luka-cutout.png" alt="" width="720" height="996" fetchpriority="high">
-    </picture>
+    <picture><source srcset="luka-cutout.webp" type="image/webp"><img src="luka-cutout.png" alt="" width="720" height="996" fetchpriority="high"></picture>
   </div>
-  <div class="node n1 lime"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#102D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></div><span>Verstehen</span></div>
-  <div class="node n2"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#102D35" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.7 10.7 15.3 7.3M8.7 13.3l6.6 3.4"/></svg></div><span>Verbinden</span></div>
-  <div class="node n3 sun"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#102D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13l5 5L20 7"/></svg></div><span>Umsetzen</span></div>
-
+  <div class="node n1"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></div><span>Verstehen</span></div>
+  <div class="node n2"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 7.6 8 9 4.6-1.4 8-4.5 8-9V6l-8-3Z"/><path d="m8.5 12 2.3 2.3L15.5 9.6"/></svg></div><span>Verantwortung übernehmen</span></div>
+  <div class="node n3 green"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"/><path d="M6 16l4-5 3 3 5-7"/><path d="M15 7h3v3"/></svg></div><span>Ergebnisse liefern</span></div>
   <div class="wrap">
     <h1 id="hero-title">Ich übernehme <span class="cap">Verantwortung</span><span class="comma">,</span><br>um deine betrieblichen Herausforderungen zu lösen.</h1>
     <div class="cta"><a class="btn" href="#kontakt">Herausforderung besprechen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
-    <div class="mini-nodes" aria-label="Vorgehen"><div><i class="lime"></i>Verstehen</div><div><i></i>Verbinden</div><div><i class="sun"></i>Umsetzen</div></div>
+    <div class="mini-nodes" aria-label="Vorgehen"><div><i></i>Verstehen</div><div><i></i>Verantwortung übernehmen</div><div class="green"><i class="green"></i>Ergebnisse liefern</div></div>
   </div>
 </section>
 
-<!-- 2 GRUNDPRINZIP -->
-<section class="band-sky" id="prinzip" aria-labelledby="prinzip-title">
+<section class="band-ice" id="prinzip" aria-labelledby="prinzip-title">
   <div class="wrap">
     <div class="head center rv"><h2 id="prinzip-title">Eine Herausforderung. Vier Schritte bis zur Lösung.</h2></div>
     <div class="steps">
       <article class="step rv"><span class="no">1</span><h3>Verstehen</h3><p>Ich kläre, was tatsächlich funktionieren muss und wo die Herausforderung liegt.</p></article>
-      <article class="step rv d1"><span class="no">2</span><h3>Entscheiden</h3><p>Ich bestimme, welche Kompetenzen, Partner und Mittel für die Lösung notwendig sind.</p></article>
-      <article class="step rv d2"><span class="no">3</span><h3>Umsetzen</h3><p>Ich begleite die Lösung von der Entscheidung bis zum konkret nutzbaren Ergebnis.</p></article>
+      <article class="step rv d1"><span class="no">2</span><h3>Entscheiden</h3><p>Ich lege den Weg fest und übernehme die Verantwortung dafür. Meine Partner sind von Anfang an mit im Boot, wo ihr Fachwissen die Lösung stärker macht.</p></article>
+      <article class="step rv d2"><span class="no">3</span><h3>Umsetzen</h3><p>Ich setze die Lösung selbst um, Hand in Hand mit meinen Partnern, bis sie im Betrieb konkret genutzt wird.</p></article>
       <article class="step rv d3"><span class="no">4</span><h3>Begleiten</h3><p>Ich bleibe Ansprechpartner und entwickle die Lösung weiter, wenn sich Anforderungen verändern.</p></article>
     </div>
   </div>
 </section>
 
-<!-- 3 ÜBER LUKA -->
-<section class="band-ice" id="ueber-mich" aria-labelledby="about-title">
+<section class="band-sage" id="ueber-mich" aria-labelledby="about-title">
   <div class="wrap about">
-    <div class="head rv"><h2 id="about-title">Verantwortung hat mich ins <span class="cap sun">Unternehmertum</span> geführt.</h2></div>
+    <div class="head rv"><h2 id="about-title">Verantwortung hat mich ins <span class="cap">Unternehmertum</span> geführt.</h2></div>
     <div class="collage rv">
       <figure class="f1"><img src="luka.jpg" alt="Luka Pecar, Porträt mit verschränkten Armen" width="800" height="800" loading="lazy"></figure>
       <figure class="f2"><img src="luka-portrait.jpg" alt="Luka Pecar im Freien" width="960" height="1200" loading="lazy"></figure>
@@ -353,63 +273,59 @@ footer{background:var(--petrol);color:rgba(250,250,246,.7);padding:1.6rem var(--
       <p>Ich komme aus der Gebäudetechnik. In meiner früheren Tätigkeit habe ich unter anderem Digitalisierungsaufgaben übernommen.</p>
       <p>Dabei habe ich erlebt, was möglich wird, wenn Menschen mir eine Herausforderung anvertrauen und mir den notwendigen Spielraum geben, sie zu lösen.</p>
       <p>Ich konnte Entscheidungen treffen, die Umsetzung voranbringen und sehen, wie Kunden mit dem Ergebnis zufrieden waren. Diese Erfahrung hat mich in die Selbstständigkeit geführt.</p>
-      <p>Heute arbeite ich in unterschiedlichen unternehmerischen Bereichen. Mein Anspruch bleibt derselbe: das Anliegen verstehen, Verantwortung übernehmen und die Lösung bis in die Umsetzung begleiten.</p>
+      <p>Heute arbeite ich in unterschiedlichen unternehmerischen Bereichen. Mein Anspruch bleibt derselbe: das Anliegen verstehen, Verantwortung übernehmen und die Lösung selbst bis in die Umsetzung tragen.</p>
     </div>
   </div>
 </section>
 
-<!-- 4 UNTERNEHMEN -->
 <section class="band-cream" id="unternehmen" aria-labelledby="firms-title">
   <div class="wrap">
     <div class="head center rv"><h2 id="firms-title">Wo ich <span class="underline">Verantwortung</span> übernehme.</h2></div>
     <div class="firms">
-      <article class="firm sun rv">
-        <div class="sym pp" aria-hidden="true"><i></i><i></i></div>
+      <article class="firm lime rv">
         <span class="role">Inhaber</span>
         <h3>Pecar &amp; Partner</h3>
-        <p>Die persönliche Anlaufstelle für unterschiedliche betriebliche und persönliche Anliegen. Dazu gehören Beratung, Neukundengewinnung, Immobilienvermittlung sowie die Koordination passender Fachpartner. Für Spezial- und Hypothekarfinanzierungen arbeitet Luka mit einem festen Fachpartner zusammen.</p>
+        <p>Die persönliche Anlaufstelle für unterschiedliche betriebliche und persönliche Anliegen. Dazu gehören Beratung, Neukundengewinnung und Immobilienvermittlung. Für Spezial- und Hypothekarfinanzierungen arbeitet Luka Hand in Hand mit einem festen Fachpartner.</p>
+        <div class="logo-chip"><img src="logo-pp.png" alt="" width="240" height="240"><span class="word">Pecar &amp; Partner</span></div>
         <a class="more" href="#kontakt">Anliegen besprechen <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
-      <article class="firm sky rv d1">
-        <div class="sym sp" aria-hidden="true"><i></i><i></i><i></i></div>
+      <article class="firm ice rv d1">
         <span class="role">Partner · Unternehmens- und Projektaufbau</span>
         <h3>Sajinth &amp; Partner</h3>
-        <p>Luka übernimmt Verantwortung für individuelle Softwarelösungen und Transformationsprojekte. Gemeinsam mit dem Team begleitet er Aufgaben von der ersten Klärung über die Entwicklung und Einführung bis zur laufenden Betreuung.</p>
+        <p>Luka übernimmt Verantwortung für individuelle Softwarelösungen und Transformationsprojekte. Gemeinsam mit dem Team setzt er sie um: von der ersten Klärung über Entwicklung und Einführung bis zur laufenden Betreuung.</p>
+        <div class="logo-chip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="338 288 348 448" fill="none" aria-hidden="true" role="img"><path fill="currentColor" d="M456.811 405.452C457.721 402.094 458.133 396.467 458.693 392.763C463.155 363.26 481.439 335.207 505.354 317.691C518.401 308.171 533.257 301.419 549.009 297.85C563.904 294.539 576.041 294.918 591.076 294.91L629.719 294.858C640.019 294.678 650.32 294.569 660.621 294.53C666.362 294.509 674.404 294.277 679.902 295.134C680.134 300.633 680.116 307.303 679.953 312.791C679.042 343.601 681.219 375.77 679.842 406.413C671.796 406.708 662.37 406.389 654.22 406.438C630.08 406.582 606.085 406.042 581.951 407.109C578.844 406.635 573.6 407.035 570.294 407.184L570.258 407.241C570.38 407.329 581.192 408.434 581.91 408.338C595.683 411.67 608.196 415.325 620.649 422.425C656.296 442.749 678.854 481.267 679.709 522.173C679.836 528.242 679.871 534.296 679.873 540.392L679.873 576.384L679.892 602.612C679.907 607.093 680.137 614.152 679.779 618.424C643.246 619.025 605.577 618.477 568.932 618.558L568.599 466.076C568.518 446.674 568.934 426.867 568.601 407.525C546.477 407.045 524.346 406.91 502.217 407.119C487.297 407.159 471.352 407.002 456.519 407.551C455.603 418.468 456.133 433.722 456.118 445.047L456.245 522.544C456.081 544.768 456.039 566.992 456.12 589.217C456.117 594.096 455.712 613.424 456.335 617.231C453.13 616.901 449.939 616.813 446.65 616.481C419.373 612.271 394.302 599.017 375.461 578.848C342.19 543.177 343.957 508.417 344.434 463.715C344.638 444.636 343.995 424.743 344.605 405.675C353.39 405.08 370.547 405.622 379.954 405.631C405.573 405.81 431.193 405.75 456.811 405.452Z"></path><path fill="currentColor" d="M456.033 618.059C462.459 618.863 485.217 618.132 492.798 618.107C517.784 618.209 542.771 618.172 567.756 617.997C564.438 648.552 555.071 673.133 532.874 695.494C518.235 710.169 499.882 720.587 479.778 725.636C458.321 731.07 433.913 729.581 411.532 729.576L344.631 729.573C344.172 715.913 344.501 700.418 344.491 686.598L344.536 618.446C352.381 617.76 366.7 618.235 374.992 618.175C398.687 618.006 422.091 618.598 445.839 618.065C449.236 618.008 452.635 618.006 456.033 618.059Z"></path></svg><span class="word">Sajinth &amp; Partner</span></div>
         <a class="more" href="https://sajinth-partner.ch/" target="_blank" rel="noopener">sajinth-partner.ch <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
-      <article class="firm lime rv d2">
-        <div class="sym pv" aria-hidden="true"><i></i><i></i></div>
+      <article class="firm sage rv d2">
         <span class="role">Alleiniger Inhaber</span>
         <h3>pv innovation</h3>
-        <p>Luka bringt Projektvorhaben, Fachpartner, Material und Finanzierungsmöglichkeiten für Solarprojekte zusammen und begleitet die Umsetzung.</p>
-        <a class="more" href="#kontakt">Solarprojekt besprechen <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p>Luka entwickelt Solarprojekte von der Idee bis zur Umsetzung. Er bringt Vorhaben, Material, Finanzierung und Fachpartner zusammen und setzt die Projekte gemeinsam mit ihnen um.</p>
+        <div class="logo-chip"><img src="logo-pv.png" alt="" width="600" height="273"></div>
+        <a class="more" href="https://pvinnovation.eu/" target="_blank" rel="noopener">pvinnovation.eu <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
     </div>
   </div>
 </section>
 
-<!-- 5 ZUSAMMENARBEIT -->
-<section class="band-sun" id="zusammenarbeit" aria-labelledby="proc-title">
+<section class="band-petrol" id="zusammenarbeit" aria-labelledby="proc-title">
   <div class="wrap">
     <div class="head rv"><h2 id="proc-title">Von der Anfrage bis zur laufenden Lösung.</h2></div>
     <div class="proc">
-      <article class="pc a rv"><span class="big" aria-hidden="true">1</span><div class="cube" aria-hidden="true"></div><h3>Anliegen klären</h3><p>Wir sprechen darüber, was dich beschäftigt und was am Ende funktionieren muss.</p></article>
-      <article class="pc b rv d1"><span class="big" aria-hidden="true">2</span><div class="cube" aria-hidden="true"></div><h3>Lösungsweg bestimmen</h3><p>Ich lege fest, welcher Weg zum Ziel führt und was dafür nötig ist.</p></article>
-      <article class="pc c rv d2"><span class="big" aria-hidden="true">3</span><div class="cube" aria-hidden="true"></div><h3>Passende Beteiligte verbinden</h3><p>Wo es Fachwissen braucht, bringe ich die richtigen Partner ins Spiel.</p></article>
-      <article class="pc d rv d3"><span class="big" aria-hidden="true">4</span><div class="cube" aria-hidden="true"></div><h3>Umsetzung begleiten</h3><p>Ich bleibe dein Ansprechpartner, bis die Lösung im Alltag läuft, und darüber hinaus.</p></article>
+      <article class="pc ice rv"><span class="no">1</span><h3>Anliegen klären</h3><p>Wir sprechen darüber, was dich beschäftigt und was am Ende funktionieren muss.</p></article>
+      <article class="pc sage rv d1"><span class="no">2</span><h3>Lösungsweg festlegen</h3><p>Ich entscheide, wie wir vorgehen, und übernehme die Verantwortung dafür.</p></article>
+      <article class="pc lime rv d2"><span class="no">3</span><h3>Gemeinsam umsetzen</h3><p>Ich packe selbst an. Meine Partner sind von Anfang an mit im Boot, jeder mit seiner Stärke.</p></article>
+      <article class="pc cream green-mark rv d3"><span class="no">4</span><h3>Ergebnis begleiten</h3><p>Ich bleibe dein Ansprechpartner, bis die Lösung im Alltag läuft, und darüber hinaus.</p></article>
     </div>
   </div>
 </section>
 
-<!-- 6 HUNZICARE -->
-<section class="band-sky" id="hunzicare" aria-labelledby="case-title">
+<section class="band-sage" id="hunzicare" aria-labelledby="case-title">
   <div class="wrap">
     <div class="head rv"><h2 id="case-title">Verantwortung zeigt sich im Alltag.</h2></div>
     <div class="case">
       <div class="video-card rv">
         <video controls preload="none" poster="gregory.jpg" playsinline aria-label="Gregory Hunziker über die Zusammenarbeit mit Luka Pecar">
-          <source src="https://reinig.ch/testimonial-hunziker.mp4" type="video/mp4">
-          Dein Browser kann dieses Video nicht abspielen.
+          <source src="https://reinig.ch/testimonial-hunziker.mp4" type="video/mp4">Dein Browser kann dieses Video nicht abspielen.
         </video>
       </div>
       <div class="case-text rv d1">
@@ -421,21 +337,22 @@ footer{background:var(--petrol);color:rgba(250,250,246,.7);padding:1.6rem var(--
   </div>
 </section>
 
-<!-- 7 AKIG -->
 <section class="band-cream" id="akig" aria-labelledby="akig-title">
   <div class="wrap akig">
-    <div class="akig-art rv" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><i class="a4"></i></div>
+    <div class="akig-card rv">
+      <img class="logo" src="logo-akig.svg" alt="akig." width="300" height="90">
+      <span class="tag"><i></i>Im Aufbau, gemeinsam mit dem Team</span>
+      <a class="btn" href="https://www.akig.ch/" target="_blank" rel="noopener">akig.ch ansehen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    </div>
     <div class="akig-text rv d1">
-      <h2 id="akig-title" style="margin-bottom:1.2rem">Aus Branchenerfahrung wird eine <span class="cap sky">gemeinsame</span> Idee.</h2>
-      <p>Luka lernte Christian Facchin über LinkedIn kennen. Beide kannten den Aufwand hinter der Kalkulation in HLKS-Betrieben.</p>
+      <h2 id="akig-title" style="margin-bottom:1.2rem">Aus Branchenerfahrung wird eine <span class="cap ice">gemeinsame</span> Idee.</h2>
+      <p>Luka lernte <a class="person" href="https://www.linkedin.com/in/christian-facchin-b753a712a/" target="_blank" rel="noopener">Christian Facchin</a> über LinkedIn kennen. Beide kannten den Aufwand hinter der Kalkulation in HLKS-Betrieben.</p>
       <p>Gemeinsam analysierten sie bestehende Kalkulationen und entwickelten mit dem Team eine KI-gestützte Lösung.</p>
-      <p>Luka begleitet den Aufbau von der Produktentwicklung bis zu den Kundengesprächen. Der reguläre Kundeneinsatz steht noch bevor.</p>
-      <p style="margin-top:1.4rem"><a class="btn sun" href="https://www.akig.ch/" target="_blank" rel="noopener">akig.ch ansehen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></p>
+      <p>Luka begleitet den Aufbau von der Produktentwicklung bis zu den Kundengesprächen.</p>
     </div>
   </div>
 </section>
 
-<!-- 8 KONTAKT -->
 <section class="band-petrol" id="kontakt" aria-labelledby="contact-title">
   <div class="wrap contact">
     <div class="shapes rv" aria-hidden="true"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><i class="s5"></i></div>
@@ -450,47 +367,17 @@ footer{background:var(--petrol);color:rgba(250,250,246,.7);padding:1.6rem var(--
   </div>
 </section>
 
-<!-- RECHTLICHES (per :target) -->
-<section class="legal-page" id="impressum">
-  <div class="wrap legal-wrap">
-    <a class="legal-back" href="#top">&larr; Zurück zur Seite</a>
-    <h2 style="margin-bottom:1.2rem">Impressum</h2>
-    <div class="legal-body">
-      <p><strong>Pecar und Partner GmbH</strong><br>Föhneneichstrasse 19a<br>6440 Brunnen<br>Schweiz</p>
-      <p>Vertreten durch: Luka Pecar<br>UID / MWST: CHE-274.524.395</p>
-      <p>E-Mail: <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a><br>Telefon: +41 79 619 06 87</p>
-    </div>
-  </div>
-</section>
-<section class="legal-page" id="datenschutz">
-  <div class="wrap legal-wrap">
-    <a class="legal-back" href="#top">&larr; Zurück zur Seite</a>
-    <h2 style="margin-bottom:1.2rem">Datenschutz</h2>
-    <div class="legal-body">
-      <p>Verantwortlich für die Datenbearbeitung ist die Pecar und Partner GmbH, Föhneneichstrasse 19a, 6440 Brunnen, <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a>.</p>
-      <p><strong>Diese Website.</strong> Diese Seite setzt keine Cookies, kein Tracking und keine Analyse-Tools ein. Schriften und Bilder werden direkt von dieser Seite geladen. Beim Aufruf verarbeitet der Hosting-Anbieter technisch notwendige Server-Logs wie IP-Adresse, Zeitpunkt und abgerufene Datei, um die Seite sicher auszuliefern.</p>
-      <p><strong>Video.</strong> Das Testimonial-Video wird erst auf Klick geladen und stammt von reinig.ch, einer von uns betriebenen Seite. Dabei wird deine IP-Adresse an diesen Server übermittelt.</p>
-      <p><strong>Kontakt.</strong> Schreibst du mir per E-Mail oder Telefon, bearbeite ich deine Angaben ausschliesslich zur Beantwortung deiner Anfrage.</p>
-      <p><strong>Deine Rechte.</strong> Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner Daten. Eine kurze Nachricht an <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a> genügt.</p>
-    </div>
-  </div>
-</section>
-
+<section class="legal-page" id="impressum"><div class="wrap legal-wrap"><a class="legal-back" href="#top">&larr; Zurück zur Seite</a><h2 style="margin-bottom:1.2rem">Impressum</h2><div class="legal-body"><p><strong>Pecar und Partner GmbH</strong><br>Föhneneichstrasse 19a<br>6440 Brunnen<br>Schweiz</p><p>Vertreten durch: Luka Pecar<br>UID / MWST: CHE-274.524.395</p><p>E-Mail: <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a><br>Telefon: +41 79 619 06 87</p></div></div></section>
+<section class="legal-page" id="datenschutz"><div class="wrap legal-wrap"><a class="legal-back" href="#top">&larr; Zurück zur Seite</a><h2 style="margin-bottom:1.2rem">Datenschutz</h2><div class="legal-body"><p>Verantwortlich für die Datenbearbeitung ist die Pecar und Partner GmbH, Föhneneichstrasse 19a, 6440 Brunnen, <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a>.</p><p><strong>Diese Website.</strong> Diese Seite setzt keine Cookies, kein Tracking und keine Analyse-Tools ein. Schriften und Bilder werden direkt von dieser Seite geladen. Beim Aufruf verarbeitet der Hosting-Anbieter technisch notwendige Server-Logs wie IP-Adresse, Zeitpunkt und abgerufene Datei, um die Seite sicher auszuliefern.</p><p><strong>Video.</strong> Das Testimonial-Video wird erst auf Klick geladen und stammt von reinig.ch, einer von uns betriebenen Seite. Dabei wird deine IP-Adresse an diesen Server übermittelt.</p><p><strong>Kontakt.</strong> Schreibst du mir per E-Mail oder Telefon, bearbeite ich deine Angaben ausschliesslich zur Beantwortung deiner Anfrage.</p><p><strong>Deine Rechte.</strong> Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner Daten. Eine kurze Nachricht an <a href="mailto:luka@pe-pa.ch">luka@pe-pa.ch</a> genügt.</p></div></div></section>
 </main>
 
-<footer>
-  <div class="foot">
-    <span>© 2026 Pecar &amp; Partner · Luka Pecar</span>
-    <nav aria-label="Rechtliches"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></nav>
-  </div>
-</footer>
+<footer><div class="foot"><span>© 2026 Pecar &amp; Partner · Luka Pecar</span><nav aria-label="Rechtliches"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></nav></div></footer>
 
 <script>
 (function(){
   var header=document.getElementById('header'),burger=document.getElementById('burger'),menu=document.getElementById('menu');
-  function onScroll(){header.classList.toggle('scrolled',window.scrollY>10)}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  function setMenu(open){header.classList.toggle('open',open);burger.setAttribute('aria-expanded',open?'true':'false');burger.setAttribute('aria-label',open?'Menü schliessen':'Menü öffnen')}
+  function onScroll(){header.classList.toggle('scrolled',window.scrollY>10)} window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  function setMenu(o){header.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false');burger.setAttribute('aria-label',o?'Menü schliessen':'Menü öffnen')}
   burger.addEventListener('click',function(){setMenu(!header.classList.contains('open'))});
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
