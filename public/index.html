@@ -89,10 +89,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .node span{font-size:.8rem;font-weight:800;color:var(--petrol);background:rgba(255,255,255,.85);padding:.2rem .65rem;border-radius:999px;text-align:center;max-width:12ch;line-height:1.15}
 .node.green span{color:var(--green)}
 .n1{left:15%;top:50%} .n2{left:85%;top:24%} .n3{left:84%;top:66%}
-.mini-nodes{display:none;justify-content:center;gap:.7rem .9rem;margin-top:1.6rem;flex-wrap:wrap}
-.mini-nodes div{display:flex;align-items:center;gap:.4rem;font-weight:800;font-size:.78rem;color:var(--petrol);background:rgba(255,255,255,.7);padding:.35rem .75rem;border-radius:999px}
-.mini-nodes i{width:12px;height:12px;border-radius:50%;background:var(--petrol);display:inline-block} .mini-nodes i.green{background:var(--green)}
-.mini-nodes div.green{color:var(--green)}
 @media (max-width:860px){
   .hero{min-height:auto}
   .hero .wrap{padding-top:clamp(11.5rem,44vw,14.5rem)}
@@ -100,8 +96,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
   .lines,.node{display:none}
   .hero h1{font-size:clamp(1.55rem,6.6vw,2.1rem);max-width:none;hyphens:manual;overflow-wrap:normal}
   .hero .btn{font-size:.95rem;padding:.9rem 1.1rem .9rem 1.35rem;white-space:normal;text-align:left;max-width:100%}
-  .mini-nodes{display:flex}
-}
+  }
 
 /* Bänder */
 .band-ice{background:var(--ice)} .band-sage{background:var(--sage)} .band-cream{background:var(--cream)}
@@ -246,7 +241,6 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
   <div class="wrap">
     <h1 id="hero-title">Ich übernehme <span class="cap">Verantwortung</span><span class="comma">,</span><br>um deine betrieblichen Herausforderungen zu lösen.</h1>
     <div class="cta"><a class="btn" href="#kontakt">Herausforderung besprechen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
-    <div class="mini-nodes" aria-label="Vorgehen"><div><i></i>Verstehen</div><div><i></i>Verantwortung übernehmen</div><div class="green"><i class="green"></i>Ergebnisse liefern</div></div>
   </div>
 </section>
 
