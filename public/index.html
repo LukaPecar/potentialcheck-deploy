@@ -151,20 +151,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .firm-logo span{font-weight:800;font-size:.98rem;letter-spacing:-.01em;color:var(--petrol);margin-left:.55rem}
 @media (min-width:900px){.firms{grid-template-columns:repeat(3,1fr);gap:1.6rem}}
 
-/* Zusammenarbeit: farbige Karten auf Petrol, ohne Vierecke */
-.proc{display:grid;grid-template-columns:1fr;gap:1.25rem;position:relative}
-.pc{border-radius:var(--r-lg);padding:1.7rem 1.6rem 1.7rem;position:relative;color:var(--petrol)}
-.pc.ice{background:var(--ice)} .pc.sage{background:var(--sage)} .pc.lime{background:var(--lime)} .pc.cream{background:var(--cream)}
-.pc .no{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--petrol);color:#fff;font-weight:800;font-size:1.3rem;margin-bottom:1.1rem;border:4px solid rgba(255,255,255,.7)}
-.pc.green-mark .no{background:var(--green)}
-.pc h3{margin-bottom:.35rem} .pc p{color:var(--text);font-size:.98rem}
-@media (min-width:760px){.proc{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1100px){
-  .proc{grid-template-columns:repeat(4,1fr)}
-  .proc::before{content:"";position:absolute;left:8%;right:8%;top:calc(1.7rem + 28px);border-top:3px dashed rgba(255,255,255,.35);z-index:0}
-  .pc{z-index:1}
-}
-
 /* HunziCare */
 .case{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
 .video-card{border-radius:var(--r-xl);overflow:hidden;background:#000;box-shadow:0 40px 90px -40px rgba(8,47,58,.6);border:8px solid var(--white)}
@@ -206,7 +192,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
 .legal-wrap{max-width:760px} .legal-back{display:inline-flex;font-weight:800;color:var(--petrol);margin-bottom:1rem}
 .legal-body{color:var(--text);line-height:1.7} .legal-body p+p{margin-top:1rem} .legal-body strong{color:var(--petrol)}
 .legal-body a{color:var(--petrol);text-decoration:underline;text-underline-offset:2px}
-#ueber-mich,#unternehmen,#zusammenarbeit,#kontakt,#prinzip,#hunzicare,#akig,#impressum,#datenschutz{scroll-margin-top:84px}
+#ueber-mich,#unternehmen,#kontakt,#prinzip,#hunzicare,#akig,#impressum,#datenschutz{scroll-margin-top:84px}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)} .rv.in{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.btn,.firm,.clink,.menu a::after,.node .disc{transition:none}}
@@ -223,7 +209,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
     <nav class="menu" id="menu" aria-label="Hauptnavigation">
       <a href="#ueber-mich">Über mich</a>
       <a href="#unternehmen">Unternehmen</a>
-      <a href="#zusammenarbeit">Zusammenarbeit</a>
+      <a href="#hunzicare">Zusammenarbeit</a>
       <a class="btn" href="#kontakt">Kontakt <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </nav>
   </div>
@@ -308,17 +294,6 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
   </div>
 </section>
 
-<section class="band-petrol" id="zusammenarbeit" aria-labelledby="proc-title">
-  <div class="wrap">
-    <div class="head rv"><h2 id="proc-title">Von der Anfrage bis zur laufenden Lösung.</h2></div>
-    <div class="proc">
-      <article class="pc ice rv"><span class="no">1</span><h3>Anliegen klären</h3><p>Wir sprechen darüber, was dich beschäftigt und was am Ende funktionieren muss.</p></article>
-      <article class="pc sage rv d1"><span class="no">2</span><h3>Lösungsweg festlegen</h3><p>Ich entscheide, wie wir vorgehen, und übernehme die Verantwortung dafür.</p></article>
-      <article class="pc lime rv d2"><span class="no">3</span><h3>Gemeinsam umsetzen</h3><p>Ich packe selbst an. Meine Partner sind von Anfang an mit im Boot, jeder mit seiner Stärke.</p></article>
-      <article class="pc cream green-mark rv d3"><span class="no">4</span><h3>Ergebnis begleiten</h3><p>Ich bleibe dein Ansprechpartner, bis die Lösung im Alltag läuft, und darüber hinaus.</p></article>
-    </div>
-  </div>
-</section>
 
 <section class="band-sage" id="hunzicare" aria-labelledby="case-title">
   <div class="wrap">
