@@ -169,8 +169,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .video-card{border-radius:var(--r-xl);overflow:hidden;background:#000;box-shadow:0 40px 90px -40px rgba(8,47,58,.6);border:8px solid var(--white)}
 .video-card video{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover}
 .case-text p{color:var(--text);font-size:1.08rem} .case-text p+p{margin-top:1rem}
-.note{display:inline-block;margin-top:1.4rem;padding:.75rem 1.2rem;border-radius:22px;background:var(--green);color:#fff;font-weight:800;font-size:.92rem;line-height:1.45}
-.note a{color:#fff;text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:3px}
+.note,.case-text .note{display:inline-block;margin-top:1.4rem;padding:.8rem 1.25rem;border-radius:22px;background:var(--white);border:1px solid var(--line);color:var(--petrol);font-weight:700;font-size:.95rem;line-height:1.45;box-shadow:0 12px 30px -22px rgba(8,47,58,.4)}
+.note a{color:var(--green);font-weight:800;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:2px;text-underline-offset:3px}
 @media (min-width:760px){.note{white-space:nowrap;border-radius:999px}}
 @media (min-width:1000px){.case{grid-template-columns:1.35fr .9fr;gap:3.5rem}}
 
@@ -184,7 +184,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .akig-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 40%}
 .akig-card .tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:999px;background:var(--sage);color:var(--petrol);font-weight:800;font-size:.82rem}
 .akig-card .tag i{width:9px;height:9px;border-radius:50%;background:var(--green)}
-@media (min-width:960px){.akig{grid-template-columns:.9fr 1.1fr;gap:4rem}}
+@media (min-width:960px){.akig{grid-template-columns:.7fr 1.3fr;gap:4rem}}
+.akig-text h2{font-size:clamp(1.9rem,3.1vw,2.5rem);max-width:none}
 
 /* Kontakt */
 .contact{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
@@ -343,7 +344,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
       <a class="btn" href="https://www.akig.ch/" target="_blank" rel="noopener">akig.ch ansehen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
     <div class="akig-text rv d1">
-      <h2 id="akig-title" style="margin-bottom:1.8rem">Aus Branchenerfahrung wird eine <span class="cap ice">gemeinsame</span> Idee.</h2>
+      <h2 id="akig-title" style="margin-bottom:1.8rem">Aus Branchenerfahrung<br>wird eine <span class="cap ice">gemeinsame</span> Idee.</h2>
       <p>Luka lernte <a class="person" href="https://www.linkedin.com/in/christian-facchin-b753a712a/" target="_blank" rel="noopener">Christian Facchin</a> über LinkedIn kennen. Beide kennen die Herausforderungen in HLKS-Betrieben aus eigener Erfahrung, vom Alltag auf der Baustelle bis zum Aufwand hinter jeder Kalkulation.</p>
       <p>Weil in der Kalkulation der grösste Mehrwert für die Betriebe liegt, haben sie sich genau darauf fokussiert: Gemeinsam analysierten sie bestehende Kalkulationen und entwickelten mit dem Team eine KI-gestützte Lösung.</p>
       <p>Luka begleitet den Aufbau von der Produktentwicklung bis zu den Kundengesprächen.</p>
