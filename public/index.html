@@ -82,7 +82,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .hero .cta{margin-top:clamp(1.6rem,3vw,2.4rem)}
 .lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .lines path{fill:none;stroke:var(--petrol);stroke-opacity:.45;stroke-width:2;stroke-dasharray:7 9;stroke-linecap:round}
-.node{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.45rem;transform:translate(-50%,-50%)}
+.node{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.45rem;transform:translate(-50%,-33px)}
 .node .disc{width:66px;height:66px;border-radius:50%;background:#fff;display:grid;place-items:center;border:3px solid var(--petrol);box-shadow:0 14px 30px -16px rgba(8,47,58,.5)}
 .node.green .disc{border-color:var(--green)}
 .node .disc svg{width:30px;height:30px;color:var(--petrol)} .node.green .disc svg{color:var(--green)}
@@ -101,7 +101,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 /* Bänder */
 .band-ice{background:var(--ice)} .band-sage{background:var(--sage)} .band-cream{background:var(--cream)}
 .band-petrol{background:var(--petrol);color:var(--cream)} .band-petrol h2{color:#fff}
-.head{max-width:860px;margin-bottom:clamp(2rem,4vw,3.2rem)} .head h2{max-width:19ch} .head.center{margin-inline:auto;text-align:center} .head.center h2{margin-inline:auto}
+.head{max-width:860px;margin-bottom:clamp(2rem,4vw,3.2rem)} .head h2{max-width:19ch} .head.center{margin-inline:auto;text-align:center} .head.center h2{margin-inline:auto} .head h2.wide{max-width:32ch}
 
 /* Prinzip */
 .steps{position:relative;display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:clamp(2.5rem,5vw,4rem)}
@@ -124,8 +124,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .collage figure img{width:100%;height:100%;object-fit:cover}
 .collage .f1{left:0;top:0;width:62%;height:56%;transform:rotate(-3deg);border-color:var(--lime)}
 .collage .f2{right:0;top:22%;width:44%;height:40%;transform:rotate(4deg);border-color:var(--ice)}
-.collage .f3{left:8%;bottom:0;width:46%;height:40%;transform:rotate(-5deg);border-color:var(--sage)}
-.collage .f4{right:0;bottom:4%;width:42%;height:30%;transform:rotate(5deg);border-color:var(--ice);z-index:2}
+.collage .f3{left:14%;bottom:0;width:50%;height:42%;transform:rotate(-5deg);border-color:var(--sage)}
 .about-text p{color:var(--text);font-size:1.06rem} .about-text p+p{margin-top:.9rem}
 @media (min-width:960px){
   .about{grid-template-columns:.85fr 1.15fr;gap:3.5rem}
@@ -167,16 +166,17 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .video-card{border-radius:var(--r-xl);overflow:hidden;background:#000;box-shadow:0 40px 90px -40px rgba(8,47,58,.6);border:8px solid var(--white)}
 .video-card video{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover}
 .case-text p{color:var(--text);font-size:1.08rem} .case-text p+p{margin-top:1rem}
-.note{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;padding:.75rem 1.1rem;border-radius:999px;background:var(--green);color:#fff;font-weight:800;font-size:.92rem}
-.note i{width:10px;height:10px;border-radius:50%;background:var(--lime);display:inline-block}
+.note{display:inline-block;margin-top:1.4rem;padding:.75rem 1.2rem;border-radius:22px;background:var(--green);color:#fff;font-weight:800;font-size:.92rem;line-height:1.45}
+.note a{color:#fff;text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:3px}
+@media (min-width:760px){.note{white-space:nowrap;border-radius:999px}}
 @media (min-width:1000px){.case{grid-template-columns:1.35fr .9fr;gap:3.5rem}}
 
 /* AKIG */
 .akig{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
-.akig-text p{color:var(--text);font-size:1.08rem} .akig-text p+p{margin-top:1rem}
+.akig-text p{color:var(--text);font-size:1.08rem;line-height:1.7} .akig-text p+p{margin-top:1.5rem}
 .akig-text a.person{font-weight:800;color:var(--petrol);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:3px;text-underline-offset:3px}
 .akig-card{background:var(--white);border-radius:var(--r-xl);padding:clamp(2rem,4vw,3.2rem);box-shadow:0 34px 70px -36px rgba(8,47,58,.4);display:grid;gap:1.4rem;justify-items:start}
-.akig-card .logo{width:min(100%,220px)}
+.akig-card .logo{width:100%;max-width:360px;height:auto}
 .akig-photo{width:100%;border-radius:22px;overflow:hidden;border:6px solid var(--ice);transform:rotate(-2deg);box-shadow:0 26px 54px -30px rgba(8,47,58,.5);margin-bottom:.4rem}
 .akig-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 40%}
 .akig-card .tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:999px;background:var(--sage);color:var(--petrol);font-weight:800;font-size:.82rem}
@@ -227,10 +227,9 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
 <main id="top">
 <section class="hero" aria-labelledby="hero-title">
   <svg class="lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M -20 610 C 140 550, 200 460, 216 452"/>
-    <path d="M 1224 216 C 1100 310, 980 370, 900 340"/>
-    <path d="M 1210 594 C 1120 660, 1000 700, 880 640"/>
-    <path d="M 160 860 C 300 800, 420 740, 520 720"/>
+    <path d="M -30 700 C 90 660, 170 560, 216 450"/>
+    <path d="M 1470 96 C 1400 140, 1320 190, 1224 216"/>
+    <path d="M 1470 780 C 1400 740, 1300 660, 1210 594"/>
   </svg>
   <div class="hero-person" aria-hidden="true">
     <picture><source srcset="luka-cutout.webp" type="image/webp"><img src="luka-cutout.png" alt="" width="720" height="996" fetchpriority="high"></picture>
@@ -246,7 +245,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
 
 <section class="band-ice" id="prinzip" aria-labelledby="prinzip-title">
   <div class="wrap">
-    <div class="head center rv"><h2 id="prinzip-title">Eine Herausforderung. Vier Schritte bis zur Lösung.</h2></div>
+    <div class="head center rv"><h2 id="prinzip-title" class="wide">Eine Herausforderung.<br>Vier Schritte bis zur Lösung.</h2></div>
     <div class="steps">
       <article class="step rv"><span class="no">1</span><h3>Verstehen</h3><p>Ich kläre, was tatsächlich funktionieren muss und wo die Herausforderung liegt.</p></article>
       <article class="step rv d1"><span class="no">2</span><h3>Entscheiden</h3><p>Ich lege den Weg fest und übernehme die Verantwortung dafür. Meine Partner sind von Anfang an mit im Boot, wo ihr Fachwissen die Lösung stärker macht.</p></article>
@@ -263,13 +262,12 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
       <figure class="f1"><img src="luka-werkstatt.jpg" alt="Luka Pecar beim Schweissen in der Werkstatt" width="1000" height="1000" loading="lazy"></figure>
       <figure class="f2"><img src="luka-baustelle.jpg" alt="Luka Pecar mit Helm auf der Baustelle" width="900" height="1125" loading="lazy"></figure>
       <figure class="f3"><img src="luka-nahbar.jpg" alt="Luka Pecar, lachend" width="1000" height="1000" loading="lazy"></figure>
-      <figure class="f4"><img src="luka-christian.jpg" alt="Luka Pecar mit Christian Facchin" width="1400" height="1050" loading="lazy"></figure>
     </div>
     <div class="about-text rv d1">
-      <p>Ich komme aus der Gebäudetechnik. In meiner früheren Tätigkeit habe ich unter anderem Digitalisierungsaufgaben übernommen.</p>
-      <p>Dabei habe ich erlebt, was möglich wird, wenn Menschen mir eine Herausforderung anvertrauen und mir den notwendigen Spielraum geben, sie zu lösen.</p>
+      <p>Ich komme aus der Gebäudetechnik, gelernt habe ich Heizung und Sanitär. In den ersten Jahren habe ich Anlagen von innen kennengelernt, durchschaut und laufend optimiert. Dabei ist mein Interesse an der Energiewende gewachsen, und mit ihm der Blick dafür, wo Betriebe Zeit und Energie verlieren.</p>
+      <p>Später habe ich im Betrieb Digitalisierungsaufgaben übernommen. Dabei habe ich erlebt, was möglich wird, wenn Menschen mir eine Herausforderung anvertrauen und mir den notwendigen Spielraum geben, sie zu lösen.</p>
       <p>Ich konnte Entscheidungen treffen, die Umsetzung voranbringen und sehen, wie Kunden mit dem Ergebnis zufrieden waren. Diese Erfahrung hat mich in die Selbstständigkeit geführt.</p>
-      <p>Heute arbeite ich in unterschiedlichen unternehmerischen Bereichen. Mein Anspruch bleibt derselbe: das Anliegen verstehen, Verantwortung übernehmen und die Lösung selbst bis in die Umsetzung tragen.</p>
+      <p>Heute arbeite ich in drei unternehmerischen Bereichen: Software und Transformationsprojekte mit Sajinth &amp; Partner, Solarprojekte mit pv innovation sowie Beratung, Neukundengewinnung und Immobilien mit Pecar und Partner. Mein Anspruch bleibt derselbe: das Anliegen verstehen, Verantwortung übernehmen und die Lösung selbst bis in die Umsetzung tragen.</p>
     </div>
   </div>
 </section>
@@ -327,7 +325,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
       <div class="case-text rv d1">
         <p>Gregory Hunziker hat Luka über LinkedIn kontaktiert. Daraus entstand die Zusammenarbeit an einer Lösung für den Alltag seines Reinigungsbetriebs.</p>
         <p>Luka trug die Verantwortung vom ersten Gespräch über die Umsetzung mit dem Team bis zur laufenden Betreuung. Die Lösung wird heute bei HunziCare im täglichen Betrieb eingesetzt.</p>
-        <div class="note"><i></i>Umsetzung gemeinsam mit dem Team von Sajinth &amp; Partner.</div>
+        <p class="note">Umsetzung gemeinsam mit dem Team von <a href="https://sajinth-partner.ch/" target="_blank" rel="noopener">Sajinth &amp; Partner</a>.</p>
       </div>
     </div>
   </div>
@@ -337,14 +335,13 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
   <div class="wrap akig">
     <div class="akig-card rv">
       <figure class="akig-photo"><img src="luka-christian.jpg" alt="Luka Pecar und Christian Facchin beim gemeinsamen Mittagessen" width="1400" height="1050" loading="lazy"></figure>
-      <img class="logo" src="logo-akig.svg" alt="akig." width="300" height="90">
-      <span class="tag"><i></i>Im Aufbau, gemeinsam mit dem Team</span>
+      <img class="logo" src="logo-akig-lockup.svg" alt="akig. alles klar im griff." width="1775" height="231">
       <a class="btn" href="https://www.akig.ch/" target="_blank" rel="noopener">akig.ch ansehen <span class="arr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
     <div class="akig-text rv d1">
-      <h2 id="akig-title" style="margin-bottom:1.2rem">Aus Branchenerfahrung wird eine <span class="cap ice">gemeinsame</span> Idee.</h2>
-      <p>Luka lernte <a class="person" href="https://www.linkedin.com/in/christian-facchin-b753a712a/" target="_blank" rel="noopener">Christian Facchin</a> über LinkedIn kennen. Beide kannten den Aufwand hinter der Kalkulation in HLKS-Betrieben.</p>
-      <p>Gemeinsam analysierten sie bestehende Kalkulationen und entwickelten mit dem Team eine KI-gestützte Lösung.</p>
+      <h2 id="akig-title" style="margin-bottom:1.8rem">Aus Branchenerfahrung wird eine <span class="cap ice">gemeinsame</span> Idee.</h2>
+      <p>Luka lernte <a class="person" href="https://www.linkedin.com/in/christian-facchin-b753a712a/" target="_blank" rel="noopener">Christian Facchin</a> über LinkedIn kennen. Beide kennen die Herausforderungen in HLKS-Betrieben aus eigener Erfahrung, vom Alltag auf der Baustelle bis zum Aufwand hinter jeder Kalkulation.</p>
+      <p>Weil in der Kalkulation der grösste Mehrwert für die Betriebe liegt, haben sie sich genau darauf fokussiert: Gemeinsam analysierten sie bestehende Kalkulationen und entwickelten mit dem Team eine KI-gestützte Lösung.</p>
       <p>Luka begleitet den Aufbau von der Produktentwicklung bis zu den Kundengesprächen.</p>
     </div>
   </div>
