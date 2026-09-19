@@ -51,6 +51,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .header{position:sticky;top:0;z-index:100;background:rgba(245,242,236,.88);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
 .header.scrolled{border-bottom-color:var(--line);box-shadow:0 10px 30px -22px rgba(8,47,58,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.8rem}
+.header .wrap{max-width:none}
 .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.12rem;letter-spacing:-.02em;color:var(--petrol)}
 .brand img{height:38px;width:38px}
 @media (max-width:420px){.brand span{font-size:1rem}}
@@ -83,9 +84,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 .lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .lines path{fill:none;stroke:var(--petrol);stroke-opacity:.45;stroke-width:2;stroke-dasharray:7 9;stroke-linecap:round}
 .node{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.45rem;transform:translate(-50%,-33px)}
-.node .disc{width:66px;height:66px;border-radius:50%;background:#fff;display:grid;place-items:center;border:3px solid var(--petrol);box-shadow:0 14px 30px -16px rgba(8,47,58,.5)}
-.node.green .disc{border-color:var(--green)}
-.node .disc svg{width:30px;height:30px;color:var(--petrol)} .node.green .disc svg{color:var(--green)}
+.node .disc{width:66px;height:66px;border-radius:50%;background:#fff;display:grid;place-items:center;border:3px solid var(--petrol);box-shadow:0 14px 30px -16px rgba(8,47,58,.5);transition:transform .28s var(--ease),box-shadow .28s var(--ease)}
+.node:hover .disc{transform:scale(1.16);box-shadow:0 22px 44px -16px rgba(8,47,58,.55)}
+.node.n1 .disc{background:var(--ice)} .node.n2 .disc{background:var(--lime)}
+.node.green .disc{border-color:var(--green);background:var(--green)}
+.node .disc svg{width:30px;height:30px;color:var(--petrol)} .node.green .disc svg{color:#fff}
 .node span{font-size:.8rem;font-weight:800;color:var(--petrol);background:rgba(255,255,255,.85);padding:.2rem .65rem;border-radius:999px;text-align:center;max-width:12ch;line-height:1.15}
 .node.green span{color:var(--green)}
 .n1{left:12.5%;top:75%} .n2{left:91%;top:12%} .n3{left:91%;top:70%}
@@ -204,7 +207,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
 #ueber-mich,#unternehmen,#zusammenarbeit,#kontakt,#prinzip,#hunzicare,#akig,#impressum,#datenschutz{scroll-margin-top:84px}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)} .rv.in{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.btn,.firm,.clink,.menu a::after{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.btn,.firm,.clink,.menu a::after,.node .disc{transition:none}}
 </style>
 </head>
 <body>
@@ -229,7 +232,7 @@ footer{background:#061F27;color:rgba(245,242,236,.7);padding:1.6rem var(--gutter
   <svg class="lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
     <defs><marker id="arrhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#082F3A" fill-opacity=".55"/></marker></defs>
     <path d="M -20 612 C 60 632, 130 655, 180 675 S 320 760, 380 830 S 430 900, 445 930"/>
-    <path d="M 1334 -10 C 1328 40, 1320 80, 1310 108 S 1270 185, 1235 214" marker-end="url(#arrhead)"/>
+    <path d="M 1308 -10 C 1308 40, 1309 80, 1310 108 S 1270 185, 1235 214" marker-end="url(#arrhead)"/>
     <path d="M 1072 930 C 1050 800, 1120 690, 1230 650 S 1400 605, 1465 598"/>
   </svg>
   <div class="hero-person" aria-hidden="true">
